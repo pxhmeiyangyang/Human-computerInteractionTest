@@ -94,6 +94,14 @@
                                     </imageView>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zwj-0a-WOm">
                                         <rect key="frame" x="0.0" y="136" width="600" height="2"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="4" id="oe9-0k-txl"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="oe9-0k-txl"/>
+                                            </mask>
+                                        </variation>
                                     </progressView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

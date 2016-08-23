@@ -38,6 +38,11 @@
     _showBgView.backgroundColor                  = YZH_GREEN;
     _contentLabel.backgroundColor                = [UIColor redColor];
     _showBgViewHeight.constant                   = CGRectGetMaxY(_contentLabel.frame) + CGRectGetHeight(_contentLabel.frame);
+    UIImage* trackImage                          = [UIColor getImageFromColor:[UIColor whiteColor] frame:CGRectMake(0, 0, CGRectGetWidth(_soundProgress.frame), CGRectGetHeight(_soundProgress.frame))];
+    [_soundProgress setTrackImage:trackImage];
+    [_soundProgress setBackgroundColor:[UIColor clearColor]];
+    [_soundProgress setProgressTintColor:YZH_BLUE];
+    _soundProgress.transform                     = CGAffineTransformMakeScale(1.0f, 4.0f);
     [_showScrollView setContentSize:_showBgView.frame.size];
 }
 - (void)viewDidLoad {
