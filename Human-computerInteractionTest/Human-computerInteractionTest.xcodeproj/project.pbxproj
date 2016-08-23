@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		F1B1DB3B1D6BEFF000F455E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B1DB3A1D6BEFF000F455E8 /* main.m */; };
 		F1B1DB3E1D6BEFF000F455E8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B1DB3D1D6BEFF000F455E8 /* AppDelegate.m */; };
-		F1B1DB411D6BEFF000F455E8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B1DB401D6BEFF000F455E8 /* ViewController.m */; };
+		F1B1DB411D6BEFF000F455E8 /* ReadingAloudVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B1DB401D6BEFF000F455E8 /* ReadingAloudVC.m */; };
 		F1B1DB441D6BEFF000F455E8 /* Human-computer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1B1DB421D6BEFF000F455E8 /* Human-computer.storyboard */; };
 		F1B1DB461D6BEFF000F455E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1B1DB451D6BEFF000F455E8 /* Assets.xcassets */; };
 		F1B1DB491D6BEFF000F455E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1B1DB471D6BEFF000F455E8 /* LaunchScreen.storyboard */; };
@@ -18,6 +18,7 @@
 		F1B1DB6F1D6BF28A00F455E8 /* NSObject+Rect.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B1DB6E1D6BF28A00F455E8 /* NSObject+Rect.m */; };
 		F1B1DB721D6BF40600F455E8 /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B1DB711D6BF40600F455E8 /* UIColor+Extension.m */; };
 		F1B1DB751D6BF62800F455E8 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B1DB741D6BF62800F455E8 /* BaseVC.m */; };
+		F1B1DB791D6C2B2300F455E8 /* SoundControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B1DB781D6C2B2300F455E8 /* SoundControlView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +43,8 @@
 		F1B1DB3A1D6BEFF000F455E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F1B1DB3C1D6BEFF000F455E8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F1B1DB3D1D6BEFF000F455E8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F1B1DB3F1D6BEFF000F455E8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F1B1DB401D6BEFF000F455E8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F1B1DB3F1D6BEFF000F455E8 /* ReadingAloudVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReadingAloudVC.h; sourceTree = "<group>"; };
+		F1B1DB401D6BEFF000F455E8 /* ReadingAloudVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReadingAloudVC.m; sourceTree = "<group>"; };
 		F1B1DB431D6BEFF000F455E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Human-computer.storyboard"; sourceTree = "<group>"; };
 		F1B1DB451D6BEFF000F455E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1B1DB481D6BEFF000F455E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,6 +62,8 @@
 		F1B1DB711D6BF40600F455E8 /* UIColor+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extension.m"; sourceTree = "<group>"; };
 		F1B1DB731D6BF62800F455E8 /* BaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
 		F1B1DB741D6BF62800F455E8 /* BaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
+		F1B1DB771D6C2B2300F455E8 /* SoundControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundControlView.h; sourceTree = "<group>"; };
+		F1B1DB781D6C2B2300F455E8 /* SoundControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundControlView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,10 +119,11 @@
 		F1B1DB381D6BEFF000F455E8 /* Human-computerInteractionTest */ = {
 			isa = PBXGroup;
 			children = (
+				F1B1DB761D6C2AE500F455E8 /* view */,
 				F1B1DB3C1D6BEFF000F455E8 /* AppDelegate.h */,
 				F1B1DB3D1D6BEFF000F455E8 /* AppDelegate.m */,
-				F1B1DB3F1D6BEFF000F455E8 /* ViewController.h */,
-				F1B1DB401D6BEFF000F455E8 /* ViewController.m */,
+				F1B1DB3F1D6BEFF000F455E8 /* ReadingAloudVC.h */,
+				F1B1DB401D6BEFF000F455E8 /* ReadingAloudVC.m */,
 				F1B1DB421D6BEFF000F455E8 /* Human-computer.storyboard */,
 				F1B1DB451D6BEFF000F455E8 /* Assets.xcassets */,
 				F1B1DB471D6BEFF000F455E8 /* LaunchScreen.storyboard */,
@@ -155,6 +159,15 @@
 				F1B1DB601D6BEFF000F455E8 /* Info.plist */,
 			);
 			path = "Human-computerInteractionTestUITests";
+			sourceTree = "<group>";
+		};
+		F1B1DB761D6C2AE500F455E8 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				F1B1DB771D6C2B2300F455E8 /* SoundControlView.h */,
+				F1B1DB781D6C2B2300F455E8 /* SoundControlView.m */,
+			);
+			name = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,9 +300,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1B1DB411D6BEFF000F455E8 /* ViewController.m in Sources */,
+				F1B1DB411D6BEFF000F455E8 /* ReadingAloudVC.m in Sources */,
 				F1B1DB3E1D6BEFF000F455E8 /* AppDelegate.m in Sources */,
 				F1B1DB721D6BF40600F455E8 /* UIColor+Extension.m in Sources */,
+				F1B1DB791D6C2B2300F455E8 /* SoundControlView.m in Sources */,
 				F1B1DB751D6BF62800F455E8 /* BaseVC.m in Sources */,
 				F1B1DB3B1D6BEFF000F455E8 /* main.m in Sources */,
 				F1B1DB6F1D6BF28A00F455E8 /* NSObject+Rect.m in Sources */,

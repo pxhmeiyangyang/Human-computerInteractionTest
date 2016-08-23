@@ -1,15 +1,15 @@
 //
-//  ViewController.h
+//  SoundControlView.m
 //  Human-computerInteractionTest
 //
 //  Created by pxh on 16/8/23.
 //  Copyright © 2016年 裴新华. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "SoundControlView.h"
 
-@interface ViewController : BaseVC
+@implementation SoundControlView
+
 
 
 @end
-
