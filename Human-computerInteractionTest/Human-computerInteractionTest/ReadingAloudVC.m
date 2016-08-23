@@ -7,8 +7,8 @@
 //
 
 #import "ReadingAloudVC.h"
-#import "SoundControlView.h"
-@interface ReadingAloudVC ()
+#import "MP3Player.h"
+@interface ReadingAloudVC ()<MP3PlayerDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *showScrollView;
 @property (weak, nonatomic) IBOutlet UIView *showBgView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *showBgViewHeight;
@@ -16,7 +16,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *tipLabel;
 @property (weak, nonatomic) IBOutlet UIView *lineView;
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
-@property (weak, nonatomic) IBOutlet SoundControlView *soundControlView;
+@property (weak, nonatomic) IBOutlet UIView *soundControlView;
+@property (weak, nonatomic) IBOutlet UILabel *soundTitle;
+@property (weak, nonatomic) IBOutlet UIImageView *soundImage;
+@property (weak, nonatomic) IBOutlet UIProgressView *soundProgress;
+
+
+@property(nonatomic,strong)MP3Player* mp3Player;
 
 @end
 
@@ -37,12 +43,32 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    _mp3Player = [MP3Player sharedInstancePlayer];
+    //音频地址
+    NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"10405520" ofType:@"mp3"];
+    [_mp3Player playWithFile:mp3Path];
+    __block ReadingAloudVC* blockSelf = self;
+    if ([_mp3Player play]) {
+        _mp3Player.playPorgressBlock = ^(CGFloat progress){
+            NSLog(@"播放进度：%.4f",progress);
+            blockSelf.soundTitle.text = @"正在播放原音";
+            blockSelf.soundProgress.progress = progress;
+        };
+    }
 }
 
 -(NSString *)VCTitle{
     return @"Modul1";
 }
 
+#pragma mark - MP3PlayerDelegate
+-(void)playFinished:(NSError *)error{
+    if (error) {
+        
+    }else{
+    
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

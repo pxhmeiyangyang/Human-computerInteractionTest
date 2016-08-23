@@ -76,7 +76,7 @@
                                     <constraint firstItem="x5s-t8-sU9" firstAttribute="centerX" secondItem="brA-fP-dyl" secondAttribute="centerX" id="eHH-TS-w0r"/>
                                 </constraints>
                             </scrollView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mhG-7o-PBq" customClass="SoundControlView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mhG-7o-PBq">
                                 <rect key="frame" x="0.0" y="462" width="600" height="138"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正在播放原音" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U04-Hb-ZQb">
@@ -92,7 +92,7 @@
                                             <constraint firstAttribute="width" secondItem="xg6-T1-ogV" secondAttribute="height" multiplier="1:1" id="tDI-nf-6Z9"/>
                                         </constraints>
                                     </imageView>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zwj-0a-WOm">
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zwj-0a-WOm">
                                         <rect key="frame" x="0.0" y="136" width="600" height="2"/>
                                     </progressView>
                                 </subviews>
@@ -125,13 +125,13 @@
                     <connections>
                         <outlet property="contentLabel" destination="8ms-Ag-ijt" id="8xx-BP-7t6"/>
                         <outlet property="lineView" destination="k5F-QC-bWJ" id="hjN-8m-zlg"/>
-                        <outlet property="progress" destination="zwj-0a-WOm" id="D4e-nS-Y4D"/>
                         <outlet property="showBgView" destination="x5s-t8-sU9" id="geL-KV-omz"/>
                         <outlet property="showBgViewHeight" destination="tFK-Te-hHQ" id="nJZ-0D-WH1"/>
-                        <outlet property="showImage" destination="xg6-T1-ogV" id="yI3-gI-t0H"/>
-                        <outlet property="showLabel" destination="U04-Hb-ZQb" id="N5S-v2-5PA"/>
                         <outlet property="showScrollView" destination="brA-fP-dyl" id="dyk-Tb-8xO"/>
-                        <outlet property="soundControlView" destination="mhG-7o-PBq" id="R55-cR-2OQ"/>
+                        <outlet property="soundControlView" destination="mhG-7o-PBq" id="Fyo-ez-w5l"/>
+                        <outlet property="soundImage" destination="xg6-T1-ogV" id="4Nt-xl-qgC"/>
+                        <outlet property="soundProgress" destination="zwj-0a-WOm" id="K4s-ET-FKI"/>
+                        <outlet property="soundTitle" destination="U04-Hb-ZQb" id="zlu-nJ-tgE"/>
                         <outlet property="tipLabel" destination="tQu-IW-bO6" id="aEb-jI-0WW"/>
                         <outlet property="titleLabel" destination="Qh7-jf-B1g" id="FUW-z2-fbE"/>
                     </connections>

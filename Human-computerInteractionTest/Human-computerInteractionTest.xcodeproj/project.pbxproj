@@ -18,7 +18,8 @@
 		F1B1DB6F1D6BF28A00F455E8 /* NSObject+Rect.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B1DB6E1D6BF28A00F455E8 /* NSObject+Rect.m */; };
 		F1B1DB721D6BF40600F455E8 /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B1DB711D6BF40600F455E8 /* UIColor+Extension.m */; };
 		F1B1DB751D6BF62800F455E8 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B1DB741D6BF62800F455E8 /* BaseVC.m */; };
-		F1B1DB791D6C2B2300F455E8 /* SoundControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B1DB781D6C2B2300F455E8 /* SoundControlView.m */; };
+		F1B1DB801D6C3CB500F455E8 /* MP3Player.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B1DB7F1D6C3CB500F455E8 /* MP3Player.m */; };
+		F1B1DB821D6C482100F455E8 /* 10405520.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F1B1DB811D6C482100F455E8 /* 10405520.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,8 +63,9 @@
 		F1B1DB711D6BF40600F455E8 /* UIColor+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extension.m"; sourceTree = "<group>"; };
 		F1B1DB731D6BF62800F455E8 /* BaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
 		F1B1DB741D6BF62800F455E8 /* BaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
-		F1B1DB771D6C2B2300F455E8 /* SoundControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundControlView.h; sourceTree = "<group>"; };
-		F1B1DB781D6C2B2300F455E8 /* SoundControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundControlView.m; sourceTree = "<group>"; };
+		F1B1DB7E1D6C3CB500F455E8 /* MP3Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MP3Player.h; sourceTree = "<group>"; };
+		F1B1DB7F1D6C3CB500F455E8 /* MP3Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MP3Player.m; sourceTree = "<group>"; };
+		F1B1DB811D6C482100F455E8 /* 10405520.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 10405520.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		F1B1DB2D1D6BEFF000F455E8 = {
 			isa = PBXGroup;
 			children = (
+				F1B1DB811D6C482100F455E8 /* 10405520.mp3 */,
 				F1B1DB6C1D6BF19E00F455E8 /* PrefixHeader.pch */,
 				F1B1DB701D6BF40600F455E8 /* UIColor+Extension.h */,
 				F1B1DB711D6BF40600F455E8 /* UIColor+Extension.m */,
@@ -119,6 +122,7 @@
 		F1B1DB381D6BEFF000F455E8 /* Human-computerInteractionTest */ = {
 			isa = PBXGroup;
 			children = (
+				F1B1DB7A1D6C3B3300F455E8 /* Mp3Player */,
 				F1B1DB761D6C2AE500F455E8 /* view */,
 				F1B1DB3C1D6BEFF000F455E8 /* AppDelegate.h */,
 				F1B1DB3D1D6BEFF000F455E8 /* AppDelegate.m */,
@@ -164,10 +168,17 @@
 		F1B1DB761D6C2AE500F455E8 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				F1B1DB771D6C2B2300F455E8 /* SoundControlView.h */,
-				F1B1DB781D6C2B2300F455E8 /* SoundControlView.m */,
 			);
 			name = view;
+			sourceTree = "<group>";
+		};
+		F1B1DB7A1D6C3B3300F455E8 /* Mp3Player */ = {
+			isa = PBXGroup;
+			children = (
+				F1B1DB7E1D6C3CB500F455E8 /* MP3Player.h */,
+				F1B1DB7F1D6C3CB500F455E8 /* MP3Player.m */,
+			);
+			name = Mp3Player;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +287,7 @@
 				F1B1DB491D6BEFF000F455E8 /* LaunchScreen.storyboard in Resources */,
 				F1B1DB461D6BEFF000F455E8 /* Assets.xcassets in Resources */,
 				F1B1DB441D6BEFF000F455E8 /* Human-computer.storyboard in Resources */,
+				F1B1DB821D6C482100F455E8 /* 10405520.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,7 +315,7 @@
 				F1B1DB411D6BEFF000F455E8 /* ReadingAloudVC.m in Sources */,
 				F1B1DB3E1D6BEFF000F455E8 /* AppDelegate.m in Sources */,
 				F1B1DB721D6BF40600F455E8 /* UIColor+Extension.m in Sources */,
-				F1B1DB791D6C2B2300F455E8 /* SoundControlView.m in Sources */,
+				F1B1DB801D6C3CB500F455E8 /* MP3Player.m in Sources */,
 				F1B1DB751D6BF62800F455E8 /* BaseVC.m in Sources */,
 				F1B1DB3B1D6BEFF000F455E8 /* main.m in Sources */,
 				F1B1DB6F1D6BF28A00F455E8 /* NSObject+Rect.m in Sources */,

@@ -10,9 +10,7 @@
 
 @interface ReadingAloudVC : BaseVC
 
-@property (weak, nonatomic) IBOutlet UIImageView *showImage;
-@property (weak, nonatomic) IBOutlet UILabel *showLabel;
-@property (weak, nonatomic) IBOutlet UIProgressView *progress;
+
 
 @end
 
