@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  BaseVC.h
 //  Human-computerInteractionTest
 //
 //  Created by pxh on 16/8/23.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : BaseVC
+@interface BaseVC : UIViewController
 
+-(NSString* )VCTitle;
 
 @end
-
