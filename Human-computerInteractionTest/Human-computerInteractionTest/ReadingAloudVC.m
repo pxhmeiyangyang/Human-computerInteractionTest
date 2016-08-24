@@ -9,6 +9,9 @@
 #import "ReadingAloudVC.h"
 #import "MP3Player.h"
 @interface ReadingAloudVC ()<MP3PlayerDelegate>
+{
+    NSInteger _soundCount;
+}
 @property (weak, nonatomic) IBOutlet UIScrollView *showScrollView;
 @property (weak, nonatomic) IBOutlet UIView *showBgView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *showBgViewHeight;
@@ -45,21 +48,33 @@
     _soundProgress.transform                     = CGAffineTransformMakeScale(1.0f, 4.0f);
     [_showScrollView setContentSize:_showBgView.frame.size];
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self resetData];
+    [self setImageViewAnimation];
     _mp3Player = [MP3Player sharedInstancePlayer];
+    _mp3Player.delegate = self;
     //音频地址
-    NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"10405520" ofType:@"mp3"];
+    NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"tixing" ofType:@"mp3"];
     [_mp3Player playWithFile:mp3Path];
-    __block ReadingAloudVC* blockSelf = self;
-    if ([_mp3Player play]) {
-        _mp3Player.playPorgressBlock = ^(CGFloat progress){
-            NSLog(@"播放进度：%.4f",progress);
-            blockSelf.soundTitle.text = @"正在播放原音";
-            blockSelf.soundProgress.progress = progress;
-        };
-    }
+    [_mp3Player play];
+    [_soundControlView setHidden:YES];
+}
+
+-(void)resetData{
+    _soundCount = 0;
+}
+
+-(void)setImageViewAnimation{
+    NSArray* images = [NSArray arrayWithObjects:
+                       [UIImage imageNamed:@"play01"],
+                       [UIImage imageNamed:@"play02"],
+                       [UIImage imageNamed:@"play03"],nil];
+    _soundImage.animationImages = images;
+    _soundImage.animationDuration = 0.9;
+    _soundImage.animationRepeatCount = 0;
 }
 
 -(NSString *)VCTitle{
@@ -72,6 +87,43 @@
         
     }else{
     
+    }
+    _soundCount ++;
+    switch (_soundCount) {
+        case 1:
+        {
+            [_soundControlView setHidden:NO];
+            NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"1" ofType:@"mp3"];
+            [_mp3Player playWithFile:mp3Path];
+            __block ReadingAloudVC* blockSelf = self;
+            if ([_mp3Player play]) {
+                _mp3Player.playPorgressBlock = ^(CGFloat progress){
+                    NSLog(@"播放进度：%.4f",progress);
+                    blockSelf.soundTitle.text = @"正在播放原音";
+                    blockSelf.soundProgress.progress = progress;
+                };
+            }
+            [_soundImage startAnimating];
+        }
+            break;
+        case 2:
+        {
+            [_soundControlView setHidden:NO];
+            NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"38miao" ofType:@"mp3"];
+            [_mp3Player playWithFile:mp3Path];
+            __block ReadingAloudVC* blockSelf = self;
+            if ([_mp3Player play]) {
+                _mp3Player.playPorgressBlock = ^(CGFloat progress){
+                    NSLog(@"播放进度：%.4f",progress);
+                    blockSelf.soundTitle.text = @"正在播放原音";
+                    blockSelf.soundProgress.progress = progress;
+                };
+            }
+            [_soundImage startAnimating];
+        }
+            break;
+        default:
+            break;
     }
 }
 - (void)didReceiveMemoryWarning {

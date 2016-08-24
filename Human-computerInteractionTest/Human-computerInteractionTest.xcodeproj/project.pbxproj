@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F114D5621D6D50A900E488E7 /* 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F114D5611D6D50A900E488E7 /* 1.mp3 */; };
+		F114D5641D6D50B900E488E7 /* 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F114D5631D6D50B900E488E7 /* 2.mp3 */; };
+		F114D5661D6D50CC00E488E7 /* 38miao.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F114D5651D6D50CC00E488E7 /* 38miao.mp3 */; };
+		F114D5681D6D50F500E488E7 /* tixing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F114D5671D6D50F500E488E7 /* tixing.mp3 */; };
 		F1B1DB3B1D6BEFF000F455E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B1DB3A1D6BEFF000F455E8 /* main.m */; };
 		F1B1DB3E1D6BEFF000F455E8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B1DB3D1D6BEFF000F455E8 /* AppDelegate.m */; };
 		F1B1DB411D6BEFF000F455E8 /* ReadingAloudVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B1DB401D6BEFF000F455E8 /* ReadingAloudVC.m */; };
@@ -19,7 +23,6 @@
 		F1B1DB721D6BF40600F455E8 /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B1DB711D6BF40600F455E8 /* UIColor+Extension.m */; };
 		F1B1DB751D6BF62800F455E8 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B1DB741D6BF62800F455E8 /* BaseVC.m */; };
 		F1B1DB801D6C3CB500F455E8 /* MP3Player.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B1DB7F1D6C3CB500F455E8 /* MP3Player.m */; };
-		F1B1DB821D6C482100F455E8 /* 10405520.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F1B1DB811D6C482100F455E8 /* 10405520.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F114D5611D6D50A900E488E7 /* 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1.mp3; sourceTree = "<group>"; };
+		F114D5631D6D50B900E488E7 /* 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 2.mp3; sourceTree = "<group>"; };
+		F114D5651D6D50CC00E488E7 /* 38miao.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 38miao.mp3; sourceTree = "<group>"; };
+		F114D5671D6D50F500E488E7 /* tixing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tixing.mp3; sourceTree = "<group>"; };
 		F1B1DB361D6BEFF000F455E8 /* Human-computerInteractionTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Human-computerInteractionTest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1B1DB3A1D6BEFF000F455E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F1B1DB3C1D6BEFF000F455E8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -65,7 +72,6 @@
 		F1B1DB741D6BF62800F455E8 /* BaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
 		F1B1DB7E1D6C3CB500F455E8 /* MP3Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MP3Player.h; sourceTree = "<group>"; };
 		F1B1DB7F1D6C3CB500F455E8 /* MP3Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MP3Player.m; sourceTree = "<group>"; };
-		F1B1DB811D6C482100F455E8 /* 10405520.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 10405520.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,10 +99,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F114D5601D6D507D00E488E7 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				F114D5671D6D50F500E488E7 /* tixing.mp3 */,
+				F114D5611D6D50A900E488E7 /* 1.mp3 */,
+				F114D5631D6D50B900E488E7 /* 2.mp3 */,
+				F114D5651D6D50CC00E488E7 /* 38miao.mp3 */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
 		F1B1DB2D1D6BEFF000F455E8 = {
 			isa = PBXGroup;
 			children = (
-				F1B1DB811D6C482100F455E8 /* 10405520.mp3 */,
+				F114D5601D6D507D00E488E7 /* Resource */,
 				F1B1DB6C1D6BF19E00F455E8 /* PrefixHeader.pch */,
 				F1B1DB701D6BF40600F455E8 /* UIColor+Extension.h */,
 				F1B1DB711D6BF40600F455E8 /* UIColor+Extension.m */,
@@ -284,10 +301,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F114D5661D6D50CC00E488E7 /* 38miao.mp3 in Resources */,
 				F1B1DB491D6BEFF000F455E8 /* LaunchScreen.storyboard in Resources */,
+				F114D5621D6D50A900E488E7 /* 1.mp3 in Resources */,
 				F1B1DB461D6BEFF000F455E8 /* Assets.xcassets in Resources */,
+				F114D5681D6D50F500E488E7 /* tixing.mp3 in Resources */,
+				F114D5641D6D50B900E488E7 /* 2.mp3 in Resources */,
 				F1B1DB441D6BEFF000F455E8 /* Human-computer.storyboard in Resources */,
-				F1B1DB821D6C482100F455E8 /* 10405520.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
