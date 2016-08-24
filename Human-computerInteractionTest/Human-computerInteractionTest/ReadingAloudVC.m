@@ -11,6 +11,9 @@
 @interface ReadingAloudVC ()<MP3PlayerDelegate>
 {
     NSInteger _soundCount;
+    NSTimer* _timer;
+    CGFloat _countDownTime;
+    CGFloat _frontCountDownTime;
 }
 @property (weak, nonatomic) IBOutlet UIScrollView *showScrollView;
 @property (weak, nonatomic) IBOutlet UIView *showBgView;
@@ -57,7 +60,7 @@
     _mp3Player = [MP3Player sharedInstancePlayer];
     _mp3Player.delegate = self;
     //音频地址
-    NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"tixing" ofType:@"mp3"];
+    NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"start_exam" ofType:@"mp3"];
     [_mp3Player playWithFile:mp3Path];
     [_mp3Player play];
     [_soundControlView setHidden:YES];
@@ -65,6 +68,8 @@
 
 -(void)resetData{
     _soundCount = 0;
+    _countDownTime = 50.0;
+    _frontCountDownTime = 0.0;
 }
 
 -(void)setImageViewAnimation{
@@ -122,13 +127,42 @@
             [_soundImage startAnimating];
         }
             break;
+        case 3:
+        {
+            _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countDown:) userInfo:nil repeats:YES];
+            
+            _soundProgress.progress = 1.0;
+        }
+            break;
         default:
             break;
     }
 }
+
+-(void)countDown:(NSTimer* )timer{
+    [_soundImage setHidden:YES];
+    if (_frontCountDownTime < 50) {
+        _frontCountDownTime ++;
+        [_soundTitle setText:[NSString stringWithFormat:@"准备朗读（倒计时%d秒）",(int)(_countDownTime - _frontCountDownTime)]];
+        _soundProgress.progress = _frontCountDownTime / _countDownTime;
+    }else{
+        [_timer invalidate];
+        _frontCountDownTime = 0.0;
+        _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(soundWait:) userInfo:nil repeats:YES];
+    }
+}
+-(void)soundWait:(NSTimer* )timer{
+    [_soundImage setHidden:NO];
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)dealloc{
+    [_timer invalidate];
+    _timer = nil;
 }
 
 @end
