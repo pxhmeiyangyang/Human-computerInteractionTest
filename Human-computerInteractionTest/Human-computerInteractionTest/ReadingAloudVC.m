@@ -8,6 +8,7 @@
 
 #import "ReadingAloudVC.h"
 #import "MP3Player.h"
+#import "GetInformationVC.h"
 @interface ReadingAloudVC ()<MP3PlayerDelegate>
 {
     NSInteger _soundCount;
@@ -134,6 +135,22 @@
             _soundProgress.progress = 1.0;
         }
             break;
+        case 4:
+        {
+            _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(soundWait:) userInfo:nil repeats:YES];
+            [_soundImage stopAnimating];
+            [_soundImage setHidden:NO];
+            [_soundImage setImage:[UIImage imageNamed:@"05_mic"]];
+        }
+            break;
+        case 5:
+        {
+            //结束录音跳转下一个界面
+            UIStoryboard* storyBoard = [UIStoryboard storyboardWithName:@"Human-computer" bundle:[NSBundle mainBundle]];
+            GetInformationVC* getInformation = [storyBoard instantiateViewControllerWithIdentifier:@"GetInformationVC.h"];
+            [self.navigationController pushViewController:getInformation animated:YES];
+        }
+            break;
         default:
             break;
     }
@@ -148,12 +165,25 @@
     }else{
         [_timer invalidate];
         _frontCountDownTime = 0.0;
-        _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(soundWait:) userInfo:nil repeats:YES];
+        //提示开始录音
+        NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"start_audio" ofType:@"mp3"];
+        [_mp3Player playWithFile:mp3Path];
+        [_mp3Player play];
     }
 }
 -(void)soundWait:(NSTimer* )timer{
-    [_soundImage setHidden:NO];
-    
+    if (_frontCountDownTime < 50) {
+        _frontCountDownTime ++;
+        [_soundTitle setText:[NSString stringWithFormat:@"请开始录音（倒计时%d秒）",(int)(_countDownTime - _frontCountDownTime)]];
+        _soundProgress.progress = _frontCountDownTime / _countDownTime;
+    }else{
+        [_timer invalidate];
+        [_soundControlView setHidden:YES];
+        //提示停止录音
+        NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"end_audio" ofType:@"mp3"];
+        [_mp3Player playWithFile:mp3Path];
+        [_mp3Player play];
+    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

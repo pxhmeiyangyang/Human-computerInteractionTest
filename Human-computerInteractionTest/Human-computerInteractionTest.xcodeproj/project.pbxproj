@@ -16,6 +16,8 @@
 		F114D5711D6D81A000E488E7 /* start_answer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F114D56C1D6D81A000E488E7 /* start_answer.mp3 */; };
 		F114D5721D6D81A000E488E7 /* start_audio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F114D56D1D6D81A000E488E7 /* start_audio.mp3 */; };
 		F114D5731D6D81A000E488E7 /* start_exam.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F114D56E1D6D81A000E488E7 /* start_exam.mp3 */; };
+		F114D5761D6D8F3100E488E7 /* GetInformationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F114D5751D6D8F3100E488E7 /* GetInformationVC.m */; };
+		F114D5791D6D931600E488E7 /* ListenTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F114D5781D6D931600E488E7 /* ListenTestVC.m */; };
 		F1B1DB3B1D6BEFF000F455E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B1DB3A1D6BEFF000F455E8 /* main.m */; };
 		F1B1DB3E1D6BEFF000F455E8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B1DB3D1D6BEFF000F455E8 /* AppDelegate.m */; };
 		F1B1DB411D6BEFF000F455E8 /* ReadingAloudVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B1DB401D6BEFF000F455E8 /* ReadingAloudVC.m */; };
@@ -57,6 +59,10 @@
 		F114D56C1D6D81A000E488E7 /* start_answer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = start_answer.mp3; sourceTree = "<group>"; };
 		F114D56D1D6D81A000E488E7 /* start_audio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = start_audio.mp3; sourceTree = "<group>"; };
 		F114D56E1D6D81A000E488E7 /* start_exam.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = start_exam.mp3; sourceTree = "<group>"; };
+		F114D5741D6D8F3100E488E7 /* GetInformationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetInformationVC.h; sourceTree = "<group>"; };
+		F114D5751D6D8F3100E488E7 /* GetInformationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetInformationVC.m; sourceTree = "<group>"; };
+		F114D5771D6D931600E488E7 /* ListenTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListenTestVC.h; sourceTree = "<group>"; };
+		F114D5781D6D931600E488E7 /* ListenTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListenTestVC.m; sourceTree = "<group>"; };
 		F1B1DB361D6BEFF000F455E8 /* Human-computerInteractionTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Human-computerInteractionTest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1B1DB3A1D6BEFF000F455E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F1B1DB3C1D6BEFF000F455E8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -168,6 +174,10 @@
 				F1B1DB3D1D6BEFF000F455E8 /* AppDelegate.m */,
 				F1B1DB3F1D6BEFF000F455E8 /* ReadingAloudVC.h */,
 				F1B1DB401D6BEFF000F455E8 /* ReadingAloudVC.m */,
+				F114D5741D6D8F3100E488E7 /* GetInformationVC.h */,
+				F114D5751D6D8F3100E488E7 /* GetInformationVC.m */,
+				F114D5771D6D931600E488E7 /* ListenTestVC.h */,
+				F114D5781D6D931600E488E7 /* ListenTestVC.m */,
 				F1B1DB421D6BEFF000F455E8 /* Human-computer.storyboard */,
 				F1B1DB451D6BEFF000F455E8 /* Assets.xcassets */,
 				F1B1DB471D6BEFF000F455E8 /* LaunchScreen.storyboard */,
@@ -363,7 +373,9 @@
 				F1B1DB411D6BEFF000F455E8 /* ReadingAloudVC.m in Sources */,
 				F1B1DB3E1D6BEFF000F455E8 /* AppDelegate.m in Sources */,
 				F1B1DB721D6BF40600F455E8 /* UIColor+Extension.m in Sources */,
+				F114D5791D6D931600E488E7 /* ListenTestVC.m in Sources */,
 				F1B1DB801D6C3CB500F455E8 /* MP3Player.m in Sources */,
+				F114D5761D6D8F3100E488E7 /* GetInformationVC.m in Sources */,
 				F1B1DB751D6BF62800F455E8 /* BaseVC.m in Sources */,
 				F1B1DB3B1D6BEFF000F455E8 /* main.m in Sources */,
 				F1B1DB6F1D6BF28A00F455E8 /* NSObject+Rect.m in Sources */,
