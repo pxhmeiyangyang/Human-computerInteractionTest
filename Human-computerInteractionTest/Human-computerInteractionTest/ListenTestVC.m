@@ -101,8 +101,8 @@ static NSString* identifer = @"collectionCell";
     [super viewDidDisappear:animated];
     //移除所有界面元素
     [_collectionView removeFromSuperview];
-//    _collectionView = nil;
-//    _collectionLayout = nil;
+    _collectionView = nil;
+    _collectionLayout = nil;
 }
 -(void)dealloc{
     NSLog(@"dealloc");
