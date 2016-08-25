@@ -8,12 +8,14 @@
 
 #import "ListenTestCollectionCell.h"
 #import "MP3Player.h"
-@interface ListenTestCollectionCell()<MP3PlayerDelegate>
+#import "EngineManager.h"
+@interface ListenTestCollectionCell()<MP3PlayerDelegate,EngineManagerDelegate>
 {
     NSInteger _soundCount;
     NSTimer* _timer;
     CGFloat _countDownTime;
     CGFloat _frontCountDownTime;
+    EngineManager* _engine;
 }
 
 @property(nonatomic,strong)MP3Player* mp3Player;
@@ -53,6 +55,9 @@
 
 
 -(void)resetData{
+    _engine = [EngineManager sharedManager];
+    _engine.delegate = self;
+    [_engine setOralText:@"good moring"];
     _soundCount = 0;
     _countDownTime = 50.0;
     _frontCountDownTime = 0.0;
@@ -130,10 +135,7 @@
             break;
         case 5:
         {
-            //结束录音跳转下一个界面
-            if (_nextItemBlock) {
-                _nextItemBlock();
-            }
+
         }
             break;
         default:
@@ -197,10 +199,46 @@
 }
 
 -(void)starRecording{
-
+    [_engine startRecognize];
 }
 -(void)stopRecording{
+    [_engine stopRecognize];
+}
 
+#pragma mark - enginemagedelagete
+- (void)onBeginOral{
+}
+
+- (void)onStopOral{
+}
+
+- (void)onResult:(NSString *)result isLast:(BOOL)isLast{
+    NSLog(@"record result:%@",result);
+}
+
+- (void)onEndOral:(NSError *)error{
+    //结束录音跳转下一个界面
+    if (_nextItemBlock) {
+        _nextItemBlock();
+    }
+}
+
+- (void)onVADTimeout{
+}
+
+- (void)onUpdateVolume:(int)volume{
+}
+
+- (void)onRecordingBuffer:(NSData *)recordingData{
+}
+
+- (void)oralEngineDidInit:(NSError *)error{
+}
+
+- (void)audioFileDidRecord:(NSString *)url{
+}
+
+- (void)recorderTimeTooShort:(BOOL)isShort{
 }
 
 -(void)dealloc{

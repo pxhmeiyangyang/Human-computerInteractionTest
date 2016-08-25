@@ -30,8 +30,20 @@
 		F1B1DB721D6BF40600F455E8 /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B1DB711D6BF40600F455E8 /* UIColor+Extension.m */; };
 		F1B1DB751D6BF62800F455E8 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B1DB741D6BF62800F455E8 /* BaseVC.m */; };
 		F1B1DB801D6C3CB500F455E8 /* MP3Player.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B1DB7F1D6C3CB500F455E8 /* MP3Player.m */; };
+		F1C4FAF91D6EC6BD00F5AB15 /* EngineManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C4FAF51D6EC6BD00F5AB15 /* EngineManager.m */; };
+		F1C4FAFA1D6EC6BD00F5AB15 /* libusc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C4FAF61D6EC6BD00F5AB15 /* libusc.a */; };
+		F1C4FAFB1D6EC6BE00F5AB15 /* tmp_oral_offline.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F1C4FAF71D6EC6BD00F5AB15 /* tmp_oral_offline.bundle */; };
 		F1E0FB7C1D6E8A4100E4F490 /* ListenTestCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E0FB7A1D6E8A4100E4F490 /* ListenTestCollectionCell.m */; };
 		F1E0FB7D1D6E8A4100E4F490 /* ListenTestCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1E0FB7B1D6E8A4100E4F490 /* ListenTestCollectionCell.xib */; };
+		F1E0FB801D6EC60200E4F490 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E0FB7F1D6EC60200E4F490 /* libstdc++.6.0.9.tbd */; };
+		F1E0FB881D6EC72500E4F490 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E0FB871D6EC72500E4F490 /* Foundation.framework */; };
+		F1E0FB8A1D6EC72B00E4F490 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E0FB891D6EC72B00E4F490 /* UIKit.framework */; };
+		F1E0FB8C1D6EC73400E4F490 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E0FB8B1D6EC73400E4F490 /* CoreGraphics.framework */; };
+		F1E0FB8E1D6EC73C00E4F490 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E0FB8D1D6EC73C00E4F490 /* AudioToolbox.framework */; };
+		F1E0FB901D6EC74600E4F490 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E0FB8F1D6EC74600E4F490 /* CoreTelephony.framework */; };
+		F1E0FB921D6EC74C00E4F490 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E0FB911D6EC74C00E4F490 /* SystemConfiguration.framework */; };
+		F1E0FB941D6EC75100E4F490 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E0FB931D6EC75100E4F490 /* AVFoundation.framework */; };
+		F1E0FB971D6EC7CC00E4F490 /* EngineStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E0FB961D6EC7CC00E4F490 /* EngineStateMachine.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,9 +102,24 @@
 		F1B1DB741D6BF62800F455E8 /* BaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
 		F1B1DB7E1D6C3CB500F455E8 /* MP3Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MP3Player.h; sourceTree = "<group>"; };
 		F1B1DB7F1D6C3CB500F455E8 /* MP3Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MP3Player.m; sourceTree = "<group>"; };
+		F1C4FAF41D6EC6BD00F5AB15 /* EngineManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EngineManager.h; sourceTree = "<group>"; };
+		F1C4FAF51D6EC6BD00F5AB15 /* EngineManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EngineManager.m; sourceTree = "<group>"; };
+		F1C4FAF61D6EC6BD00F5AB15 /* libusc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libusc.a; sourceTree = "<group>"; };
+		F1C4FAF71D6EC6BD00F5AB15 /* tmp_oral_offline.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = tmp_oral_offline.bundle; sourceTree = "<group>"; };
+		F1C4FAF81D6EC6BD00F5AB15 /* USCRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USCRecognizer.h; sourceTree = "<group>"; };
 		F1E0FB791D6E8A4100E4F490 /* ListenTestCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListenTestCollectionCell.h; sourceTree = "<group>"; };
 		F1E0FB7A1D6E8A4100E4F490 /* ListenTestCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListenTestCollectionCell.m; sourceTree = "<group>"; };
 		F1E0FB7B1D6E8A4100E4F490 /* ListenTestCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListenTestCollectionCell.xib; sourceTree = "<group>"; };
+		F1E0FB7F1D6EC60200E4F490 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		F1E0FB871D6EC72500E4F490 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F1E0FB891D6EC72B00E4F490 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F1E0FB8B1D6EC73400E4F490 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F1E0FB8D1D6EC73C00E4F490 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		F1E0FB8F1D6EC74600E4F490 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		F1E0FB911D6EC74C00E4F490 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F1E0FB931D6EC75100E4F490 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		F1E0FB951D6EC7CC00E4F490 /* EngineStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EngineStateMachine.h; sourceTree = "<group>"; };
+		F1E0FB961D6EC7CC00E4F490 /* EngineStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EngineStateMachine.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +127,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1E0FB941D6EC75100E4F490 /* AVFoundation.framework in Frameworks */,
+				F1E0FB921D6EC74C00E4F490 /* SystemConfiguration.framework in Frameworks */,
+				F1E0FB901D6EC74600E4F490 /* CoreTelephony.framework in Frameworks */,
+				F1E0FB8E1D6EC73C00E4F490 /* AudioToolbox.framework in Frameworks */,
+				F1E0FB8C1D6EC73400E4F490 /* CoreGraphics.framework in Frameworks */,
+				F1E0FB8A1D6EC72B00E4F490 /* UIKit.framework in Frameworks */,
+				F1E0FB881D6EC72500E4F490 /* Foundation.framework in Frameworks */,
+				F1E0FB801D6EC60200E4F490 /* libstdc++.6.0.9.tbd in Frameworks */,
+				F1C4FAFA1D6EC6BD00F5AB15 /* libusc.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +190,7 @@
 		F1B1DB2D1D6BEFF000F455E8 = {
 			isa = PBXGroup;
 			children = (
+				F1E0FB7E1D6EC5EB00E4F490 /* Frameworks */,
 				F114D5601D6D507D00E488E7 /* Resource */,
 				F1B1DB6C1D6BF19E00F455E8 /* PrefixHeader.pch */,
 				F1B1DB701D6BF40600F455E8 /* UIColor+Extension.h */,
@@ -245,6 +282,36 @@
 				F1B1DB7F1D6C3CB500F455E8 /* MP3Player.m */,
 			);
 			name = Mp3Player;
+			sourceTree = "<group>";
+		};
+		F1C4FAF31D6EC6BD00F5AB15 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				F1E0FB951D6EC7CC00E4F490 /* EngineStateMachine.h */,
+				F1E0FB961D6EC7CC00E4F490 /* EngineStateMachine.m */,
+				F1C4FAF41D6EC6BD00F5AB15 /* EngineManager.h */,
+				F1C4FAF51D6EC6BD00F5AB15 /* EngineManager.m */,
+				F1C4FAF61D6EC6BD00F5AB15 /* libusc.a */,
+				F1C4FAF71D6EC6BD00F5AB15 /* tmp_oral_offline.bundle */,
+				F1C4FAF81D6EC6BD00F5AB15 /* USCRecognizer.h */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		F1E0FB7E1D6EC5EB00E4F490 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F1E0FB931D6EC75100E4F490 /* AVFoundation.framework */,
+				F1E0FB911D6EC74C00E4F490 /* SystemConfiguration.framework */,
+				F1E0FB8F1D6EC74600E4F490 /* CoreTelephony.framework */,
+				F1E0FB8D1D6EC73C00E4F490 /* AudioToolbox.framework */,
+				F1E0FB8B1D6EC73400E4F490 /* CoreGraphics.framework */,
+				F1E0FB891D6EC72B00E4F490 /* UIKit.framework */,
+				F1E0FB871D6EC72500E4F490 /* Foundation.framework */,
+				F1C4FAF31D6EC6BD00F5AB15 /* lib */,
+				F1E0FB7F1D6EC60200E4F490 /* libstdc++.6.0.9.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,6 +420,7 @@
 				F114D5661D6D50CC00E488E7 /* 38miao.mp3 in Resources */,
 				F1B1DB491D6BEFF000F455E8 /* LaunchScreen.storyboard in Resources */,
 				F114D5621D6D50A900E488E7 /* 1.mp3 in Resources */,
+				F1C4FAFB1D6EC6BE00F5AB15 /* tmp_oral_offline.bundle in Resources */,
 				F1E0FB7D1D6E8A4100E4F490 /* ListenTestCollectionCell.xib in Resources */,
 				F114D5711D6D81A000E488E7 /* start_answer.mp3 in Resources */,
 				F114D5701D6D81A000E488E7 /* end_exam.mp3 in Resources */,
@@ -390,6 +458,7 @@
 				F1B1DB411D6BEFF000F455E8 /* ReadingAloudVC.m in Sources */,
 				F1B1DB3E1D6BEFF000F455E8 /* AppDelegate.m in Sources */,
 				F1B1DB721D6BF40600F455E8 /* UIColor+Extension.m in Sources */,
+				F1E0FB971D6EC7CC00E4F490 /* EngineStateMachine.m in Sources */,
 				F114D5791D6D931600E488E7 /* ListenTestVC.m in Sources */,
 				F1B1DB801D6C3CB500F455E8 /* MP3Player.m in Sources */,
 				F114D5761D6D8F3100E488E7 /* GetInformationVC.m in Sources */,
@@ -397,6 +466,7 @@
 				F1B1DB3B1D6BEFF000F455E8 /* main.m in Sources */,
 				F1E0FB7C1D6E8A4100E4F490 /* ListenTestCollectionCell.m in Sources */,
 				F1B1DB6F1D6BF28A00F455E8 /* NSObject+Rect.m in Sources */,
+				F1C4FAF91D6EC6BD00F5AB15 /* EngineManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,11 +607,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
 				INFOPLIST_FILE = "Human-computerInteractionTest/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yunzhisheng.Human-computerInteractionTest";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cn.yunzhisheng.UStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -550,11 +625,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
 				INFOPLIST_FILE = "Human-computerInteractionTest/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yunzhisheng.Human-computerInteractionTest";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cn.yunzhisheng.UStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "559A25938B635E262847CB426075E627442C21FF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "A8CDBA9513AA51CB342C8701BA42DD70C341880B" : 0,
+    "559A25938B635E262847CB426075E627442C21FF" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4ED1F5D5-42C1-4C6E-AB96-4EFE3F34CE13",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "A8CDBA9513AA51CB342C8701BA42DD70C341880B" : "..\/company\/unisound",
+    "559A25938B635E262847CB426075E627442C21FF" : "Human-computerInteraction\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Human-computerInteractionTest",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Human-computerInteractionTest\/Human-computerInteractionTest.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/pxhmeiyangyang\/Human-computerInteractionTest.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "559A25938B635E262847CB426075E627442C21FF"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "192.168.5.70:UStudy-iOS-app.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A8CDBA9513AA51CB342C8701BA42DD70C341880B"
+    }
+  ]
+}
