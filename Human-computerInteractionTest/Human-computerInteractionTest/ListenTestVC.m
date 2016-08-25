@@ -12,7 +12,7 @@
 #import "UIViewController+BackButtonHandler.h"
 static NSString* identifer = @"collectionCell";
 
-@interface ListenTestVC ()<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface ListenTestVC ()<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *collectionLayout;
 
@@ -49,13 +49,32 @@ static NSString* identifer = @"collectionCell";
 
 -(void)setNavigation{
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:@selector(backAction)];
+    [self.navigationItem setTitle:[self VCTitle]];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"<" style:UIBarButtonItemStylePlain target:self action:@selector(naviBackAction)];
 }
--(void)backAction{
-    NSLog(@"返回触发事件");
+-(void)naviBackAction{
+    UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"课程没有结束确定退出吗" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    alert.delegate = self;
+    [alert show];
 }
-
-
+//-(BOOL)navigationShouldPopOnBackButton{
+//    NSLog(@"返回触发事件");
+////    if (_isFinished) {
+//        UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"课程没有结束确定退出吗" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+//        alert.delegate = self;
+//        [alert show];
+////    }
+//    return YES;
+//}
+#pragma mark - UIAlertDelegate
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex) {
+        //确定
+        [self.navigationController popViewControllerAnimated:YES];
+    }else{
+        //取消
+    }
+}
 #pragma mark - UICollectionViewDelegate
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{

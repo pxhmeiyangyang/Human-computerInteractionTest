@@ -8,6 +8,7 @@
 
 #import "GetInformationVC.h"
 #import "ListenTestVC.h"
+//#import "UIViewController+BackButtonHandler.h"
 @interface GetInformationVC ()
 
 @end
@@ -26,6 +27,8 @@
 - (IBAction)nextClick:(id)sender {
     UIStoryboard* storyBoard = [UIStoryboard storyboardWithName:@"Human-computer" bundle:[NSBundle mainBundle]];
     ListenTestVC* vc = [storyBoard instantiateViewControllerWithIdentifier:@"ListenTestVC"];
+
+//    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
