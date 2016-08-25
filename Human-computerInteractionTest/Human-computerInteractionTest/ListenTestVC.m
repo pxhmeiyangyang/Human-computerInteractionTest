@@ -43,16 +43,11 @@ static NSString* identifer = @"collectionCell";
     return 4;
 }
 -(UICollectionViewCell* )collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-//    ListenTestCollectionCell* cell = (ListenTestCollectionCell* )[collectionView dequeueReusableCellWithReuseIdentifier:identifer forIndexPath:indexPath];
     ListenTestCollectionCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifer forIndexPath:indexPath];
-//    UIStoryboard* storyBoard = [UIStoryboard storyboardWithName:@"Human-computer" bundle:[NSBundle mainBundle]];
     switch (indexPath.row) {
         case 0:
         {
             cell.backgroundColor = [UIColor orangeColor];
-//            ReadingAloudVC* readVC = [storyBoard instantiateViewControllerWithIdentifier:@"ReadingAloudVC"];
-//            [cell.contentView addSubview:readVC.view];
-            
         }
             break;
         case 1:
@@ -67,7 +62,13 @@ static NSString* identifer = @"collectionCell";
         default:
             break;
     }
-    
+    cell.nextItemBlock = ^(){
+        NSIndexPath* currentIndexPath = [[self.collectionView indexPathsForVisibleItems] lastObject];
+        NSInteger nextItem = currentIndexPath.item + 1;
+        NSInteger nextSection = currentIndexPath.section;
+        NSIndexPath* nextIndexpath = [NSIndexPath indexPathForItem:nextItem inSection:nextSection];
+        [self.collectionView scrollToItemAtIndexPath:nextIndexpath atScrollPosition:UICollectionViewScrollPositionRight animated:YES];
+    };
     return cell;
 }
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section

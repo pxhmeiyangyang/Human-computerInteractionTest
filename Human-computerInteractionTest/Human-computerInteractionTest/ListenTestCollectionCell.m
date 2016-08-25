@@ -52,14 +52,6 @@
 }
 
 
-
-//
-//- (void)viewDidLoad {
-//    [super viewDidLoad];
-//    // Do any additional setup after loading the view, typically from a nib.
-//   
-//}
-
 -(void)resetData{
     _soundCount = 0;
     _countDownTime = 50.0;
@@ -139,10 +131,9 @@
         case 5:
         {
             //结束录音跳转下一个界面
-            
-//            UIStoryboard* storyBoard = [UIStoryboard storyboardWithName:@"Human-computer" bundle:[NSBundle mainBundle]];
-//            GetInformationVC* getInformation = [storyBoard instantiateViewControllerWithIdentifier:@"GetInformationVC.h"];
-//            [self.navigationController pushViewController:getInformation animated:YES];
+            if (_nextItemBlock) {
+                _nextItemBlock();
+            }
         }
             break;
         default:
@@ -154,7 +145,17 @@
     [_soundImage setHidden:YES];
     if (_frontCountDownTime < 50) {
         _frontCountDownTime ++;
-        [_soundTitle setText:[NSString stringWithFormat:@"准备朗读（倒计时%d秒）",(int)(_countDownTime - _frontCountDownTime)]];
+        int ratio = (int)(_countDownTime - _frontCountDownTime);
+        NSString* str = [NSString stringWithFormat:@"准备朗读（倒计时%d秒）",ratio];
+        NSMutableAttributedString* attriStr = [[NSMutableAttributedString alloc]initWithString:str];
+        NSRange rang;
+        if (ratio > 9) {
+            rang = NSMakeRange(8, 2);
+        }else{
+            rang = NSMakeRange(8, 1);
+        }
+        [attriStr addAttribute:NSForegroundColorAttributeName value:[UIColor orangeColor] range:rang];
+        [_soundTitle setAttributedText:attriStr];
         _soundProgress.progress = _frontCountDownTime / _countDownTime;
     }else{
         [_timer invalidate];
@@ -170,7 +171,17 @@
 -(void)soundWait:(NSTimer* )timer{
     if (_frontCountDownTime < 50) {
         _frontCountDownTime ++;
-        [_soundTitle setText:[NSString stringWithFormat:@"请开始录音（倒计时%d秒）",(int)(_countDownTime - _frontCountDownTime)]];
+        int ratio = (int)(_countDownTime - _frontCountDownTime);
+        NSString* str = [NSString stringWithFormat:@"请开始录音（倒计时%d秒）",ratio];
+        NSMutableAttributedString* attriStr = [[NSMutableAttributedString alloc]initWithString:str];
+        NSRange range;
+        if (ratio > 9) {
+            range = NSMakeRange(9, 2);
+        }else{
+            range = NSMakeRange(9, 1);
+        }
+        [attriStr addAttribute:NSForegroundColorAttributeName value:[UIColor orangeColor] range:range];
+        [_soundTitle setAttributedText:attriStr];
         _soundProgress.progress = _frontCountDownTime / _countDownTime;
     }else{
         [_timer invalidate];

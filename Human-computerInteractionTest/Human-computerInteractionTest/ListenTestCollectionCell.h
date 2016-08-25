@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^nextItemBlock)();
+
 @interface ListenTestCollectionCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UIScrollView *showScrollView;
@@ -23,5 +25,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *soundTitle;
 @property (weak, nonatomic) IBOutlet UIImageView *soundImage;
 @property (weak, nonatomic) IBOutlet UIProgressView *soundProgress;
+
+@property(nonatomic,copy)nextItemBlock nextItemBlock;
 
 @end
