@@ -112,7 +112,7 @@
             __block ListenTestCollectionCell* blockSelf = self;
             if ([_mp3Player play]) {
                 _mp3Player.playPorgressBlock = ^(CGFloat progress){
-                    NSLog(@"播放进度：%.4f",progress);
+                    NSLog(@"播放进度1：%.4f",progress);
                     blockSelf.soundTitle.text = @"正在播放原音";
                     blockSelf.soundProgress.progress = progress;
                 };
@@ -129,7 +129,7 @@
             __block ListenTestCollectionCell* blockSelf = self;
             if ([_mp3Player play]) {
                 _mp3Player.playPorgressBlock = ^(CGFloat progress){
-                    NSLog(@"播放进度：%.4f",progress);
+                    NSLog(@"播放进度2：%.4f",progress);
                     blockSelf.soundTitle.text = @"正在播放原音";
                     blockSelf.soundProgress.progress = progress;
                 };
@@ -269,7 +269,9 @@
 }
 
 -(void)dealloc{
-    [_timer invalidate];
+    if ([_timer isValid]) {
+        [_timer invalidate];
+    }
     _timer     = nil;
     _engine    = nil;
     [_mp3Player stop];

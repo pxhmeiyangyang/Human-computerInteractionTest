@@ -71,6 +71,7 @@ static NSString* identifer = @"collectionCell";
     if (buttonIndex) {
         //确定
         [self.navigationController popViewControllerAnimated:YES];
+
     }else{
         //取消
     }
@@ -116,13 +117,14 @@ static NSString* identifer = @"collectionCell";
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
     return 0;
 }
--(void)viewDidDisappear:(BOOL)animated{
-    [super viewDidDisappear:animated];
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
     //移除所有界面元素
     [_collectionView removeFromSuperview];
     _collectionView = nil;
     _collectionLayout = nil;
 }
+
 -(void)dealloc{
     NSLog(@"dealloc");
 }
