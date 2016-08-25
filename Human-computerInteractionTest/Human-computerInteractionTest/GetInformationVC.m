@@ -7,7 +7,7 @@
 //
 
 #import "GetInformationVC.h"
-
+#import "ListenTestVC.h"
 @interface GetInformationVC ()
 
 @end
@@ -22,6 +22,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)nextClick:(id)sender {
+    UIStoryboard* storyBoard = [UIStoryboard storyboardWithName:@"Human-computer" bundle:[NSBundle mainBundle]];
+    ListenTestVC* vc = [storyBoard instantiateViewControllerWithIdentifier:@"ListenTestVC"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 /*

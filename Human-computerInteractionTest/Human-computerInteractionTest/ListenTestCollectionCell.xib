@@ -15,7 +15,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                 <subviews>
                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFQ-8j-WNT">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="398"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ihX-kE-zI3">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
@@ -131,7 +131,7 @@
                 <constraint firstItem="gFQ-8j-WNT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8CQ-Pi-Ced"/>
                 <constraint firstAttribute="trailing" secondItem="fyw-1B-uKK" secondAttribute="trailing" id="KE5-Iz-1HY"/>
                 <constraint firstItem="fyw-1B-uKK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="RuD-p7-hmP"/>
-                <constraint firstAttribute="bottom" secondItem="gFQ-8j-WNT" secondAttribute="bottom" id="gU8-Ts-ihd"/>
+                <constraint firstAttribute="bottom" secondItem="gFQ-8j-WNT" secondAttribute="bottom" constant="138" id="gU8-Ts-ihd"/>
                 <constraint firstAttribute="bottom" secondItem="fyw-1B-uKK" secondAttribute="bottom" id="oCl-xB-7l5"/>
                 <constraint firstItem="gFQ-8j-WNT" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="twm-mV-dYv"/>
                 <constraint firstAttribute="trailing" secondItem="gFQ-8j-WNT" secondAttribute="trailing" id="ucX-yW-ttf"/>

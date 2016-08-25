@@ -44,17 +44,31 @@
     // Initialization code
     [self resetData];
     [self setImageViewAnimation];
+//    _showBgView.backgroundColor = [UIColor orangeColor];
+    _mp3Player = [MP3Player sharedInstancePlayer];
+    _mp3Player.delegate = self;
+    //音频地址
+    NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"start_exam" ofType:@"mp3"];
+    [_mp3Player playWithFile:mp3Path];
+    [_mp3Player play];
     [_soundControlView setHidden:YES];
-    _showBgView.backgroundColor = [UIColor orangeColor];
-//    _mp3Player = [MP3Player sharedInstancePlayer];
-//    _mp3Player.delegate = self;
-//    //音频地址
-//    NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"start_exam" ofType:@"mp3"];
-//    [_mp3Player playWithFile:mp3Path];
-//    [_mp3Player play];
-//    [_soundControlView setHidden:YES];
+//    [self setSoundControlViewHidden:YES];
 }
 
+//-(void)setSoundControlViewHidden:(BOOL)hidden{
+//    [_soundControlView setHidden:hidden];
+//    CGFloat controlHeight = CGRectGetHeight(_showBgView.frame);
+//    BOOL ratio = controlHeight > kScreenHeight - 44 - CGRectGetHeight(_soundControlView.frame);
+//    if (hidden) {
+//        if (ratio) {
+//            [_showScrollView setContentOffset:CGPointMake(0, 0) animated:YES];
+//        }
+//    }else{
+//        if (ratio) {
+//            [_showScrollView setContentOffset:CGPointMake(0, CGRectGetHeight(_soundControlView.frame)) animated:YES];
+//        }
+//    }
+//}
 
 -(void)resetData{
     _engine = [EngineManager sharedManager];
@@ -92,6 +106,7 @@
         case 1:
         {
             [_soundControlView setHidden:NO];
+//            [self setSoundControlViewHidden:NO];
             NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"1" ofType:@"mp3"];
             [_mp3Player playWithFile:mp3Path];
             __block ListenTestCollectionCell* blockSelf = self;
@@ -108,6 +123,7 @@
         case 2:
         {
             [_soundControlView setHidden:NO];
+//            [self setSoundControlViewHidden:NO];
             NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"38miao" ofType:@"mp3"];
             [_mp3Player playWithFile:mp3Path];
             __block ListenTestCollectionCell* blockSelf = self;
@@ -191,6 +207,7 @@
     }else{
         [_timer invalidate];
         [_soundControlView setHidden:YES];
+//        [self setSoundControlViewHidden:YES];
         //提示停止录音
         [self stopRecording];//停止录音函数
         NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"end_audio" ofType:@"mp3"];
