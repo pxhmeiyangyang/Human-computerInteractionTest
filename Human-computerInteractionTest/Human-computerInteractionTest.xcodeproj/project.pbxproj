@@ -30,6 +30,8 @@
 		F1B1DB721D6BF40600F455E8 /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B1DB711D6BF40600F455E8 /* UIColor+Extension.m */; };
 		F1B1DB751D6BF62800F455E8 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B1DB741D6BF62800F455E8 /* BaseVC.m */; };
 		F1B1DB801D6C3CB500F455E8 /* MP3Player.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B1DB7F1D6C3CB500F455E8 /* MP3Player.m */; };
+		F1E0FB7C1D6E8A4100E4F490 /* ListenTestCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E0FB7A1D6E8A4100E4F490 /* ListenTestCollectionCell.m */; };
+		F1E0FB7D1D6E8A4100E4F490 /* ListenTestCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1E0FB7B1D6E8A4100E4F490 /* ListenTestCollectionCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,9 @@
 		F1B1DB741D6BF62800F455E8 /* BaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
 		F1B1DB7E1D6C3CB500F455E8 /* MP3Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MP3Player.h; sourceTree = "<group>"; };
 		F1B1DB7F1D6C3CB500F455E8 /* MP3Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MP3Player.m; sourceTree = "<group>"; };
+		F1E0FB791D6E8A4100E4F490 /* ListenTestCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListenTestCollectionCell.h; sourceTree = "<group>"; };
+		F1E0FB7A1D6E8A4100E4F490 /* ListenTestCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListenTestCollectionCell.m; sourceTree = "<group>"; };
+		F1E0FB7B1D6E8A4100E4F490 /* ListenTestCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListenTestCollectionCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +144,13 @@
 			path = audio;
 			sourceTree = "<group>";
 		};
+		F114D57A1D6DA08F00E488E7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		F1B1DB2D1D6BEFF000F455E8 = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +180,7 @@
 		F1B1DB381D6BEFF000F455E8 /* Human-computerInteractionTest */ = {
 			isa = PBXGroup;
 			children = (
+				F114D57A1D6DA08F00E488E7 /* Model */,
 				F1B1DB7A1D6C3B3300F455E8 /* Mp3Player */,
 				F1B1DB761D6C2AE500F455E8 /* view */,
 				F1B1DB3C1D6BEFF000F455E8 /* AppDelegate.h */,
@@ -218,6 +231,9 @@
 		F1B1DB761D6C2AE500F455E8 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				F1E0FB791D6E8A4100E4F490 /* ListenTestCollectionCell.h */,
+				F1E0FB7A1D6E8A4100E4F490 /* ListenTestCollectionCell.m */,
+				F1E0FB7B1D6E8A4100E4F490 /* ListenTestCollectionCell.xib */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -337,6 +353,7 @@
 				F114D5661D6D50CC00E488E7 /* 38miao.mp3 in Resources */,
 				F1B1DB491D6BEFF000F455E8 /* LaunchScreen.storyboard in Resources */,
 				F114D5621D6D50A900E488E7 /* 1.mp3 in Resources */,
+				F1E0FB7D1D6E8A4100E4F490 /* ListenTestCollectionCell.xib in Resources */,
 				F114D5711D6D81A000E488E7 /* start_answer.mp3 in Resources */,
 				F114D5701D6D81A000E488E7 /* end_exam.mp3 in Resources */,
 				F114D56F1D6D81A000E488E7 /* end_audio.mp3 in Resources */,
@@ -378,6 +395,7 @@
 				F114D5761D6D8F3100E488E7 /* GetInformationVC.m in Sources */,
 				F1B1DB751D6BF62800F455E8 /* BaseVC.m in Sources */,
 				F1B1DB3B1D6BEFF000F455E8 /* main.m in Sources */,
+				F1E0FB7C1D6E8A4100E4F490 /* ListenTestCollectionCell.m in Sources */,
 				F1B1DB6F1D6BF28A00F455E8 /* NSObject+Rect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

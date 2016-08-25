@@ -7,7 +7,8 @@
 //
 
 #import "ListenTestVC.h"
-
+#import "ReadingAloudVC.h"
+#import "ListenTestCollectionCell.h"
 static NSString* identifer = @"collectionCell";
 
 @interface ListenTestVC ()<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
@@ -21,7 +22,6 @@ static NSString* identifer = @"collectionCell";
 -(NSString *)VCTitle{
     return @"Modul1";
 }
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -29,12 +29,13 @@ static NSString* identifer = @"collectionCell";
     [self VCTitle];
 }
 -(void)resetData{
-    _collectionView.delegate = self;
-    _collectionView.dataSource = self;
+    _collectionView.delegate                       = self;
+    _collectionView.dataSource                     = self;
+    _collectionView.scrollEnabled                  = NO;
     _collectionView.showsHorizontalScrollIndicator = NO;
     [_collectionView setBackgroundColor:YZH_BG_COLOR];
-    [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:identifer];
-    _collectionLayout.itemSize = CGSizeMake(kScreenWidth, kScreenHeight - 44);
+    [_collectionView registerNib:[UINib nibWithNibName:@"ListenTestCollectionCell" bundle:nil] forCellWithReuseIdentifier:identifer];
+    _collectionLayout.itemSize                     = CGSizeMake(kScreenWidth, kScreenHeight - 44);
 }
 #pragma mark - UICollectionViewDelegate
 
@@ -42,8 +43,31 @@ static NSString* identifer = @"collectionCell";
     return 4;
 }
 -(UICollectionViewCell* )collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    UICollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifer forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor orangeColor];
+//    ListenTestCollectionCell* cell = (ListenTestCollectionCell* )[collectionView dequeueReusableCellWithReuseIdentifier:identifer forIndexPath:indexPath];
+    ListenTestCollectionCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifer forIndexPath:indexPath];
+//    UIStoryboard* storyBoard = [UIStoryboard storyboardWithName:@"Human-computer" bundle:[NSBundle mainBundle]];
+    switch (indexPath.row) {
+        case 0:
+        {
+            cell.backgroundColor = [UIColor orangeColor];
+//            ReadingAloudVC* readVC = [storyBoard instantiateViewControllerWithIdentifier:@"ReadingAloudVC"];
+//            [cell.contentView addSubview:readVC.view];
+            
+        }
+            break;
+        case 1:
+            cell.backgroundColor = YZH_BG_COLOR;
+            break;
+        case 2:
+            cell.backgroundColor = YZH_BLUE;
+            break;
+        case 3:
+            cell.backgroundColor = YZH_GREEN;
+            break;
+        default:
+            break;
+    }
+    
     return cell;
 }
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
