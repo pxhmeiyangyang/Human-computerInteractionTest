@@ -270,7 +270,10 @@
 
 -(void)dealloc{
     [_timer invalidate];
-    _timer = nil;
+    _timer     = nil;
+    _engine    = nil;
+    [_mp3Player stop];
+    _mp3Player = nil;
 }
 
 @end

@@ -9,15 +9,23 @@
 #import "ListenTestVC.h"
 #import "ReadingAloudVC.h"
 #import "ListenTestCollectionCell.h"
+#import "UIViewController+BackButtonHandler.h"
 static NSString* identifer = @"collectionCell";
 
 @interface ListenTestVC ()<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *collectionLayout;
 
+@property(nonatomic,assign)BOOL isFinished;
+
 @end
 
 @implementation ListenTestVC
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+}
 
 -(NSString *)VCTitle{
     return @"Modul1";
@@ -27,6 +35,7 @@ static NSString* identifer = @"collectionCell";
     // Do any additional setup after loading the view.
     [self resetData];
     [self VCTitle];
+    [self setNavigation];
 }
 -(void)resetData{
     _collectionView.delegate                       = self;
@@ -37,6 +46,16 @@ static NSString* identifer = @"collectionCell";
     [_collectionView registerNib:[UINib nibWithNibName:@"ListenTestCollectionCell" bundle:nil] forCellWithReuseIdentifier:identifer];
     _collectionLayout.itemSize                     = CGSizeMake(kScreenWidth, kScreenHeight - 44);
 }
+
+-(void)setNavigation{
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:@selector(backAction)];
+}
+-(void)backAction{
+    NSLog(@"返回触发事件");
+}
+
+
 #pragma mark - UICollectionViewDelegate
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
@@ -78,7 +97,16 @@ static NSString* identifer = @"collectionCell";
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
     return 0;
 }
-
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    //移除所有界面元素
+    [_collectionView removeFromSuperview];
+//    _collectionView = nil;
+//    _collectionLayout = nil;
+}
+-(void)dealloc{
+    NSLog(@"dealloc");
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

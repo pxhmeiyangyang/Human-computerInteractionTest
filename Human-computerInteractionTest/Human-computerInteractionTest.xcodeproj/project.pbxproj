@@ -44,6 +44,7 @@
 		F1E0FB921D6EC74C00E4F490 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E0FB911D6EC74C00E4F490 /* SystemConfiguration.framework */; };
 		F1E0FB941D6EC75100E4F490 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E0FB931D6EC75100E4F490 /* AVFoundation.framework */; };
 		F1E0FB971D6EC7CC00E4F490 /* EngineStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E0FB961D6EC7CC00E4F490 /* EngineStateMachine.m */; };
+		F1FFF5A71D6F0220009B8BE2 /* UIViewController+BackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F1FFF5A61D6F0220009B8BE2 /* UIViewController+BackButtonHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,8 @@
 		F1E0FB931D6EC75100E4F490 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		F1E0FB951D6EC7CC00E4F490 /* EngineStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EngineStateMachine.h; sourceTree = "<group>"; };
 		F1E0FB961D6EC7CC00E4F490 /* EngineStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EngineStateMachine.m; sourceTree = "<group>"; };
+		F1FFF5A51D6F0220009B8BE2 /* UIViewController+BackButtonHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BackButtonHandler.h"; sourceTree = "<group>"; };
+		F1FFF5A61D6F0220009B8BE2 /* UIViewController+BackButtonHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BackButtonHandler.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +200,8 @@
 				F1B1DB711D6BF40600F455E8 /* UIColor+Extension.m */,
 				F1B1DB6D1D6BF28A00F455E8 /* NSObject+Rect.h */,
 				F1B1DB6E1D6BF28A00F455E8 /* NSObject+Rect.m */,
+				F1FFF5A51D6F0220009B8BE2 /* UIViewController+BackButtonHandler.h */,
+				F1FFF5A61D6F0220009B8BE2 /* UIViewController+BackButtonHandler.m */,
 				F1B1DB381D6BEFF000F455E8 /* Human-computerInteractionTest */,
 				F1B1DB521D6BEFF000F455E8 /* Human-computerInteractionTestTests */,
 				F1B1DB5D1D6BEFF000F455E8 /* Human-computerInteractionTestUITests */,
@@ -467,6 +472,7 @@
 				F1E0FB7C1D6E8A4100E4F490 /* ListenTestCollectionCell.m in Sources */,
 				F1B1DB6F1D6BF28A00F455E8 /* NSObject+Rect.m in Sources */,
 				F1C4FAF91D6EC6BD00F5AB15 /* EngineManager.m in Sources */,
+				F1FFF5A71D6F0220009B8BE2 /* UIViewController+BackButtonHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

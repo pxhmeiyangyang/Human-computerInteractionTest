@@ -24,7 +24,11 @@
     self.navigationController.navigationBar.translucent = NO;
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName, nil]];
     [self.navigationItem setTitle:[self VCTitle]];
-    [self.view setBackgroundColor:YZH_BG_COLOR];
+    [self.view setBackgroundColor:YZH_BG_COLOR];    
+}
+
+-(void)backAction{
+
 }
 
 -(NSString* )VCTitle{
