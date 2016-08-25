@@ -64,67 +64,66 @@
                                     <constraint firstAttribute="trailing" secondItem="eOc-7K-08V" secondAttribute="trailing" id="rYd-uG-t2r"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g7i-d3-ofv">
-                                <rect key="frame" x="0.0" y="398" width="600" height="138"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正在播放原音" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPF-eB-hVz">
-                                        <rect key="frame" x="0.0" y="105" width="600" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PGl-hl-8sZ">
-                                        <rect key="frame" x="257" y="8" width="85" height="85"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="85" id="B7e-JT-5Wl"/>
-                                            <constraint firstAttribute="width" secondItem="PGl-hl-8sZ" secondAttribute="height" multiplier="1:1" id="XQV-q4-RVN"/>
-                                        </constraints>
-                                    </imageView>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rke-7x-ipK">
-                                        <rect key="frame" x="0.0" y="136" width="600" height="2"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="4" id="3IU-Gz-q3j"/>
-                                        </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="3IU-Gz-q3j"/>
-                                            </mask>
-                                        </variation>
-                                    </progressView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="PGl-hl-8sZ" firstAttribute="top" secondItem="g7i-d3-ofv" secondAttribute="top" constant="8" id="0dH-AN-oTp"/>
-                                    <constraint firstAttribute="trailing" secondItem="rke-7x-ipK" secondAttribute="trailing" id="AeB-4U-bN2"/>
-                                    <constraint firstItem="PGl-hl-8sZ" firstAttribute="centerX" secondItem="g7i-d3-ofv" secondAttribute="centerX" id="BMr-dX-0gI"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="138" id="PuQ-3r-8J9"/>
-                                    <constraint firstAttribute="bottom" secondItem="rke-7x-ipK" secondAttribute="bottom" id="aiZ-bv-VN3"/>
-                                    <constraint firstAttribute="height" constant="138" id="enR-i4-d01"/>
-                                    <constraint firstAttribute="trailing" secondItem="XPF-eB-hVz" secondAttribute="trailing" id="f7a-qe-f0H"/>
-                                    <constraint firstAttribute="bottom" secondItem="XPF-eB-hVz" secondAttribute="bottom" constant="15" id="gXB-I4-UFB"/>
-                                    <constraint firstItem="XPF-eB-hVz" firstAttribute="leading" secondItem="g7i-d3-ofv" secondAttribute="leading" id="tMM-qL-Cr5"/>
-                                    <constraint firstItem="rke-7x-ipK" firstAttribute="leading" secondItem="g7i-d3-ofv" secondAttribute="leading" id="zbz-4H-IY7"/>
-                                </constraints>
-                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.29048407009999999" green="1" blue="0.22234353209999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="ihX-kE-zI3" secondAttribute="bottom" id="Cmg-HT-sIX"/>
                             <constraint firstItem="ihX-kE-zI3" firstAttribute="leading" secondItem="gFQ-8j-WNT" secondAttribute="leading" id="HM8-te-iYO"/>
-                            <constraint firstItem="g7i-d3-ofv" firstAttribute="leading" secondItem="gFQ-8j-WNT" secondAttribute="leading" id="P3e-yW-giA"/>
-                            <constraint firstAttribute="bottom" secondItem="g7i-d3-ofv" secondAttribute="bottom" id="WgA-Pk-MZ1"/>
                             <constraint firstItem="ihX-kE-zI3" firstAttribute="top" secondItem="gFQ-8j-WNT" secondAttribute="top" id="YKo-Ly-aW0"/>
                             <constraint firstItem="ihX-kE-zI3" firstAttribute="centerX" secondItem="gFQ-8j-WNT" secondAttribute="centerX" id="fA0-Di-IM4"/>
-                            <constraint firstAttribute="trailing" secondItem="g7i-d3-ofv" secondAttribute="trailing" id="kNr-zH-FLu"/>
                             <constraint firstAttribute="trailing" secondItem="ihX-kE-zI3" secondAttribute="trailing" id="wNi-Zj-Ky3"/>
                         </constraints>
                     </scrollView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fyw-1B-uKK">
+                        <rect key="frame" x="0.0" y="398" width="600" height="138"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正在播放原音" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4iW-uy-sze">
+                                <rect key="frame" x="0.0" y="103" width="600" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WQC-sq-3fb">
+                                <rect key="frame" x="258" y="8" width="85" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="cpK-qT-RHp"/>
+                                    <constraint firstAttribute="width" secondItem="WQC-sq-3fb" secondAttribute="height" multiplier="1:1" id="hQr-v2-KIy"/>
+                                </constraints>
+                            </imageView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oYN-26-iTb">
+                                <rect key="frame" x="0.0" y="136" width="600" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="4" id="7Iv-S8-fnF"/>
+                                    <constraint firstAttribute="height" constant="2" id="TdQ-6C-q6B"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="7Iv-S8-fnF"/>
+                                    </mask>
+                                </variation>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="oYN-26-iTb" secondAttribute="bottom" id="DAG-Oh-uPR"/>
+                            <constraint firstItem="oYN-26-iTb" firstAttribute="leading" secondItem="fyw-1B-uKK" secondAttribute="leading" id="HCv-y4-Hxd"/>
+                            <constraint firstItem="WQC-sq-3fb" firstAttribute="top" secondItem="fyw-1B-uKK" secondAttribute="top" constant="8" id="I3k-q1-9a4"/>
+                            <constraint firstItem="WQC-sq-3fb" firstAttribute="centerX" secondItem="fyw-1B-uKK" secondAttribute="centerX" id="JRe-IO-Ij7"/>
+                            <constraint firstItem="oYN-26-iTb" firstAttribute="top" secondItem="4iW-uy-sze" secondAttribute="bottom" constant="15" id="UJm-09-Zp4"/>
+                            <constraint firstAttribute="height" constant="138" id="evK-Ka-3tB"/>
+                            <constraint firstAttribute="trailing" secondItem="oYN-26-iTb" secondAttribute="trailing" id="fYr-QS-MZ2"/>
+                            <constraint firstItem="4iW-uy-sze" firstAttribute="leading" secondItem="fyw-1B-uKK" secondAttribute="leading" id="nZ8-xN-TZR"/>
+                            <constraint firstAttribute="trailing" secondItem="4iW-uy-sze" secondAttribute="trailing" id="uKP-Mr-3Uf"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
                 <constraint firstItem="gFQ-8j-WNT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8CQ-Pi-Ced"/>
+                <constraint firstAttribute="trailing" secondItem="fyw-1B-uKK" secondAttribute="trailing" id="KE5-Iz-1HY"/>
+                <constraint firstItem="fyw-1B-uKK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="RuD-p7-hmP"/>
                 <constraint firstAttribute="bottom" secondItem="gFQ-8j-WNT" secondAttribute="bottom" id="gU8-Ts-ihd"/>
+                <constraint firstAttribute="bottom" secondItem="fyw-1B-uKK" secondAttribute="bottom" id="oCl-xB-7l5"/>
                 <constraint firstItem="gFQ-8j-WNT" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="twm-mV-dYv"/>
                 <constraint firstAttribute="trailing" secondItem="gFQ-8j-WNT" secondAttribute="trailing" id="ucX-yW-ttf"/>
             </constraints>
@@ -135,10 +134,10 @@
                 <outlet property="showBgView" destination="ihX-kE-zI3" id="e0K-7a-XS1"/>
                 <outlet property="showBgViewHeight" destination="VE5-77-dS4" id="tPV-o9-d5d"/>
                 <outlet property="showScrollView" destination="gFQ-8j-WNT" id="B5b-1y-SFu"/>
-                <outlet property="soundControlView" destination="g7i-d3-ofv" id="4hl-AK-2DU"/>
-                <outlet property="soundImage" destination="PGl-hl-8sZ" id="sqN-pY-lPE"/>
-                <outlet property="soundProgress" destination="rke-7x-ipK" id="6Qe-o7-7c7"/>
-                <outlet property="soundTitle" destination="XPF-eB-hVz" id="0Pp-mv-E67"/>
+                <outlet property="soundControlView" destination="fyw-1B-uKK" id="QK5-cV-wNM"/>
+                <outlet property="soundImage" destination="WQC-sq-3fb" id="xq1-7g-vLL"/>
+                <outlet property="soundProgress" destination="oYN-26-iTb" id="2Mo-oJ-Xaw"/>
+                <outlet property="soundTitle" destination="4iW-uy-sze" id="Wt2-dn-sWB"/>
                 <outlet property="tipLabel" destination="uaC-db-51A" id="2II-9E-Bxa"/>
                 <outlet property="titleLabel" destination="iAD-ro-pJg" id="YCv-Ds-rDx"/>
             </connections>
