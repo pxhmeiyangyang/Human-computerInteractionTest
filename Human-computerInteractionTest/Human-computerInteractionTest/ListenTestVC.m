@@ -47,7 +47,7 @@ static NSString* identifer = @"collectionCell";
     switch (indexPath.row) {
         case 0:
         {
-            cell.backgroundColor = [UIColor orangeColor];
+//            cell.backgroundColor = [UIColor orangeColor];
         }
             break;
         case 1:

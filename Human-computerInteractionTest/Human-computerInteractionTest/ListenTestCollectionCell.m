@@ -16,6 +16,7 @@
     CGFloat _countDownTime;
     CGFloat _frontCountDownTime;
     EngineManager* _engine;
+    BOOL _isNext;
 }
 
 @property(nonatomic,strong)MP3Player* mp3Player;
@@ -26,16 +27,15 @@
 
 -(void)layoutSubViews{
     [super layoutSubviews];
-    _showScrollView.backgroundColor              = YZH_BLUE;
-    _showScrollView.showsVerticalScrollIndicator = NO;
-    _showBgView.backgroundColor                  = YZH_GREEN;
-    _contentLabel.backgroundColor                = [UIColor redColor];
-    _showBgViewHeight.constant                   = CGRectGetMaxY(_contentLabel.frame) + CGRectGetHeight(_contentLabel.frame);
-    UIImage* trackImage                          = [UIColor getImageFromColor:[UIColor whiteColor] frame:CGRectMake(0, 0, CGRectGetWidth(_soundProgress.frame), CGRectGetHeight(_soundProgress.frame))];
+    _showScrollView.backgroundColor                = YZH_BLUE;
+    _showBgView.backgroundColor                    = YZH_GREEN;
+    _contentLabel.backgroundColor                  = [UIColor redColor];
+    _showBgViewHeight.constant                     = CGRectGetMaxY(_contentLabel.frame) + CGRectGetHeight(_contentLabel.frame);
+    UIImage* trackImage                            = [UIColor getImageFromColor:[UIColor whiteColor] frame:CGRectMake(0, 0, CGRectGetWidth(_soundProgress.frame), CGRectGetHeight(_soundProgress.frame))];
     [_soundProgress setTrackImage:trackImage];
     [_soundProgress setBackgroundColor:[UIColor clearColor]];
     [_soundProgress setProgressTintColor:YZH_BLUE];
-    _soundProgress.transform                     = CGAffineTransformMakeScale(1.0f, 4.0f);
+    _soundProgress.transform                       = CGAffineTransformMakeScale(1.0f, 4.0f);
     [_showScrollView setContentSize:_showBgView.frame.size];
 }
 
@@ -44,13 +44,15 @@
     // Initialization code
     [self resetData];
     [self setImageViewAnimation];
-    _mp3Player = [MP3Player sharedInstancePlayer];
-    _mp3Player.delegate = self;
-    //音频地址
-    NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"start_exam" ofType:@"mp3"];
-    [_mp3Player playWithFile:mp3Path];
-    [_mp3Player play];
     [_soundControlView setHidden:YES];
+    _showBgView.backgroundColor = [UIColor orangeColor];
+//    _mp3Player = [MP3Player sharedInstancePlayer];
+//    _mp3Player.delegate = self;
+//    //音频地址
+//    NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"start_exam" ofType:@"mp3"];
+//    [_mp3Player playWithFile:mp3Path];
+//    [_mp3Player play];
+//    [_soundControlView setHidden:YES];
 }
 
 
@@ -61,6 +63,7 @@
     _soundCount = 0;
     _countDownTime = 50.0;
     _frontCountDownTime = 0.0;
+    _isNext = NO;
 }
 
 -(void)setImageViewAnimation{
@@ -135,7 +138,7 @@
             break;
         case 5:
         {
-
+            [self gotoNextSubject];
         }
             break;
         default:
@@ -204,7 +207,17 @@
 -(void)stopRecording{
     [_engine stopRecognize];
 }
-
+-(void)gotoNextSubject{
+    if (_isNext) {
+        //结束录音跳转下一个界面
+        if (_nextItemBlock) {
+            _nextItemBlock();
+        }
+        
+    }else{
+        _isNext = YES;
+    }
+}
 #pragma mark - enginemagedelagete
 - (void)onBeginOral{
 }
@@ -217,10 +230,7 @@
 }
 
 - (void)onEndOral:(NSError *)error{
-    //结束录音跳转下一个界面
-    if (_nextItemBlock) {
-        _nextItemBlock();
-    }
+    [self gotoNextSubject];
 }
 
 - (void)onVADTimeout{
