@@ -17,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *tipLabel;
 @property (weak, nonatomic) IBOutlet UIView *lineView;
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *contentImage;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentImageHeight;
 @property (weak, nonatomic) IBOutlet UIView *soundControlView;
 @property (weak, nonatomic) IBOutlet UILabel *soundTitle;
 @property (weak, nonatomic) IBOutlet UIImageView *soundImage;

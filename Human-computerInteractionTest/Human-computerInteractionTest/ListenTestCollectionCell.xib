@@ -46,6 +46,12 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wo2-mE-NMG">
+                                        <rect key="frame" x="0.0" y="299.5" width="600" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="jeb-UL-05y"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="iAD-ro-pJg" firstAttribute="top" secondItem="ihX-kE-zI3" secondAttribute="top" constant="20" id="0BI-zo-TNN"/>
@@ -56,12 +62,15 @@
                                     <constraint firstItem="uaC-db-51A" firstAttribute="leading" secondItem="ihX-kE-zI3" secondAttribute="leading" constant="15" id="LDA-1D-Ueg"/>
                                     <constraint firstAttribute="trailing" secondItem="zhU-Wd-sYm" secondAttribute="trailing" constant="15" id="SFT-1G-p5f"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="536" id="VE5-77-dS4"/>
+                                    <constraint firstItem="Wo2-mE-NMG" firstAttribute="leading" secondItem="ihX-kE-zI3" secondAttribute="leading" id="aA5-oy-1tb"/>
                                     <constraint firstItem="zhU-Wd-sYm" firstAttribute="top" secondItem="eOc-7K-08V" secondAttribute="bottom" constant="10" id="bSV-l9-f60"/>
                                     <constraint firstAttribute="trailing" secondItem="uaC-db-51A" secondAttribute="trailing" constant="15" id="cje-pm-s40"/>
                                     <constraint firstAttribute="trailing" secondItem="iAD-ro-pJg" secondAttribute="trailing" constant="15" id="iX8-rg-1Jj"/>
                                     <constraint firstAttribute="height" constant="536" id="jio-vI-5O4"/>
                                     <constraint firstItem="zhU-Wd-sYm" firstAttribute="leading" secondItem="ihX-kE-zI3" secondAttribute="leading" constant="15" id="l9X-lH-4pj"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wo2-mE-NMG" secondAttribute="trailing" id="mIT-rE-NvQ"/>
                                     <constraint firstAttribute="trailing" secondItem="eOc-7K-08V" secondAttribute="trailing" id="rYd-uG-t2r"/>
+                                    <constraint firstItem="Wo2-mE-NMG" firstAttribute="top" secondItem="zhU-Wd-sYm" secondAttribute="bottom" constant="5" id="t7K-Gv-NBd"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -129,6 +138,8 @@
             </constraints>
             <size key="customSize" width="451" height="506"/>
             <connections>
+                <outlet property="contentImage" destination="Wo2-mE-NMG" id="ZMv-cF-cz3"/>
+                <outlet property="contentImageHeight" destination="jeb-UL-05y" id="vLu-Qi-BE3"/>
                 <outlet property="contentLabel" destination="zhU-Wd-sYm" id="Aem-Tx-lX2"/>
                 <outlet property="lineView" destination="eOc-7K-08V" id="t85-oN-KeY"/>
                 <outlet property="showBgView" destination="ihX-kE-zI3" id="e0K-7a-XS1"/>

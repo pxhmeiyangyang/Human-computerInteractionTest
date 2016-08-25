@@ -139,6 +139,7 @@
         case 5:
         {
             //结束录音跳转下一个界面
+            
 //            UIStoryboard* storyBoard = [UIStoryboard storyboardWithName:@"Human-computer" bundle:[NSBundle mainBundle]];
 //            GetInformationVC* getInformation = [storyBoard instantiateViewControllerWithIdentifier:@"GetInformationVC.h"];
 //            [self.navigationController pushViewController:getInformation animated:YES];
@@ -162,6 +163,8 @@
         NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"start_audio" ofType:@"mp3"];
         [_mp3Player playWithFile:mp3Path];
         [_mp3Player play];
+        //开始录音
+        [self starRecording];
     }
 }
 -(void)soundWait:(NSTimer* )timer{
@@ -173,10 +176,20 @@
         [_timer invalidate];
         [_soundControlView setHidden:YES];
         //提示停止录音
+        [self stopRecording];//停止录音函数
         NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"end_audio" ofType:@"mp3"];
         [_mp3Player playWithFile:mp3Path];
         [_mp3Player play];
+    
+       
     }
+}
+
+-(void)starRecording{
+
+}
+-(void)stopRecording{
+
 }
 
 -(void)dealloc{
