@@ -13,6 +13,7 @@ typedef void(^nextItemBlock)();
 @interface ListenTestCollectionCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UIScrollView *showScrollView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *showScrollViewBottom;
 @property (weak, nonatomic) IBOutlet UIView *showBgView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *showBgViewHeight;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;

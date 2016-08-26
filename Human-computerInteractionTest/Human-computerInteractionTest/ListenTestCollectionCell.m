@@ -9,6 +9,13 @@
 #import "ListenTestCollectionCell.h"
 #import "MP3Player.h"
 #import "EngineManager.h"
+
+typedef NS_ENUM(NSInteger,controlShowType) {
+    ControlshowAll,
+    ControlHiddenAll,
+    ControlShowImage
+};
+
 @interface ListenTestCollectionCell()<MP3PlayerDelegate,EngineManagerDelegate>
 {
     NSInteger _soundCount;
@@ -49,34 +56,12 @@
     NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"start_exam" ofType:@"mp3"];
     [_mp3Player playWithFile:mp3Path];
     [_mp3Player play];
-    [_soundControlView setHidden:YES];
-    [_soundImageView setHidden:YES];
-//    [self setSoundControlViewHidden:YES];
+//    [_soundControlView setHidden:YES];
+//    [_soundImageView setHidden:YES];
+    [self controlViewShow:ControlHiddenAll];
     [self theLayoutSubViews];
 }
 
-//-(void)setSoundControlViewHidden:(BOOL)hidden{
-//    [_soundControlView setHidden:hidden];
-//    CGFloat controlHeight = CGRectGetHeight(_showBgView.frame);
-//    BOOL ratio = controlHeight > kScreenHeight - 44 - CGRectGetHeight(_soundControlView.frame);
-//    
-//    if (hidden) {
-////        if (ratio) {
-////            [_showScrollView setContentOffset:CGPointMake(0, 0) animated:YES];
-////        }
-//        CGRect rect = _showScrollView.frame;
-//        rect.size.height = kScreenHeight - 44;
-//        [_showScrollView setFrame:rect];
-//    }else{
-////        if (ratio) {
-////            [_showScrollView setContentOffset:CGPointMake(0, CGRectGetHeight(_soundControlView.frame)) animated:YES];
-////        }
-//        CGFloat height = kScreenHeight - 44 - CGRectGetHeight(_soundControlView.frame);
-//        CGRect rect = _showScrollView.frame;
-//        rect.size.height = height;
-//        [_showScrollView setFrame:rect];
-//    }
-//}
 
 -(void)resetData{
     _engine = [EngineManager sharedManager];
@@ -102,6 +87,34 @@
     return @"Modul1";
 }
 
+-(void)controlViewShow:(controlShowType)type{
+    switch (type) {
+        case ControlshowAll:
+            [_soundControlView setHidden:NO];
+            [_soundImageView setHidden:NO];
+            _showBgViewHeight.constant = CGRectGetHeight(_soundImageView.frame) + CGRectGetHeight(_soundControlView.frame);
+            [self setNeedsLayout];
+            [self layoutIfNeeded];
+            break;
+        case ControlHiddenAll:
+            [_soundControlView setHidden:YES];
+            [_soundImageView setHidden:YES];
+            _showBgViewHeight.constant = 0;
+            [self setNeedsLayout];
+            [self layoutIfNeeded];
+            break;
+        case ControlShowImage:
+            [_soundControlView setHidden:NO];
+            [_soundImageView setHidden:YES];
+            _showBgViewHeight.constant = CGRectGetHeight(_soundControlView.frame);
+            [self setNeedsLayout];
+            [self layoutIfNeeded];
+            break;
+        default:
+            break;
+    }
+}
+
 #pragma mark - MP3PlayerDelegate
 -(void)playFinished:(NSError *)error{
     if (error) {
@@ -113,9 +126,9 @@
     switch (_soundCount) {
         case 1:
         {
-            [_soundControlView setHidden:NO];
-            [_soundImageView setHidden:NO];
-//            [self setSoundControlViewHidden:NO];
+//            [_soundControlView setHidden:NO];
+//            [_soundImageView setHidden:NO];
+            [self controlViewShow:ControlshowAll];
             NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"1" ofType:@"mp3"];
             [_mp3Player playWithFile:mp3Path];
             self.soundTitle.text = @"正在播放原音";
@@ -131,9 +144,9 @@
             break;
         case 2:
         {
-            [_soundControlView setHidden:NO];
-            [_soundImageView setHidden:NO];
-//            [self setSoundControlViewHidden:NO];
+//            [_soundControlView setHidden:NO];
+//            [_soundImageView setHidden:NO];
+            [self controlViewShow:ControlshowAll];
             NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"38miao" ofType:@"mp3"];
             [_mp3Player playWithFile:mp3Path];
             self.soundTitle.text = @"正在播放原音";
@@ -177,7 +190,8 @@
     [_soundImage setHidden:YES];
     if (_frontCountDownTime < 50) {
         if (_frontCountDownTime == 0) {
-            [_soundImageView setHidden:YES];
+//            [_soundImageView setHidden:YES];
+            [self controlViewShow:ControlShowImage];
         }
         _frontCountDownTime ++;
         int ratio = (int)(_countDownTime - _frontCountDownTime);
@@ -193,7 +207,8 @@
         [_soundTitle setAttributedText:attriStr];
         _soundProgress.progress = _frontCountDownTime / _countDownTime;
     }else{
-        [_soundImageView setHidden:NO];
+//        [_soundImageView setHidden:NO];
+        [self controlViewShow:ControlshowAll];
         [_timer invalidate];
         _frontCountDownTime = 0.0;
         //提示开始录音
@@ -222,9 +237,9 @@
         _soundProgress.progress = _frontCountDownTime / _countDownTime;
     }else{
         [_timer invalidate];
-        [_soundControlView setHidden:YES];
-        [_soundImageView setHidden:YES];
-//        [self setSoundControlViewHidden:YES];
+//        [_soundControlView setHidden:YES];
+//        [_soundImageView setHidden:YES];
+        [self controlViewShow:ControlHiddenAll];
         //提示停止录音
         [self stopRecording];//停止录音函数
         NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"end_audio" ofType:@"mp3"];

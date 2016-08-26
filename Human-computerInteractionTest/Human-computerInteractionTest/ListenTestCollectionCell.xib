@@ -118,7 +118,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rgP-xe-Joz">
                         <rect key="frame" x="0.0" y="398" width="600" height="100"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WQC-sq-3fb">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play01" translatesAutoresizingMaskIntoConstraints="NO" id="WQC-sq-3fb">
                                 <rect key="frame" x="258" y="8" width="85" height="85"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="85" id="cpK-qT-RHp"/>
@@ -130,6 +130,7 @@
                         <constraints>
                             <constraint firstItem="WQC-sq-3fb" firstAttribute="top" secondItem="rgP-xe-Joz" secondAttribute="top" constant="8" id="637-KX-4uQ"/>
                             <constraint firstItem="WQC-sq-3fb" firstAttribute="centerX" secondItem="rgP-xe-Joz" secondAttribute="centerX" id="JnA-Z0-Mru"/>
+                            <constraint firstAttribute="height" constant="100" id="dh1-Ly-zkz"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -141,7 +142,6 @@
                 <constraint firstAttribute="trailing" secondItem="fyw-1B-uKK" secondAttribute="trailing" id="KE5-Iz-1HY"/>
                 <constraint firstItem="fyw-1B-uKK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="RuD-p7-hmP"/>
                 <constraint firstAttribute="bottom" secondItem="gFQ-8j-WNT" secondAttribute="bottom" constant="138" id="gU8-Ts-ihd"/>
-                <constraint firstItem="rgP-xe-Joz" firstAttribute="top" secondItem="gFQ-8j-WNT" secondAttribute="bottom" id="nte-vd-9kH"/>
                 <constraint firstAttribute="bottom" secondItem="fyw-1B-uKK" secondAttribute="bottom" id="oCl-xB-7l5"/>
                 <constraint firstAttribute="trailing" secondItem="rgP-xe-Joz" secondAttribute="trailing" id="pHk-4b-F5f"/>
                 <constraint firstItem="rgP-xe-Joz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="tW7-qB-0GN"/>
@@ -157,6 +157,7 @@
                 <outlet property="showBgView" destination="ihX-kE-zI3" id="e0K-7a-XS1"/>
                 <outlet property="showBgViewHeight" destination="VE5-77-dS4" id="tPV-o9-d5d"/>
                 <outlet property="showScrollView" destination="gFQ-8j-WNT" id="B5b-1y-SFu"/>
+                <outlet property="showScrollViewBottom" destination="gU8-Ts-ihd" id="6Tk-62-DwG"/>
                 <outlet property="soundControlView" destination="fyw-1B-uKK" id="QK5-cV-wNM"/>
                 <outlet property="soundImage" destination="WQC-sq-3fb" id="xq1-7g-vLL"/>
                 <outlet property="soundImageView" destination="rgP-xe-Joz" id="5C2-Bs-sYj"/>
@@ -168,4 +169,7 @@
             <point key="canvasLocation" x="328" y="100"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="play01" width="121" height="121"/>
+    </resources>
 </document>
