@@ -37,6 +37,7 @@
 
 #undef PXH_RGB
 #define PXH_RGB_COLOR(R,G,B)    [UIColor colorWithRed:((R) / 255.0f) green:((G) / 255.0f) blue:((B) / 255.0f) alpha:1.0f]
+#define RGB(A,B,C) [UIColor colorWithRed:A/255.0 green:B/255.0 blue:C/255.0 alpha:1.0]
 
 /**
  *  从十六进色值中获取颜色

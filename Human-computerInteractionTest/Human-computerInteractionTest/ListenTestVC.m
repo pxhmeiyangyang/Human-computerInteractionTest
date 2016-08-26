@@ -11,7 +11,7 @@
 #import "ListenTestCollectionCell.h"
 #import "UIViewController+BackButtonHandler.h"
 
-//static NSString* identifer = @"collectionCell";
+#define cellCount 4
 
 @interface ListenTestVC ()<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -73,7 +73,7 @@
 #pragma mark - UICollectionViewDelegate
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 4;
+    return cellCount;
 }
 -(UICollectionViewCell* )collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     NSString* identifier = [_cellDic objectForKey:[NSString stringWithFormat:@"%@",indexPath]];
@@ -86,9 +86,13 @@
     cell.nextItemBlock = ^(){
         NSIndexPath* currentIndexPath = [[self.collectionView indexPathsForVisibleItems] lastObject];
         NSInteger nextItem = currentIndexPath.item + 1;
-        NSInteger nextSection = currentIndexPath.section;
-        NSIndexPath* nextIndexpath = [NSIndexPath indexPathForItem:nextItem inSection:nextSection];
-        [self.collectionView scrollToItemAtIndexPath:nextIndexpath atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
+        if (nextItem > cellCount) {
+         //跳转到下一个页面
+        }else{
+            NSInteger nextSection = currentIndexPath.section;
+            NSIndexPath* nextIndexpath = [NSIndexPath indexPathForItem:nextItem inSection:nextSection];
+            [self.collectionView scrollToItemAtIndexPath:nextIndexpath atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
+        }
     };
     return cell;
 }

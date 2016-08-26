@@ -9,7 +9,7 @@
 #import "ListenTestCollectionCell.h"
 #import "MP3Player.h"
 #import "EngineManager.h"
-
+#import "Waver.h"
 typedef NS_ENUM(NSInteger,controlShowType) {
     ControlshowAll,
     ControlHiddenAll,
@@ -24,9 +24,12 @@ typedef NS_ENUM(NSInteger,controlShowType) {
     CGFloat _frontCountDownTime;
     EngineManager* _engine;
     BOOL _isNext;
+    int _volume;
 }
 
 @property(nonatomic,strong)MP3Player* mp3Player;
+
+@property (nonatomic, weak) Waver *wave;
 
 @end
 
@@ -58,6 +61,7 @@ typedef NS_ENUM(NSInteger,controlShowType) {
     [_mp3Player play];
     [self controlViewShow:ControlHiddenAll];
     [self theLayoutSubViews];
+    [self addWaver];
 }
 
 
@@ -105,6 +109,19 @@ typedef NS_ENUM(NSInteger,controlShowType) {
         default:
             break;
     }
+}
+
+- (void)addWaver{
+    Waver * waver = [[Waver alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 50)];
+    [_soundImageView addSubview:waver];
+    __weak ListenTestCollectionCell* weakSelf = self;
+    waver.waverLevelCallback = ^(Waver * waver) {
+        weakSelf.wave.level = _volume;
+    };
+    
+    self.autoresizesSubviews = YES;
+    waver.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+    _wave = waver;
 }
 
 #pragma mark - MP3PlayerDelegate
@@ -262,6 +279,7 @@ typedef NS_ENUM(NSInteger,controlShowType) {
 }
 
 - (void)onUpdateVolume:(int)volume{
+    _volume = volume;
 }
 
 - (void)onRecordingBuffer:(NSData *)recordingData{
