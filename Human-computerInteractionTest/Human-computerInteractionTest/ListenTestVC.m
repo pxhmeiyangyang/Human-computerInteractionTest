@@ -126,7 +126,7 @@ static NSString* identifer = @"collectionCell";
 }
 
 -(void)dealloc{
-    NSLog(@"dealloc");
+    NSLog(@"ListenVC dealloc");
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

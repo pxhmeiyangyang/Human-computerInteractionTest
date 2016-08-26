@@ -45,6 +45,7 @@
     [self resetData];
     [self setImageViewAnimation];
 //    _showBgView.backgroundColor = [UIColor orangeColor];
+//    _mp3Player = [MP3Player sharedInstancePlayer];
     _mp3Player = [MP3Player sharedInstancePlayer];
     _mp3Player.delegate = self;
     //音频地址
@@ -109,12 +110,13 @@
 //            [self setSoundControlViewHidden:NO];
             NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"1" ofType:@"mp3"];
             [_mp3Player playWithFile:mp3Path];
+            self.soundTitle.text = @"正在播放原音";
             __block ListenTestCollectionCell* blockSelf = self;
             if ([_mp3Player play]) {
                 _mp3Player.playPorgressBlock = ^(CGFloat progress){
                     NSLog(@"播放进度1：%.4f",progress);
-                    blockSelf.soundTitle.text = @"正在播放原音";
-                    blockSelf.soundProgress.progress = progress;
+
+//                    blockSelf.soundProgress.progress = progress;
                 };
             }
             [_soundImage startAnimating];
@@ -126,12 +128,13 @@
 //            [self setSoundControlViewHidden:NO];
             NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"38miao" ofType:@"mp3"];
             [_mp3Player playWithFile:mp3Path];
+            self.soundTitle.text = @"正在播放原音";
             __block ListenTestCollectionCell* blockSelf = self;
             if ([_mp3Player play]) {
                 _mp3Player.playPorgressBlock = ^(CGFloat progress){
                     NSLog(@"播放进度2：%.4f",progress);
-                    blockSelf.soundTitle.text = @"正在播放原音";
-                    blockSelf.soundProgress.progress = progress;
+
+//                    blockSelf.soundProgress.progress = progress;
                 };
             }
             [_soundImage startAnimating];
@@ -269,13 +272,12 @@
 }
 
 -(void)dealloc{
-    if ([_timer isValid]) {
-        [_timer invalidate];
-    }
+    [_timer invalidate];
     _timer     = nil;
     _engine    = nil;
     [_mp3Player stop];
     _mp3Player = nil;
+    NSLog(@"Lisencell dealloc");
 }
 
 @end

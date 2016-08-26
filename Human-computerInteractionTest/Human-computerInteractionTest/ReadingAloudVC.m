@@ -103,11 +103,11 @@
             [_mp3Player playWithFile:mp3Path];
             __block ReadingAloudVC* blockSelf = self;
             if ([_mp3Player play]) {
-                _mp3Player.playPorgressBlock = ^(CGFloat progress){
-                    NSLog(@"播放进度：%.4f",progress);
-                    blockSelf.soundTitle.text = @"正在播放原音";
-                    blockSelf.soundProgress.progress = progress;
-                };
+//                _mp3Player.playPorgressBlock = ^(CGFloat progress){
+//                    NSLog(@"播放进度：%.4f",progress);
+//                    blockSelf.soundTitle.text = @"正在播放原音";
+//                    blockSelf.soundProgress.progress = progress;
+//                };
             }
             [_soundImage startAnimating];
         }
@@ -119,11 +119,11 @@
             [_mp3Player playWithFile:mp3Path];
             __block ReadingAloudVC* blockSelf = self;
             if ([_mp3Player play]) {
-                _mp3Player.playPorgressBlock = ^(CGFloat progress){
-                    NSLog(@"播放进度：%.4f",progress);
-                    blockSelf.soundTitle.text = @"正在播放原音";
-                    blockSelf.soundProgress.progress = progress;
-                };
+//                _mp3Player.playPorgressBlock = ^(CGFloat progress){
+//                    NSLog(@"播放进度：%.4f",progress);
+//                    blockSelf.soundTitle.text = @"正在播放原音";
+//                    blockSelf.soundProgress.progress = progress;
+//                };
             }
             [_soundImage startAnimating];
         }

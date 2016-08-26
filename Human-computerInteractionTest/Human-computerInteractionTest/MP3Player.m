@@ -9,8 +9,10 @@
 #import "MP3Player.h"
 
 @interface MP3Player()
-
-@property(nonatomic,strong)NSTimer* sliderTimer;
+{
+    NSTimer* _sliderTimer;
+}
+//@property(nonatomic,strong)NSTimer* sliderTimer
 
 @end
 
@@ -37,7 +39,7 @@ static MP3Player* _instancePlayer = nil;
 +(instancetype)sharedInstancePlayer{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _instancePlayer = [self new];
+        _instancePlayer = [[self alloc]init];
     });
     return _instancePlayer;
 }
@@ -86,5 +88,8 @@ static MP3Player* _instancePlayer = nil;
     if (_delegate && [_delegate respondsToSelector:@selector(playFinished:)]) {
         [self.delegate playFinished:error];
     }
+}
+-(void)dealloc{
+    NSLog(@"mp3Player dealloc");
 }
 @end
