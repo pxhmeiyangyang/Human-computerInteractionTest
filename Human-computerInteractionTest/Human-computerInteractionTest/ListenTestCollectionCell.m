@@ -56,8 +56,6 @@ typedef NS_ENUM(NSInteger,controlShowType) {
     NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"start_exam" ofType:@"mp3"];
     [_mp3Player playWithFile:mp3Path];
     [_mp3Player play];
-//    [_soundControlView setHidden:YES];
-//    [_soundImageView setHidden:YES];
     [self controlViewShow:ControlHiddenAll];
     [self theLayoutSubViews];
 }
@@ -92,23 +90,17 @@ typedef NS_ENUM(NSInteger,controlShowType) {
         case ControlshowAll:
             [_soundControlView setHidden:NO];
             [_soundImageView setHidden:NO];
-            _showBgViewHeight.constant = CGRectGetHeight(_soundImageView.frame) + CGRectGetHeight(_soundControlView.frame);
-            [self setNeedsLayout];
-            [self layoutIfNeeded];
+            _showScrollViewBottom.constant = CGRectGetHeight(_soundImageView.frame) + CGRectGetHeight(_soundControlView.frame);
             break;
         case ControlHiddenAll:
             [_soundControlView setHidden:YES];
             [_soundImageView setHidden:YES];
-            _showBgViewHeight.constant = 0;
-            [self setNeedsLayout];
-            [self layoutIfNeeded];
+            _showScrollViewBottom.constant = 0;
             break;
         case ControlShowImage:
             [_soundControlView setHidden:NO];
             [_soundImageView setHidden:YES];
-            _showBgViewHeight.constant = CGRectGetHeight(_soundControlView.frame);
-            [self setNeedsLayout];
-            [self layoutIfNeeded];
+            _showScrollViewBottom.constant = CGRectGetHeight(_soundControlView.frame);
             break;
         default:
             break;
@@ -126,8 +118,6 @@ typedef NS_ENUM(NSInteger,controlShowType) {
     switch (_soundCount) {
         case 1:
         {
-//            [_soundControlView setHidden:NO];
-//            [_soundImageView setHidden:NO];
             [self controlViewShow:ControlshowAll];
             NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"1" ofType:@"mp3"];
             [_mp3Player playWithFile:mp3Path];
@@ -144,8 +134,6 @@ typedef NS_ENUM(NSInteger,controlShowType) {
             break;
         case 2:
         {
-//            [_soundControlView setHidden:NO];
-//            [_soundImageView setHidden:NO];
             [self controlViewShow:ControlshowAll];
             NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"38miao" ofType:@"mp3"];
             [_mp3Player playWithFile:mp3Path];
@@ -190,7 +178,6 @@ typedef NS_ENUM(NSInteger,controlShowType) {
     [_soundImage setHidden:YES];
     if (_frontCountDownTime < 50) {
         if (_frontCountDownTime == 0) {
-//            [_soundImageView setHidden:YES];
             [self controlViewShow:ControlShowImage];
         }
         _frontCountDownTime ++;
@@ -207,7 +194,6 @@ typedef NS_ENUM(NSInteger,controlShowType) {
         [_soundTitle setAttributedText:attriStr];
         _soundProgress.progress = _frontCountDownTime / _countDownTime;
     }else{
-//        [_soundImageView setHidden:NO];
         [self controlViewShow:ControlshowAll];
         [_timer invalidate];
         _frontCountDownTime = 0.0;
@@ -237,8 +223,6 @@ typedef NS_ENUM(NSInteger,controlShowType) {
         _soundProgress.progress = _frontCountDownTime / _countDownTime;
     }else{
         [_timer invalidate];
-//        [_soundControlView setHidden:YES];
-//        [_soundImageView setHidden:YES];
         [self controlViewShow:ControlHiddenAll];
         //提示停止录音
         [self stopRecording];//停止录音函数

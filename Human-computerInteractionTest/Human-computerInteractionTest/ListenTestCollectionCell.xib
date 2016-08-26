@@ -15,7 +15,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                 <subviews>
                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFQ-8j-WNT">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="398"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ihX-kE-zI3">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
@@ -141,7 +141,7 @@
                 <constraint firstItem="fyw-1B-uKK" firstAttribute="top" secondItem="rgP-xe-Joz" secondAttribute="bottom" id="HZO-cW-hf9"/>
                 <constraint firstAttribute="trailing" secondItem="fyw-1B-uKK" secondAttribute="trailing" id="KE5-Iz-1HY"/>
                 <constraint firstItem="fyw-1B-uKK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="RuD-p7-hmP"/>
-                <constraint firstAttribute="bottom" secondItem="gFQ-8j-WNT" secondAttribute="bottom" constant="138" id="gU8-Ts-ihd"/>
+                <constraint firstAttribute="bottom" secondItem="gFQ-8j-WNT" secondAttribute="bottom" id="esO-DD-nvN"/>
                 <constraint firstAttribute="bottom" secondItem="fyw-1B-uKK" secondAttribute="bottom" id="oCl-xB-7l5"/>
                 <constraint firstAttribute="trailing" secondItem="rgP-xe-Joz" secondAttribute="trailing" id="pHk-4b-F5f"/>
                 <constraint firstItem="rgP-xe-Joz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="tW7-qB-0GN"/>
@@ -157,7 +157,7 @@
                 <outlet property="showBgView" destination="ihX-kE-zI3" id="e0K-7a-XS1"/>
                 <outlet property="showBgViewHeight" destination="VE5-77-dS4" id="tPV-o9-d5d"/>
                 <outlet property="showScrollView" destination="gFQ-8j-WNT" id="B5b-1y-SFu"/>
-                <outlet property="showScrollViewBottom" destination="gU8-Ts-ihd" id="6Tk-62-DwG"/>
+                <outlet property="showScrollViewBottom" destination="esO-DD-nvN" id="gaN-Pk-dlj"/>
                 <outlet property="soundControlView" destination="fyw-1B-uKK" id="QK5-cV-wNM"/>
                 <outlet property="soundImage" destination="WQC-sq-3fb" id="xq1-7g-vLL"/>
                 <outlet property="soundImageView" destination="rgP-xe-Joz" id="5C2-Bs-sYj"/>
