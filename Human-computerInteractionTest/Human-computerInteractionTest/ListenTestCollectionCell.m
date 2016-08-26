@@ -111,12 +111,11 @@
             NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"1" ofType:@"mp3"];
             [_mp3Player playWithFile:mp3Path];
             self.soundTitle.text = @"正在播放原音";
-            __block ListenTestCollectionCell* blockSelf = self;
+            __weak ListenTestCollectionCell *weakSelf = self;
             if ([_mp3Player play]) {
                 _mp3Player.playPorgressBlock = ^(CGFloat progress){
                     NSLog(@"播放进度1：%.4f",progress);
-
-//                    blockSelf.soundProgress.progress = progress;
+                    weakSelf.soundProgress.progress = progress;
                 };
             }
             [_soundImage startAnimating];
@@ -129,12 +128,11 @@
             NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"38miao" ofType:@"mp3"];
             [_mp3Player playWithFile:mp3Path];
             self.soundTitle.text = @"正在播放原音";
-            __block ListenTestCollectionCell* blockSelf = self;
+            __weak ListenTestCollectionCell *weakSelf = self;
             if ([_mp3Player play]) {
                 _mp3Player.playPorgressBlock = ^(CGFloat progress){
                     NSLog(@"播放进度2：%.4f",progress);
-
-//                    blockSelf.soundProgress.progress = progress;
+                    weakSelf.soundProgress.progress = progress;
                 };
             }
             [_soundImage startAnimating];
@@ -166,6 +164,7 @@
 }
 
 -(void)countDown:(NSTimer* )timer{
+    NSLog(@"正在计时");
     [_soundImage setHidden:YES];
     if (_frontCountDownTime < 50) {
         _frontCountDownTime ++;
@@ -193,6 +192,7 @@
     }
 }
 -(void)soundWait:(NSTimer* )timer{
+    NSLog(@"正在计时");
     if (_frontCountDownTime < 50) {
         _frontCountDownTime ++;
         int ratio = (int)(_countDownTime - _frontCountDownTime);
