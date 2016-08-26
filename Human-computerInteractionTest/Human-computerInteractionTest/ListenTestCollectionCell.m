@@ -34,7 +34,7 @@ typedef NS_ENUM(NSInteger,controlShowType) {
 
 -(void)theLayoutSubViews{
     _showScrollView.backgroundColor                = YZH_BLUE;
-    _showBgView.backgroundColor                    = YZH_GREEN;
+    _showBgView.backgroundColor                    = YZH_ORCHID;
     _contentLabel.backgroundColor                  = [UIColor redColor];
     _showBgViewHeight.constant                     = CGRectGetMaxY(_contentLabel.frame) + CGRectGetHeight(_contentLabel.frame);
     UIImage* trackImage                            = [UIColor getImageFromColor:[UIColor whiteColor] frame:CGRectMake(0, 0, CGRectGetWidth(_soundProgress.frame), CGRectGetHeight(_soundProgress.frame))];
@@ -66,7 +66,7 @@ typedef NS_ENUM(NSInteger,controlShowType) {
     _engine.delegate = self;
     [_engine setOralText:@"good moring"];
     _soundCount = 0;
-    _countDownTime = 50.0;
+    _countDownTime = 10.0;
     _frontCountDownTime = 0.0;
     _isNext = NO;
 }
@@ -109,11 +109,6 @@ typedef NS_ENUM(NSInteger,controlShowType) {
 
 #pragma mark - MP3PlayerDelegate
 -(void)playFinished:(NSError *)error{
-    if (error) {
-        
-    }else{
-        
-    }
     _soundCount ++;
     switch (_soundCount) {
         case 1:
@@ -151,7 +146,6 @@ typedef NS_ENUM(NSInteger,controlShowType) {
         case 3:
         {
             _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countDown:) userInfo:nil repeats:YES];
-            
             _soundProgress.progress = 1.0;
         }
             break;
@@ -176,7 +170,7 @@ typedef NS_ENUM(NSInteger,controlShowType) {
 -(void)countDown:(NSTimer* )timer{
     NSLog(@"正在计时");
     [_soundImage setHidden:YES];
-    if (_frontCountDownTime < 50) {
+    if (_frontCountDownTime < _countDownTime) {
         if (_frontCountDownTime == 0) {
             [self controlViewShow:ControlShowImage];
         }
@@ -207,7 +201,7 @@ typedef NS_ENUM(NSInteger,controlShowType) {
 }
 -(void)soundWait:(NSTimer* )timer{
     NSLog(@"正在计时");
-    if (_frontCountDownTime < 50) {
+    if (_frontCountDownTime < _countDownTime) {
         _frontCountDownTime ++;
         int ratio = (int)(_countDownTime - _frontCountDownTime);
         NSString* str = [NSString stringWithFormat:@"请开始录音（倒计时%d秒）",ratio];
@@ -229,8 +223,6 @@ typedef NS_ENUM(NSInteger,controlShowType) {
         NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"end_audio" ofType:@"mp3"];
         [_mp3Player playWithFile:mp3Path];
         [_mp3Player play];
-    
-       
     }
 }
 
@@ -289,7 +281,6 @@ typedef NS_ENUM(NSInteger,controlShowType) {
     _timer     = nil;
     _engine    = nil;
     [_mp3Player stop];
-    _mp3Player = nil;
     NSLog(@"Lisencell dealloc");
 }
 

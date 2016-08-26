@@ -10,11 +10,13 @@
 #import "ReadingAloudVC.h"
 #import "ListenTestCollectionCell.h"
 #import "UIViewController+BackButtonHandler.h"
-static NSString* identifer = @"collectionCell";
+
+//static NSString* identifer = @"collectionCell";
 
 @interface ListenTestVC ()<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *collectionLayout;
+@property (nonatomic,strong) NSMutableDictionary* cellDic;
 
 @property(nonatomic,assign)BOOL isFinished;
 
@@ -24,7 +26,6 @@ static NSString* identifer = @"collectionCell";
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
 }
 
 -(NSString *)VCTitle{
@@ -43,8 +44,9 @@ static NSString* identifer = @"collectionCell";
     _collectionView.scrollEnabled                  = NO;
     _collectionView.showsHorizontalScrollIndicator = NO;
     [_collectionView setBackgroundColor:YZH_BG_COLOR];
-    [_collectionView registerNib:[UINib nibWithNibName:@"ListenTestCollectionCell" bundle:nil] forCellWithReuseIdentifier:identifer];
+//    [_collectionView registerNib:[UINib nibWithNibName:@"ListenTestCollectionCell" bundle:nil] forCellWithReuseIdentifier:identifer];
     _collectionLayout.itemSize                     = CGSizeMake(kScreenWidth, kScreenHeight - 44);
+    _cellDic                                       = [NSMutableDictionary dictionary];
 }
 
 -(void)setNavigation{
@@ -57,15 +59,7 @@ static NSString* identifer = @"collectionCell";
     alert.delegate = self;
     [alert show];
 }
-//-(BOOL)navigationShouldPopOnBackButton{
-//    NSLog(@"返回触发事件");
-////    if (_isFinished) {
-//        UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"课程没有结束确定退出吗" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-//        alert.delegate = self;
-//        [alert show];
-////    }
-//    return YES;
-//}
+
 #pragma mark - UIAlertDelegate
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex) {
@@ -82,31 +76,19 @@ static NSString* identifer = @"collectionCell";
     return 4;
 }
 -(UICollectionViewCell* )collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    ListenTestCollectionCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifer forIndexPath:indexPath];
-    switch (indexPath.row) {
-        case 0:
-        {
-//            cell.backgroundColor = [UIColor orangeColor];
-        }
-            break;
-        case 1:
-            cell.backgroundColor = YZH_BG_COLOR;
-            break;
-        case 2:
-            cell.backgroundColor = YZH_BLUE;
-            break;
-        case 3:
-            cell.backgroundColor = YZH_GREEN;
-            break;
-        default:
-            break;
+    NSString* identifier = [_cellDic objectForKey:[NSString stringWithFormat:@"%@",indexPath]];
+    if (!identifier) {
+        identifier = [NSString stringWithFormat:@"collectioncell%@",indexPath];
+        [_cellDic setValue:identifier forKey:[NSString stringWithFormat:@"%@",indexPath]];
+        [self.collectionView registerNib:[UINib nibWithNibName:@"ListenTestCollectionCell" bundle:nil] forCellWithReuseIdentifier:identifier];
     }
+    ListenTestCollectionCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     cell.nextItemBlock = ^(){
         NSIndexPath* currentIndexPath = [[self.collectionView indexPathsForVisibleItems] lastObject];
         NSInteger nextItem = currentIndexPath.item + 1;
         NSInteger nextSection = currentIndexPath.section;
         NSIndexPath* nextIndexpath = [NSIndexPath indexPathForItem:nextItem inSection:nextSection];
-        [self.collectionView scrollToItemAtIndexPath:nextIndexpath atScrollPosition:UICollectionViewScrollPositionRight animated:YES];
+        [self.collectionView scrollToItemAtIndexPath:nextIndexpath atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
     };
     return cell;
 }
