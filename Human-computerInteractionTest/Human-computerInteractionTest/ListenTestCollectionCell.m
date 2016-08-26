@@ -25,8 +25,7 @@
 
 @implementation ListenTestCollectionCell
 
--(void)layoutSubViews{
-    [super layoutSubviews];
+-(void)theLayoutSubViews{
     _showScrollView.backgroundColor                = YZH_BLUE;
     _showBgView.backgroundColor                    = YZH_GREEN;
     _contentLabel.backgroundColor                  = [UIColor redColor];
@@ -44,8 +43,6 @@
     // Initialization code
     [self resetData];
     [self setImageViewAnimation];
-//    _showBgView.backgroundColor = [UIColor orangeColor];
-//    _mp3Player = [MP3Player sharedInstancePlayer];
     _mp3Player = [MP3Player sharedInstancePlayer];
     _mp3Player.delegate = self;
     //音频地址
@@ -53,21 +50,31 @@
     [_mp3Player playWithFile:mp3Path];
     [_mp3Player play];
     [_soundControlView setHidden:YES];
+    [_soundImageView setHidden:YES];
 //    [self setSoundControlViewHidden:YES];
+    [self theLayoutSubViews];
 }
 
 //-(void)setSoundControlViewHidden:(BOOL)hidden{
 //    [_soundControlView setHidden:hidden];
 //    CGFloat controlHeight = CGRectGetHeight(_showBgView.frame);
 //    BOOL ratio = controlHeight > kScreenHeight - 44 - CGRectGetHeight(_soundControlView.frame);
+//    
 //    if (hidden) {
-//        if (ratio) {
-//            [_showScrollView setContentOffset:CGPointMake(0, 0) animated:YES];
-//        }
+////        if (ratio) {
+////            [_showScrollView setContentOffset:CGPointMake(0, 0) animated:YES];
+////        }
+//        CGRect rect = _showScrollView.frame;
+//        rect.size.height = kScreenHeight - 44;
+//        [_showScrollView setFrame:rect];
 //    }else{
-//        if (ratio) {
-//            [_showScrollView setContentOffset:CGPointMake(0, CGRectGetHeight(_soundControlView.frame)) animated:YES];
-//        }
+////        if (ratio) {
+////            [_showScrollView setContentOffset:CGPointMake(0, CGRectGetHeight(_soundControlView.frame)) animated:YES];
+////        }
+//        CGFloat height = kScreenHeight - 44 - CGRectGetHeight(_soundControlView.frame);
+//        CGRect rect = _showScrollView.frame;
+//        rect.size.height = height;
+//        [_showScrollView setFrame:rect];
 //    }
 //}
 
@@ -107,6 +114,7 @@
         case 1:
         {
             [_soundControlView setHidden:NO];
+            [_soundImageView setHidden:NO];
 //            [self setSoundControlViewHidden:NO];
             NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"1" ofType:@"mp3"];
             [_mp3Player playWithFile:mp3Path];
@@ -124,6 +132,7 @@
         case 2:
         {
             [_soundControlView setHidden:NO];
+            [_soundImageView setHidden:NO];
 //            [self setSoundControlViewHidden:NO];
             NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"38miao" ofType:@"mp3"];
             [_mp3Player playWithFile:mp3Path];
@@ -167,6 +176,9 @@
     NSLog(@"正在计时");
     [_soundImage setHidden:YES];
     if (_frontCountDownTime < 50) {
+        if (_frontCountDownTime == 0) {
+            [_soundImageView setHidden:YES];
+        }
         _frontCountDownTime ++;
         int ratio = (int)(_countDownTime - _frontCountDownTime);
         NSString* str = [NSString stringWithFormat:@"准备朗读（倒计时%d秒）",ratio];
@@ -181,6 +193,7 @@
         [_soundTitle setAttributedText:attriStr];
         _soundProgress.progress = _frontCountDownTime / _countDownTime;
     }else{
+        [_soundImageView setHidden:NO];
         [_timer invalidate];
         _frontCountDownTime = 0.0;
         //提示开始录音
@@ -210,6 +223,7 @@
     }else{
         [_timer invalidate];
         [_soundControlView setHidden:YES];
+        [_soundImageView setHidden:YES];
 //        [self setSoundControlViewHidden:YES];
         //提示停止录音
         [self stopRecording];//停止录音函数

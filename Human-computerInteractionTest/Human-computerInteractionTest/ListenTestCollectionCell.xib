@@ -47,7 +47,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wo2-mE-NMG">
-                                        <rect key="frame" x="0.0" y="299.5" width="600" height="100"/>
+                                        <rect key="frame" x="0.0" y="299" width="600" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="jeb-UL-05y"/>
                                         </constraints>
@@ -83,23 +83,16 @@
                         </constraints>
                     </scrollView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fyw-1B-uKK">
-                        <rect key="frame" x="0.0" y="398" width="600" height="138"/>
+                        <rect key="frame" x="0.0" y="498" width="600" height="38"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正在播放原音" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4iW-uy-sze">
-                                <rect key="frame" x="0.0" y="103" width="600" height="18"/>
+                                <rect key="frame" x="0.0" y="7" width="600" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WQC-sq-3fb">
-                                <rect key="frame" x="258" y="8" width="85" height="85"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="85" id="cpK-qT-RHp"/>
-                                    <constraint firstAttribute="width" secondItem="WQC-sq-3fb" secondAttribute="height" multiplier="1:1" id="hQr-v2-KIy"/>
-                                </constraints>
-                            </imageView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oYN-26-iTb">
-                                <rect key="frame" x="0.0" y="136" width="600" height="2"/>
+                                <rect key="frame" x="0.0" y="36" width="600" height="2"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="4" id="7Iv-S8-fnF"/>
                                     <constraint firstAttribute="height" constant="2" id="TdQ-6C-q6B"/>
@@ -115,13 +108,28 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="oYN-26-iTb" secondAttribute="bottom" id="DAG-Oh-uPR"/>
                             <constraint firstItem="oYN-26-iTb" firstAttribute="leading" secondItem="fyw-1B-uKK" secondAttribute="leading" id="HCv-y4-Hxd"/>
-                            <constraint firstItem="WQC-sq-3fb" firstAttribute="top" secondItem="fyw-1B-uKK" secondAttribute="top" constant="8" id="I3k-q1-9a4"/>
-                            <constraint firstItem="WQC-sq-3fb" firstAttribute="centerX" secondItem="fyw-1B-uKK" secondAttribute="centerX" id="JRe-IO-Ij7"/>
-                            <constraint firstItem="oYN-26-iTb" firstAttribute="top" secondItem="4iW-uy-sze" secondAttribute="bottom" constant="15" id="UJm-09-Zp4"/>
-                            <constraint firstAttribute="height" constant="138" id="evK-Ka-3tB"/>
+                            <constraint firstItem="oYN-26-iTb" firstAttribute="top" secondItem="4iW-uy-sze" secondAttribute="bottom" constant="11" id="UJm-09-Zp4"/>
+                            <constraint firstAttribute="height" constant="38" id="evK-Ka-3tB"/>
                             <constraint firstAttribute="trailing" secondItem="oYN-26-iTb" secondAttribute="trailing" id="fYr-QS-MZ2"/>
                             <constraint firstItem="4iW-uy-sze" firstAttribute="leading" secondItem="fyw-1B-uKK" secondAttribute="leading" id="nZ8-xN-TZR"/>
                             <constraint firstAttribute="trailing" secondItem="4iW-uy-sze" secondAttribute="trailing" id="uKP-Mr-3Uf"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rgP-xe-Joz">
+                        <rect key="frame" x="0.0" y="398" width="600" height="100"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WQC-sq-3fb">
+                                <rect key="frame" x="258" y="8" width="85" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="cpK-qT-RHp"/>
+                                    <constraint firstAttribute="width" secondItem="WQC-sq-3fb" secondAttribute="height" multiplier="1:1" id="hQr-v2-KIy"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WQC-sq-3fb" firstAttribute="top" secondItem="rgP-xe-Joz" secondAttribute="top" constant="8" id="637-KX-4uQ"/>
+                            <constraint firstItem="WQC-sq-3fb" firstAttribute="centerX" secondItem="rgP-xe-Joz" secondAttribute="centerX" id="JnA-Z0-Mru"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -129,10 +137,14 @@
             </view>
             <constraints>
                 <constraint firstItem="gFQ-8j-WNT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8CQ-Pi-Ced"/>
+                <constraint firstItem="fyw-1B-uKK" firstAttribute="top" secondItem="rgP-xe-Joz" secondAttribute="bottom" id="HZO-cW-hf9"/>
                 <constraint firstAttribute="trailing" secondItem="fyw-1B-uKK" secondAttribute="trailing" id="KE5-Iz-1HY"/>
                 <constraint firstItem="fyw-1B-uKK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="RuD-p7-hmP"/>
                 <constraint firstAttribute="bottom" secondItem="gFQ-8j-WNT" secondAttribute="bottom" constant="138" id="gU8-Ts-ihd"/>
+                <constraint firstItem="rgP-xe-Joz" firstAttribute="top" secondItem="gFQ-8j-WNT" secondAttribute="bottom" id="nte-vd-9kH"/>
                 <constraint firstAttribute="bottom" secondItem="fyw-1B-uKK" secondAttribute="bottom" id="oCl-xB-7l5"/>
+                <constraint firstAttribute="trailing" secondItem="rgP-xe-Joz" secondAttribute="trailing" id="pHk-4b-F5f"/>
+                <constraint firstItem="rgP-xe-Joz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="tW7-qB-0GN"/>
                 <constraint firstItem="gFQ-8j-WNT" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="twm-mV-dYv"/>
                 <constraint firstAttribute="trailing" secondItem="gFQ-8j-WNT" secondAttribute="trailing" id="ucX-yW-ttf"/>
             </constraints>
@@ -147,6 +159,7 @@
                 <outlet property="showScrollView" destination="gFQ-8j-WNT" id="B5b-1y-SFu"/>
                 <outlet property="soundControlView" destination="fyw-1B-uKK" id="QK5-cV-wNM"/>
                 <outlet property="soundImage" destination="WQC-sq-3fb" id="xq1-7g-vLL"/>
+                <outlet property="soundImageView" destination="rgP-xe-Joz" id="5C2-Bs-sYj"/>
                 <outlet property="soundProgress" destination="oYN-26-iTb" id="2Mo-oJ-Xaw"/>
                 <outlet property="soundTitle" destination="4iW-uy-sze" id="Wt2-dn-sWB"/>
                 <outlet property="tipLabel" destination="uaC-db-51A" id="2II-9E-Bxa"/>

@@ -23,6 +23,7 @@ typedef void(^nextItemBlock)();
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentImageHeight;
 @property (weak, nonatomic) IBOutlet UIView *soundControlView;
 @property (weak, nonatomic) IBOutlet UILabel *soundTitle;
+@property (weak, nonatomic) IBOutlet UIView *soundImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *soundImage;
 @property (weak, nonatomic) IBOutlet UIProgressView *soundProgress;
 
