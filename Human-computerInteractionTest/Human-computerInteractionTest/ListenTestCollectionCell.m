@@ -24,7 +24,6 @@ typedef NS_ENUM(NSInteger,controlShowType) {
     CGFloat _frontCountDownTime;
     EngineManager* _engine;
     BOOL _isNext;
-    int _volume;
 }
 
 @property(nonatomic,strong)MP3Player* mp3Player;
@@ -112,16 +111,18 @@ typedef NS_ENUM(NSInteger,controlShowType) {
 }
 
 - (void)addWaver{
-    Waver * waver = [[Waver alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 50)];
-    [_soundImageView addSubview:waver];
-    __weak ListenTestCollectionCell* weakSelf = self;
+    Waver * waver = [[Waver alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(_soundImageView.frame) - 50, kScreenWidth - 0, 50)];
+    self.wave = waver;
+    [self.wave setHidden:YES];
+    waver.backgroundColor = [UIColor orangeColor];
+    [self.soundImageView addSubview:waver];
+//    __weak ListenTestCollectionCell* weakSelf = self;
     waver.waverLevelCallback = ^(Waver * waver) {
-        weakSelf.wave.level = _volume;
+
     };
+//    self.autoresizesSubviews = YES;
+//    waver.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     
-    self.autoresizesSubviews = YES;
-    waver.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-    _wave = waver;
 }
 
 #pragma mark - MP3PlayerDelegate
@@ -244,10 +245,12 @@ typedef NS_ENUM(NSInteger,controlShowType) {
 }
 
 -(void)starRecording{
+    [self.wave setHidden:NO];
     [_engine startRecognize];
 }
 -(void)stopRecording{
     [_engine stopRecognize];
+    [self.wave setHidden:YES];
 }
 -(void)gotoNextSubject{
     if (_isNext) {
@@ -279,7 +282,7 @@ typedef NS_ENUM(NSInteger,controlShowType) {
 }
 
 - (void)onUpdateVolume:(int)volume{
-    _volume = volume;
+    self.wave.level = volume / 100.0;
 }
 
 - (void)onRecordingBuffer:(NSData *)recordingData{
