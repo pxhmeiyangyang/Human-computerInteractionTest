@@ -116,13 +116,9 @@ typedef NS_ENUM(NSInteger,controlShowType) {
     [self.wave setHidden:YES];
     waver.backgroundColor = [UIColor orangeColor];
     [self.soundImageView addSubview:waver];
-//    __weak ListenTestCollectionCell* weakSelf = self;
     waver.waverLevelCallback = ^(Waver * waver) {
 
-    };
-//    self.autoresizesSubviews = YES;
-//    waver.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-    
+    };    
 }
 
 #pragma mark - MP3PlayerDelegate

@@ -10,7 +10,7 @@
 #import "ReadingAloudVC.h"
 #import "ListenTestCollectionCell.h"
 #import "UIViewController+BackButtonHandler.h"
-
+#import "MJExtension.h"
 #define cellCount 4
 
 @interface ListenTestVC ()<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UIAlertViewDelegate>
@@ -37,6 +37,7 @@
     [self resetData];
     [self VCTitle];
     [self setNavigation];
+    [self getMyPaperModel];
 }
 -(void)resetData{
     _collectionView.delegate                       = self;
@@ -47,6 +48,15 @@
 //    [_collectionView registerNib:[UINib nibWithNibName:@"ListenTestCollectionCell" bundle:nil] forCellWithReuseIdentifier:identifer];
     _collectionLayout.itemSize                     = CGSizeMake(kScreenWidth, kScreenHeight - 44);
     _cellDic                                       = [NSMutableDictionary dictionary];
+}
+
+-(void)getMyPaperModel{
+    NSString* jsonPath = [[NSBundle mainBundle]pathForResource:@"paper" ofType:@"json"];
+    NSData* jsonData = [NSData dataWithContentsOfFile:jsonPath];
+    NSDictionary* dict = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
+    PaperModel* model = [PaperModel mj_objectWithKeyValues:dict];
+    self.paperModel = model;
+    NSLog(@"json dict:%@",dict);
 }
 
 -(void)setNavigation{

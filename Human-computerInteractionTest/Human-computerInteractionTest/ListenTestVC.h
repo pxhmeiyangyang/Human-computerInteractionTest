@@ -7,7 +7,9 @@
 //
 
 #import "BaseVC.h"
-
+#import "PaperModel.h"
 @interface ListenTestVC : BaseVC
+
+@property(nonatomic,strong)PaperModel* paperModel;
 
 @end
