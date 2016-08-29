@@ -199,7 +199,6 @@ typedef NS_ENUM(NSInteger,controlShowType) {
             _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(soundWait:) userInfo:nil repeats:YES];
             [_soundImage stopAnimating];
             [_soundImage setHidden:NO];
-            [_soundImage setImage:[UIImage imageNamed:@"05_mic"]];
         }
             break;
         case 5:
@@ -271,8 +270,10 @@ typedef NS_ENUM(NSInteger,controlShowType) {
 }
 
 -(void)starRecording{
-    [self.wave setHidden:NO];
     [_engine startRecognize];
+    [self.wave setHidden:NO];
+    [_soundImage setImage:[UIImage imageNamed:@"05_mic"]];
+    _soundProgress.progress = .0;
 }
 -(void)stopRecording{
     [_engine stopRecognize];
