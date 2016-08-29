@@ -10,7 +10,8 @@
 #import "MP3Player.h"
 #import "EngineManager.h"
 #import "Waver.h"
-
+#import "QuestionDetail.h"
+#import "MJExtension.h"
 #define FolderPath [[NSBundle mainBundle]pathForResource:@"media" ofType:@""]
 
 typedef NS_ENUM(NSInteger,controlShowType) {
@@ -34,6 +35,7 @@ typedef NS_ENUM(NSInteger,controlShowType) {
 
 @property (nonatomic, weak) Waver *wave;
 
+@property(nonatomic,strong)NSMutableArray* questionTwoArray;
 @end
 
 @implementation ListenTestCollectionCell
@@ -61,14 +63,6 @@ typedef NS_ENUM(NSInteger,controlShowType) {
     [self controlViewShow:ControlHiddenAll];
     [self theLayoutSubViews];
     [self addWaver];
-
-}
-
--(NSString* )fileName:(NSString* )path{
-    NSArray* names = [path componentsSeparatedByString:@"/"];
-    NSString* lastNames = [names lastObject];
-    NSString* lastName = [[lastNames componentsSeparatedByString:@"."] firstObject];
-    return lastName;
 }
 
 -(void)resetData{
@@ -78,6 +72,7 @@ typedef NS_ENUM(NSInteger,controlShowType) {
     _soundCount = 0;
     _frontCountDownTime = 0.0;
     _isNext = NO;
+    _questionTwoArray = [NSMutableArray array];
 }
 
 -(void)setImageViewAnimation{
@@ -91,7 +86,7 @@ typedef NS_ENUM(NSInteger,controlShowType) {
 }
 
 -(NSString *)VCTitle{
-    return @"Modul1";
+    return _paperModel.paper.paperName;
 }
 
 -(void)controlViewShow:(controlShowType)type{
@@ -129,6 +124,20 @@ typedef NS_ENUM(NSInteger,controlShowType) {
 
 -(void)setPaperModel:(PaperModel *)paperModel{
     _paperModel = paperModel;
+    switch (self.tag) {
+        case 0:
+            [self setReadQuestionInfomation:paperModel];
+            break;
+        case 1:
+            [self setInfoAccessQuestionInfomation:paperModel Index:self.tag];
+            break;
+        default:
+            break;
+    }
+}
+
+#pragma mark - 重用cell对应不同cell的赋值
+-(void)setReadQuestionInfomation:(PaperModel *)paperModel{
     if (_paperModel.paper.readQuestion.titleAudioPath.length > 0) {
         //音频地址
         NSString* path = [NSString stringWithFormat:@"%@%@",FolderPath,_paperModel.paper.readQuestion.titleAudioPath];
@@ -150,11 +159,49 @@ typedef NS_ENUM(NSInteger,controlShowType) {
     if (paperModel.paper.readQuestion.timoutMillseconds > 0) {
         _timeOut = paperModel.paper.readQuestion.timoutMillseconds / 1000;
     }
-}
 
+}
+-(void)setInfoAccessQuestionInfomation:(PaperModel *)paperModel Index:(NSInteger)index{
+    if (_paperModel.paper.infoAccessQuestion.titleAudioPath.length > 0) {
+        //音频地址
+        NSString* path = [NSString stringWithFormat:@"%@%@",FolderPath,_paperModel.paper.infoAccessQuestion.titleAudioPath];
+        [_mp3Player playWithFile:path];
+        [_mp3Player play];
+    }
+    if (paperModel.paper.infoAccessQuestion.title.length > 0) {
+        _titleLabel.text = paperModel.paper.readQuestion.title;
+    }
+    Infoaccessquestionparts* part = paperModel.paper.infoAccessQuestion.infoAccessQuestionParts[0];
+    if (part.title.length > 0 && part.descContent.length > 0) {
+        _tipLabel.text = [NSString stringWithFormat:@"%@\n%@",part.title,part.descContent];
+    }
+    NSArray* questionDetail = part.questionDetails[0];
+    for (id question in questionDetail) {
+        QuestionDetail* detail = [QuestionDetail mj_objectWithKeyValues:question];
+        [_questionTwoArray addObject:detail];
+    }
+//    if (paperModel.paper.infoAccessQuestion.content.length > 0) {
+//        _contentLabel.text = paperModel.paper.readQuestion.content;
+//    }
+//    if (paperModel.paper.infoAccessQuestion.waitTimeMillseconds > 0) {
+//        _waitTime = paperModel.paper.readQuestion.waitTimeMillseconds / 1000;
+//    }
+//    if (paperModel.paper.infoAccessQuestion.timoutMillseconds > 0) {
+//        _timeOut = paperModel.paper.readQuestion.timoutMillseconds / 1000;
+//    }
+    
+}
 #pragma mark - MP3PlayerDelegate
 -(void)playFinished:(NSError *)error{
     _soundCount ++;
+    if (self.tag == 0) {
+        [self questionOne];
+    }else if(self.tag > 0){
+        [self questionTwo];
+    }
+    
+}
+-(void)questionOne{
     switch (_soundCount) {
         case 1:
         {
@@ -209,8 +256,66 @@ typedef NS_ENUM(NSInteger,controlShowType) {
         default:
             break;
     }
-}
 
+}
+-(void)questionTwo{
+    Infoaccessquestionparts* part = _paperModel.paper.infoAccessQuestion.infoAccessQuestionParts[0];
+    switch (_soundCount) {
+        case 1:
+        {
+            [self controlViewShow:ControlshowAll];
+            NSString* path = [NSString stringWithFormat:@"%@%@",FolderPath,part.titleAudioPath];
+            [_mp3Player playWithFile:path];
+            self.soundTitle.text = @"正在播放原音";
+            __weak ListenTestCollectionCell *weakSelf = self;
+            if ([_mp3Player play]) {
+                _mp3Player.playPorgressBlock = ^(CGFloat progress){
+                    NSLog(@"播放进度1：%.4f",progress);
+                    weakSelf.soundProgress.progress = progress;
+                };
+            }
+            [_soundImage startAnimating];
+        }
+            break;
+        case 2:
+        {
+            [self controlViewShow:ControlshowAll];
+            NSString* path = [NSString stringWithFormat:@"%@%@",FolderPath,part.descAudioPath];
+            [_mp3Player playWithFile:path];
+            self.soundTitle.text = @"正在播放原音";
+            __weak ListenTestCollectionCell *weakSelf = self;
+            if ([_mp3Player play]) {
+                _mp3Player.playPorgressBlock = ^(CGFloat progress){
+                    NSLog(@"播放进度2：%.4f",progress);
+                    weakSelf.soundProgress.progress = progress;
+                };
+            }
+            [_soundImage startAnimating];
+        }
+            break;
+        case 3:
+        {
+            _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countDown:) userInfo:nil repeats:YES];
+            _soundProgress.progress = 1.0;
+        }
+            break;
+        case 4:
+        {
+            _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(soundWait:) userInfo:nil repeats:YES];
+            [_soundImage stopAnimating];
+            [_soundImage setHidden:NO];
+        }
+            break;
+        case 5:
+        {
+            [self gotoNextSubject];
+        }
+            break;
+        default:
+            break;
+    }
+
+}
 -(void)countDown:(NSTimer* )timer{
     [_soundImage setHidden:YES];
     if (_frontCountDownTime < _waitTime ) {

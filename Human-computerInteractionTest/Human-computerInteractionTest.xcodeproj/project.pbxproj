@@ -48,6 +48,7 @@
 		F1C4FAF91D6EC6BD00F5AB15 /* EngineManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C4FAF51D6EC6BD00F5AB15 /* EngineManager.m */; };
 		F1C4FAFA1D6EC6BD00F5AB15 /* libusc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C4FAF61D6EC6BD00F5AB15 /* libusc.a */; };
 		F1C4FAFB1D6EC6BE00F5AB15 /* tmp_oral_offline.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F1C4FAF71D6EC6BD00F5AB15 /* tmp_oral_offline.bundle */; };
+		F1D2A3BE1D74906C0045F06F /* QuestionDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D2A3BD1D74906C0045F06F /* QuestionDetail.m */; };
 		F1E0FB7C1D6E8A4100E4F490 /* ListenTestCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E0FB7A1D6E8A4100E4F490 /* ListenTestCollectionCell.m */; };
 		F1E0FB7D1D6E8A4100E4F490 /* ListenTestCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1E0FB7B1D6E8A4100E4F490 /* ListenTestCollectionCell.xib */; };
 		F1E0FB801D6EC60200E4F490 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E0FB7F1D6EC60200E4F490 /* libstdc++.6.0.9.tbd */; };
@@ -151,6 +152,8 @@
 		F1C4FAF61D6EC6BD00F5AB15 /* libusc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libusc.a; sourceTree = "<group>"; };
 		F1C4FAF71D6EC6BD00F5AB15 /* tmp_oral_offline.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = tmp_oral_offline.bundle; sourceTree = "<group>"; };
 		F1C4FAF81D6EC6BD00F5AB15 /* USCRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USCRecognizer.h; sourceTree = "<group>"; };
+		F1D2A3BC1D74906C0045F06F /* QuestionDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionDetail.h; sourceTree = "<group>"; };
+		F1D2A3BD1D74906C0045F06F /* QuestionDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionDetail.m; sourceTree = "<group>"; };
 		F1E0FB791D6E8A4100E4F490 /* ListenTestCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListenTestCollectionCell.h; sourceTree = "<group>"; };
 		F1E0FB7A1D6E8A4100E4F490 /* ListenTestCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListenTestCollectionCell.m; sourceTree = "<group>"; };
 		F1E0FB7B1D6E8A4100E4F490 /* ListenTestCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListenTestCollectionCell.xib; sourceTree = "<group>"; };
@@ -231,6 +234,8 @@
 			children = (
 				F1B65B8B1D73D207009AE91F /* PaperModel.h */,
 				F1B65B8C1D73D207009AE91F /* PaperModel.m */,
+				F1D2A3BC1D74906C0045F06F /* QuestionDetail.h */,
+				F1D2A3BD1D74906C0045F06F /* QuestionDetail.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -552,6 +557,7 @@
 			files = (
 				F1B1DB411D6BEFF000F455E8 /* ReadingAloudVC.m in Sources */,
 				F1B65BAF1D73DC1F009AE91F /* NSObject+MJKeyValue.m in Sources */,
+				F1D2A3BE1D74906C0045F06F /* QuestionDetail.m in Sources */,
 				F1B65B8D1D73D207009AE91F /* PaperModel.m in Sources */,
 				F1B1DB3E1D6BEFF000F455E8 /* AppDelegate.m in Sources */,
 				F1B1DB721D6BF40600F455E8 /* UIColor+Extension.m in Sources */,

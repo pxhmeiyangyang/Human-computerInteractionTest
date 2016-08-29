@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Human-computerInteractionTest/ListenTestCollectionCell.m"
-            timestampString = "494148941.065895"
+            timestampString = "494178830.600603"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "-fileName:"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "-setInfoAccessQuestionInfomation:Index:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -12,11 +12,9 @@
 @class Paper,Infodescquestion,Infodescquestionparts,Details,Infoaccessquestion,Infoaccessquestionparts,Readquestion;
 @interface PaperModel : NSObject
 
-
 @property (nonatomic, strong) Paper *paper;
 
 @property (nonatomic, assign) NSInteger code;
-
 
 @end
 

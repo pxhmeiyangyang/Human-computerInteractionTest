@@ -11,7 +11,6 @@
 @implementation PaperModel
 
 @end
-
 @implementation Paper
 
 @end
