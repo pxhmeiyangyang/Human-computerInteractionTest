@@ -45,7 +45,6 @@
     _collectionView.scrollEnabled                  = NO;
     _collectionView.showsHorizontalScrollIndicator = NO;
     [_collectionView setBackgroundColor:YZH_BG_COLOR];
-//    [_collectionView registerNib:[UINib nibWithNibName:@"ListenTestCollectionCell" bundle:nil] forCellWithReuseIdentifier:identifer];
     _collectionLayout.itemSize                     = CGSizeMake(kScreenWidth, kScreenHeight - 44);
     _cellDic                                       = [NSMutableDictionary dictionary];
 }
