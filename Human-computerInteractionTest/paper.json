@@ -8,14 +8,14 @@
         "readQuestion":{
             "readQuestionId":1,
             "title":"一、模仿朗读",
-            "titleAudioPath":"/aa/bb/cc.mp3",
-            "descContent":"听以下短文一遍听以下短文一遍听以下短文一遍听以下短文一遍听以下短文一遍听以下短文一遍",
-            "descAudioPath":"/aa/bb/cc.mp3",
-            "content":"Early the next morning Early the next morning Early the next morning Early the next morning",
-            "contentAudioPath":"/aa/bb/cc.mp3",
+            "titleAudioPath":"media/read/title.mp3",
+            "descContent":"听以下短文一遍，给你50秒钟的时间准备，然后模仿朗读。当听到“开始录音”的信号后，立即在50秒钟内朗读短文，当听到要求“停止录音”的信号时，应立即中止朗读。",
+            "descAudioPath":"media/read/desc.mp3",
+            "content":"One of the most famous wise men in ancient Greece was Diogenes. Diogenes lived a simple life. He only owned three things — the clothes he wore, a lantern and a bowl to eat with.\nDiogenes used to walk through the city with his lantern during the day. When people askedhim why he was carrying the lantern, he would hold it up to their face, look at them, and say: I'm looking for an honest man.",
+            "contentAudioPath":"media/read/content.mp3",
             "totalScore":8,
-            "waitTimeMillseconds":10000,
-            "timoutMillseconds":10000,
+            "waitTimeMillseconds":50000,
+            "timoutMillseconds":50000,
             "audioRepeatTimes":1
         },
         "infoAccessQuestion": {
