@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "PaperModel.h"
+
 typedef void(^nextItemBlock)();
 
 @interface ListenTestCollectionCell : UICollectionViewCell
@@ -29,5 +31,7 @@ typedef void(^nextItemBlock)();
 @property (weak, nonatomic) IBOutlet UIProgressView *soundProgress;
 
 @property(nonatomic,copy)nextItemBlock nextItemBlock;
+
+@property(nonatomic,strong)PaperModel* paperModel;
 
 @end

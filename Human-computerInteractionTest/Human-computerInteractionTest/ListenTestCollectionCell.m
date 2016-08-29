@@ -10,6 +10,9 @@
 #import "MP3Player.h"
 #import "EngineManager.h"
 #import "Waver.h"
+
+#define FolderPath [[NSBundle mainBundle]pathForResource:@"media" ofType:@""]
+
 typedef NS_ENUM(NSInteger,controlShowType) {
     ControlshowAll,
     ControlHiddenAll,
@@ -20,10 +23,11 @@ typedef NS_ENUM(NSInteger,controlShowType) {
 {
     NSInteger _soundCount;
     NSTimer* _timer;
-    CGFloat _countDownTime;
     CGFloat _frontCountDownTime;
     EngineManager* _engine;
     BOOL _isNext;
+    NSInteger _waitTime;
+    NSInteger _timeOut;
 }
 
 @property(nonatomic,strong)MP3Player* mp3Player;
@@ -54,22 +58,24 @@ typedef NS_ENUM(NSInteger,controlShowType) {
     [self setImageViewAnimation];
     _mp3Player = [MP3Player sharedInstancePlayer];
     _mp3Player.delegate = self;
-    //音频地址
-    NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"start_exam" ofType:@"mp3"];
-    [_mp3Player playWithFile:mp3Path];
-    [_mp3Player play];
     [self controlViewShow:ControlHiddenAll];
     [self theLayoutSubViews];
     [self addWaver];
+
 }
 
+-(NSString* )fileName:(NSString* )path{
+    NSArray* names = [path componentsSeparatedByString:@"/"];
+    NSString* lastNames = [names lastObject];
+    NSString* lastName = [[lastNames componentsSeparatedByString:@"."] firstObject];
+    return lastName;
+}
 
 -(void)resetData{
     _engine = [EngineManager sharedManager];
     _engine.delegate = self;
     [_engine setOralText:@"good moring"];
     _soundCount = 0;
-    _countDownTime = 10.0;
     _frontCountDownTime = 0.0;
     _isNext = NO;
 }
@@ -121,6 +127,31 @@ typedef NS_ENUM(NSInteger,controlShowType) {
     };    
 }
 
+-(void)setPaperModel:(PaperModel *)paperModel{
+    _paperModel = paperModel;
+    if (_paperModel.paper.readQuestion.titleAudioPath.length > 0) {
+        //音频地址
+        NSString* path = [NSString stringWithFormat:@"%@%@",FolderPath,_paperModel.paper.readQuestion.titleAudioPath];
+        [_mp3Player playWithFile:path];
+        [_mp3Player play];
+    }
+    if (paperModel.paper.readQuestion.title.length > 0) {
+        _titleLabel.text = paperModel.paper.readQuestion.title;
+    }
+    if (paperModel.paper.readQuestion.descContent.length > 0) {
+        _tipLabel.text = paperModel.paper.readQuestion.descContent;
+    }
+    if (paperModel.paper.readQuestion.content.length > 0) {
+        _contentLabel.text = paperModel.paper.readQuestion.content;
+    }
+    if (paperModel.paper.readQuestion.waitTimeMillseconds > 0) {
+        _waitTime = paperModel.paper.readQuestion.waitTimeMillseconds / 1000;
+    }
+    if (paperModel.paper.readQuestion.timoutMillseconds > 0) {
+        _timeOut = paperModel.paper.readQuestion.timoutMillseconds / 1000;
+    }
+}
+
 #pragma mark - MP3PlayerDelegate
 -(void)playFinished:(NSError *)error{
     _soundCount ++;
@@ -128,8 +159,8 @@ typedef NS_ENUM(NSInteger,controlShowType) {
         case 1:
         {
             [self controlViewShow:ControlshowAll];
-            NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"1" ofType:@"mp3"];
-            [_mp3Player playWithFile:mp3Path];
+            NSString* path = [NSString stringWithFormat:@"%@%@",FolderPath,_paperModel.paper.readQuestion.descAudioPath];
+            [_mp3Player playWithFile:path];
             self.soundTitle.text = @"正在播放原音";
             __weak ListenTestCollectionCell *weakSelf = self;
             if ([_mp3Player play]) {
@@ -144,8 +175,8 @@ typedef NS_ENUM(NSInteger,controlShowType) {
         case 2:
         {
             [self controlViewShow:ControlshowAll];
-            NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"38miao" ofType:@"mp3"];
-            [_mp3Player playWithFile:mp3Path];
+            NSString* path = [NSString stringWithFormat:@"%@%@",FolderPath,_paperModel.paper.readQuestion.contentAudioPath];
+            [_mp3Player playWithFile:path];
             self.soundTitle.text = @"正在播放原音";
             __weak ListenTestCollectionCell *weakSelf = self;
             if ([_mp3Player play]) {
@@ -182,14 +213,13 @@ typedef NS_ENUM(NSInteger,controlShowType) {
 }
 
 -(void)countDown:(NSTimer* )timer{
-    NSLog(@"正在计时");
     [_soundImage setHidden:YES];
-    if (_frontCountDownTime < _countDownTime) {
+    if (_frontCountDownTime < _waitTime ) {
         if (_frontCountDownTime == 0) {
             [self controlViewShow:ControlShowImage];
         }
         _frontCountDownTime ++;
-        int ratio = (int)(_countDownTime - _frontCountDownTime);
+        int ratio = (int)(_waitTime - _frontCountDownTime);
         NSString* str = [NSString stringWithFormat:@"准备朗读（倒计时%d秒）",ratio];
         NSMutableAttributedString* attriStr = [[NSMutableAttributedString alloc]initWithString:str];
         NSRange rang;
@@ -200,7 +230,7 @@ typedef NS_ENUM(NSInteger,controlShowType) {
         }
         [attriStr addAttribute:NSForegroundColorAttributeName value:[UIColor orangeColor] range:rang];
         [_soundTitle setAttributedText:attriStr];
-        _soundProgress.progress = _frontCountDownTime / _countDownTime;
+        _soundProgress.progress = _frontCountDownTime / _waitTime;
     }else{
         [self controlViewShow:ControlshowAll];
         [_timer invalidate];
@@ -215,9 +245,9 @@ typedef NS_ENUM(NSInteger,controlShowType) {
 }
 -(void)soundWait:(NSTimer* )timer{
     NSLog(@"正在计时");
-    if (_frontCountDownTime < _countDownTime) {
+    if (_frontCountDownTime < _timeOut) {
         _frontCountDownTime ++;
-        int ratio = (int)(_countDownTime - _frontCountDownTime);
+        int ratio = (int)(_timeOut - _frontCountDownTime);
         NSString* str = [NSString stringWithFormat:@"请开始录音（倒计时%d秒）",ratio];
         NSMutableAttributedString* attriStr = [[NSMutableAttributedString alloc]initWithString:str];
         NSRange range;
@@ -228,7 +258,7 @@ typedef NS_ENUM(NSInteger,controlShowType) {
         }
         [attriStr addAttribute:NSForegroundColorAttributeName value:[UIColor orangeColor] range:range];
         [_soundTitle setAttributedText:attriStr];
-        _soundProgress.progress = _frontCountDownTime / _countDownTime;
+        _soundProgress.progress = _frontCountDownTime / _timeOut;
     }else{
         [_timer invalidate];
         [self controlViewShow:ControlHiddenAll];

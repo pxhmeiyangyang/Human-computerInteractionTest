@@ -92,11 +92,13 @@
         [self.collectionView registerNib:[UINib nibWithNibName:@"ListenTestCollectionCell" bundle:nil] forCellWithReuseIdentifier:identifier];
     }
     ListenTestCollectionCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    cell.paperModel = self.paperModel;
     cell.nextItemBlock = ^(){
         NSIndexPath* currentIndexPath = [[self.collectionView indexPathsForVisibleItems] lastObject];
         NSInteger nextItem = currentIndexPath.item + 1;
         if (nextItem > cellCount) {
          //跳转到下一个页面
+            NSLog(@"跳转到下一个页面");
         }else{
             NSInteger nextSection = currentIndexPath.section;
             NSIndexPath* nextIndexpath = [NSIndexPath indexPathForItem:nextItem inSection:nextSection];
