@@ -1,312 +1,352 @@
 {
- "code":200,
- "paper":{
-   "paperId":1,
-   "paperName":"Module 1",
-   "resourceUrl":"http://resource.url",
-   "questionCount":14,
-   "readQuestion":{
-     "readQuestionId":1,
-     "title":"一、模仿朗读",
-     "titleAudioPath":"/aa/bb/cc.mp3",
-     "descContent":"听以下短文一遍听以下短文一遍听以下短文一遍听以下短文一遍听以下短文一遍听以下短文一遍",
-     "descAudioPath":"/aa/bb/cc.mp3",
-     "content":"Early the next morning Early the next morning Early the next morning Early the next morning",
-     "contentAudioPath":"/aa/bb/cc.mp3",
-     "totalScore":8,
-     "waitTimeMillseconds":10000,
-     "timoutMillseconds":10000,
-     "audioRepeatTimes":1
-   },
-   "infoAccessQuestion": {
-      "infoAccessId": 1,
-      "title": "二、信息获取(共20分)",
-      "titleAudioPath": "info_access/title.mp3",
-      "totalScore": 20,
-      "infoAccessQuestionParts": [
-        {
-          "partId": 1,
-          "infoAccessId": 1,
-          "title": "第一节　听选信息(共6小题;每小题2分,满分12分)",
-          "titleAudioPath": "info_access/p1_title.mp3",
-          "descContent": "听三段对话或独白，每段播放两遍。各段播放前你有10秒钟的阅题时间。各段播放后有两个问题。请根据所听到的问题和括号内的提示，选择正确的信息在8秒钟内口头回答。",
-          "descAudioPath": "info_access/p1_desc.mp3",
-          "audioPath": null,
-          "audioRepeatTimes": 1,
-          "questionCount": 6,
-          "totalScore": 12,
-          "scorePerQuestion": 2,
-          "questionDetails": [
-            [
-              {
-                "infoAccessDetailId": 1,
-                "partId": 1,
-                "descContent": "听第一段对话,回答第1-2两个问题。现在你有10秒钟的阅题时间。",
-                "descAudioPath": "info_access/p1_desc1.mp3",
-                "group": 1,
-                "question": "1. What day is it today?",
-                "questionAudioPath": "info_access/q1.mp3",
-                "questionAudioRepeatTimes": 2,
-                "audioPath": "info_access/content1.mp3",
-                "waitTimeMillseconds": 10000,
-                "timeoutMillseconds": 8000,
-                "audioRepeatTimes": 2,
-                "hasOption": true,
-                "answer": "Today is Saturday.",
-                "jsgf": "{\"Grammar\": \"#enumerate\\nToday is Saturday.\\nIt's Saturday.\\nIt's Saturday today.\\nIt is Saturday today.\\nIt is Saturday.\\nSaturday.\\n\",\"GrammarWeight\": \"\",\"DisplayText\": \"\",\"Versions\": 1}"
-              },
-              {
-                "infoAccessDetailId": 2,
-                "partId": 1,
-                "descContent": null,
-                "descAudioPath": null,
-                "group": 1,
-                "question": "2. What's the weather like on Sunday?",
-                "questionAudioPath": "info_access/q2.mp3",
-                "questionAudioRepeatTimes": 2,
-                "audioPath": null,
-                "waitTimeMillseconds": 0,
-                "timeoutMillseconds": 8000,
-                "audioRepeatTimes": 0,
-                "hasOption": true,
-                "answer": "It's hot and rainy on Sunday.",
-                "jsgf": "{\"Grammar\": \"#enumerate\\nIt's hot and rainy on Sunday.\\nIt is hot and rainy on Sunday.\\nIt's rainy and hot on Sunday.\\nIt is rainy and hot on Sunday.\\nIt's rainy and hot.\\nIt's hot and rainy.\\nIt is rainy and hot.\\nIt is hot and rainy.\\nRainy and hot.\\nHot and rainy.\\nRainy and hot on Sunday.\\nHot and Rainy on Sunday.\\n\",\"GrammarWeight\": \"\",\"DisplayText\": \"\",\"Versions\": 1}"
-              }
-            ],
-            [
-              {
-                "infoAccessDetailId": 3,
-                "partId": 1,
-                "descContent": "听第二段对话，回答第3-4两个问题。现在你有10秒钟的阅题时间。",
-                "descAudioPath": "info_access/p1_desc2.mp3",
-                "group": 2,
-                "question": "3. What are the speakers talking about?",
-                "questionAudioPath": "info_access/q3.mp3",
-                "questionAudioRepeatTimes": 2,
-                "audioPath": "info_access/content2.mp3",
-                "waitTimeMillseconds": 10000,
-                "timeoutMillseconds": 8000,
-                "audioRepeatTimes": 2,
-                "hasOption": true,
-                "answer": "They are talking about an encyclopaedia about wise men.",
-                "jsgf": "{\"Grammar\": \"#enumerate\\nThey are talking about an encyclopedia about wise men.\\nAn encyclopaedia about wise men.\\n\",\"GrammarWeight\": \"\",\"DisplayText\": \"\",\"Versions\": 1}"
-              },
-              {
-                "infoAccessDetailId": 4,
-                "partId": 1,
-                "descContent": null,
-                "descAudioPath": null,
-                "group": 2,
-                "question": "4. How did Mike get the book?",
-                "questionAudioPath": "info_access/q4.mp3",
-                "questionAudioRepeatTimes": 2,
-                "audioPath": null,
-                "waitTimeMillseconds": 0,
-                "timeoutMillseconds": 8000,
-                "audioRepeatTimes": 0,
-                "hasOption": true,
-                "answer": "Mike got it by borrowing from the library.",
-                "jsgf": "{\"Grammar\": \"#enumerate\\nMike got it by borrowing from the library.\\nMike got the book by borrowing from the library.\\nHe got the book by borrowing from the library.\\nHe got it by borrowing from the library.\\nBy borrowing from the library.\\n\",\"GrammarWeight\": \"\",\"DisplayText\": \"\",\"Versions\": 1}"
-              }
-            ],
-            [
-              {
-                "infoAccessDetailId": 5,
-                "partId": 1,
-                "descContent": "听第三段独白，回答第5-6两个问题。现在你有10秒钟的阅题时间。",
-                "descAudioPath": "info_access/p1_desc3.mp3",
-                "group": 3,
-                "question": "5. When did the modern Olympic Games start?",
-                "questionAudioPath": "info_access/q5.mp3",
-                "questionAudioRepeatTimes": 2,
-                "audioPath": "info_access/content3.mp3",
-                "waitTimeMillseconds": 10000,
-                "timeoutMillseconds": 8000,
-                "audioRepeatTimes": 2,
-                "hasOption": true,
-                "answer": "It started in 1896.",
-                "jsgf": "{\"Grammar\": \"#enumerate\\nIt started in 1896.\\nThe modern Olympic Games started in 1896.\\nIn 1896.\\n\",\"GrammarWeight\": \"\",\"DisplayText\": \"\",\"Versions\": 1}"
-              },
-              {
-                "infoAccessDetailId": 6,
-                "partId": 1,
-                "descContent": null,
-                "descAudioPath": null,
-                "group": 3,
-                "question": "6. How long did the first ancient Olympic Games last?",
-                "questionAudioPath": "info_access/q6.mp3",
-                "questionAudioRepeatTimes": 2,
-                "audioPath": null,
-                "waitTimeMillseconds": 0,
-                "timeoutMillseconds": 8000,
-                "audioRepeatTimes": 0,
-                "hasOption": true,
-                "answer": "It lasted for a day.",
-                "jsgf": "{\"Grammar\": \"#enumerate\\nIt lasted for a day.\\nFor a day.\\n\",\"GrammarWeight\": \"\",\"DisplayText\": \"\",\"Versions\": 1}"
-              }
-            ]
-          ]
+    "code":200,
+    "paper":{
+        "paperId":1,
+        "paperName":"Module 1",
+        "resourceUrl":"http://resource.url",
+        "questionCount":14,
+        "readQuestion":{
+            "readQuestionId":1,
+            "title":"一、模仿朗读",
+            "titleAudioPath":"/aa/bb/cc.mp3",
+            "descContent":"听以下短文一遍听以下短文一遍听以下短文一遍听以下短文一遍听以下短文一遍听以下短文一遍",
+            "descAudioPath":"/aa/bb/cc.mp3",
+            "content":"Early the next morning Early the next morning Early the next morning Early the next morning",
+            "contentAudioPath":"/aa/bb/cc.mp3",
+            "totalScore":8,
+            "waitTimeMillseconds":10000,
+            "timoutMillseconds":10000,
+            "audioRepeatTimes":1
         },
-        {
-          "partId": 2,
-          "infoAccessId": 1,
-          "title": "第二节　回答问题(共4小题;每小题2分,满分8分)",
-          "titleAudioPath": "info_access/p1_title.mp3",
-          "descContent": "听下面一段对话或独白,录音播放两遍。请根据所听内容回答第7-10四个问题。当听到“开始录音”的信号后,请在8秒钟内口头回答。",
-          "descAudioPath": "info_access/p2_desc.mp3",
-          "audioPath": null,
-          "audioRepeatTimes": 1,
-          "questionCount": 4,
-          "totalScore": 8,
-          "scorePerQuestion": 2,
-          "questionDetails": [
-            [
-              {
-                "infoAccessDetailId": 7,
-                "partId": 2,
-                "descContent": "现在你有15 秒钟的时间阅读这四个问题。",
-                "descAudioPath": "info_access/p2_desc1.mp3",
-                "group": 4,
-                "question": "7. Where did Steve Jobs work as a video designer?",
-                "questionAudioPath": "info_access/q7.mp3",
-                "questionAudioRepeatTimes": 2,
-                "audioPath": "info_access/content4.mp3",
-                "waitTimeMillseconds": 15000,
-                "timeoutMillseconds": 8000,
-                "audioRepeatTimes": 2,
-                "hasOption": false,
-                "answer": "He worked as a video designer in a company.",
-                "jsgf": "{\"Grammar\": \"#enumerate\\nHe worked as a video designer in a company.\\nHe worked in a company.\\nSteve Jobs worked as a video designer in a company.\\nSteve Jobs worked in a company.\\nIn a company.\\n\",\"GrammarWeight\": \"\",\"DisplayText\": \"\",\"Versions\": 1}"
-              },
-              {
-                "infoAccessDetailId": 8,
-                "partId": 2,
-                "descContent": null,
-                "descAudioPath": null,
-                "group": 4,
-                "question": "8. How long had Steve Jobs worked there before he went to India?",
-                "questionAudioPath": "info_access/q8.mp3",
-                "questionAudioRepeatTimes": 2,
-                "audioPath": null,
-                "waitTimeMillseconds": 0,
-                "timeoutMillseconds": 8000,
-                "audioRepeatTimes": 0,
-                "hasOption": false,
-                "answer": "He had worked there for a few months before he went to India.",
-                "jsgf": "{\"Grammar\": \"#enumerate\\nHe had worked there for a few months before he went to India.\\nHe had worked there for a few months.\\nFor a few months.\\nSteve Jobs had worked there for a few months before he went to India.\\nSteve Jobs had worked there for a few months.\\n\",\"GrammarWeight\": \"\",\"DisplayText\": \"\",\"Versions\": 1}"
-              },
-              {
-                "infoAccessDetailId": 9,
-                "partId": 2,
-                "descContent": null,
-                "descAudioPath": null,
-                "group": 4,
-                "question": "9. When did Steve Jobs begin to make a new type of computer?",
-                "questionAudioPath": "info_access/q9.mp3",
-                "questionAudioRepeatTimes": 2,
-                "audioPath": null,
-                "waitTimeMillseconds": 0,
-                "timeoutMillseconds": 8000,
-                "audioRepeatTimes": 0,
-                "hasOption": false,
-                "answer": "He began to make a new type of computer in 1975. / In 1975.",
-                "jsgf": "{\"Grammar\": \"#enumerate\\nHe began to make a new type of computer in 1975.\\nHe began to make it in 1975\\nSteve Jobs began to make a new type of computer in 1975.\\nSteve Jobs began to make it in 1975.\\nIn 1975.\\n\",\"GrammarWeight\": \"\",\"DisplayText\": \"\",\"Versions\": 1}"
-              },
-              {
-                "infoAccessDetailId": 10,
-                "partId": 2,
-                "descContent": null,
-                "descAudioPath": null,
-                "group": 4,
-                "question": "10. What did Steve Jobs design in his garage?",
-                "questionAudioPath": "info_access/q10.mp3",
-                "questionAudioRepeatTimes": 2,
-                "audioPath": null,
-                "waitTimeMillseconds": 0,
-                "timeoutMillseconds": 8000,
-                "audioRepeatTimes": null,
-                "hasOption": false,
-                "answer": "He designed the first Apple computer in his garage.",
-                "jsgf": "{\"Grammar\": \"#enumerate\\nHe designed the first Apple computer in his garage.\\nHe designed the first Apple computer.\\nDesigning the first Apple computer.\\nSteve Jobs designed the first Apple computer in his garage.\\nSteve Jobs designed the first Apple computer.\\nThe first Apple computer. \\nThe first Apple computer was designed by Steve Jobs in his garage.\\nThe first Apple computer was designed in his garage.\\nThe first Apple computer was designed by Steve Jobs.\\n\",\"GrammarWeight\": \"\",\"DisplayText\": \"\",\"Versions\": 1}"
-              }
-            ]
-          ]
+        "infoAccessQuestion": {
+            "infoAccessId": 1,
+            "title": "二、信息获取(共20分)",
+            "titleAudioPath": "info_access/title.mp3",
+            "totalScore": 20,
+            "infoAccessQuestionParts": [
+                                        {
+                                        "partId": 1,
+                                        "infoAccessId": 1,
+                                        "title": "第一节　听选信息(共6小题;每小题2分,满分12分)",
+                                        "titleAudioPath": "info_access/p1_title.mp3",
+                                        "descContent": "听三段对话或独白，每段播放两遍。各段播放前你有10秒钟的阅题时间。各段播放后有两个问题。请根据所听到的问题和括号内的提示，选择正确的信息在8秒钟内口头回答。",
+                                        "descAudioPath": "info_access/p1_desc.mp3",
+                                        "audioPath": null,
+                                        "audioRepeatTimes": 1,
+                                        "questionCount": 6,
+                                        "totalScore": 12,
+                                        "scorePerQuestion": 2,
+                                        "questionDetails": [
+                                                            [
+                                                             {
+                                                             "infoAccessDetailId": 1,
+                                                             "partId": 1,
+                                                             "descContent": "听第一段对话,回答第1-2两个问题。现在你有10秒钟的阅题时间。",
+                                                             "descAudioPath": "info_access/p1_desc1.mp3",
+                                                             "group": 1,
+                                                             "question": "1. What day is it today?",
+                                                             "questionAudioPath": "info_access/q1.mp3",
+                                                             "questionAudioRepeatTimes": 2,
+                                                             "audioPath": "info_access/content1.mp3",
+                                                             "waitTimeMillseconds": 10000,
+                                                             "timeoutMillseconds": 8000,
+                                                             "audioRepeatTimes": 2,
+                                                             "hasOption": true,
+                                                             "answer": "Today is Saturday.",
+                                                             "jsgf": "{\"Grammar\": \"#enumerate\\nToday is Saturday.\\nIt's Saturday.\\nIt's Saturday today.\\nIt is Saturday today.\\nIt is Saturday.\\nSaturday.\\n\",\"GrammarWeight\": \"\",\"DisplayText\": \"\",\"Versions\": 1}",
+                                                             "option": {
+                                                             "optionId": 1,
+                                                             "infoAccessDetailId": 1,
+                                                             "optionContent": "(Today is Sunday / Today is Saturday / Today is Friday)",
+                                                             "correct": null
+                                                             }
+                                                             },
+                                                             {
+                                                             "infoAccessDetailId": 2,
+                                                             "partId": 1,
+                                                             "descContent": null,
+                                                             "descAudioPath": null,
+                                                             "group": 1,
+                                                             "question": "2. What's the weather like on Sunday?",
+                                                             "questionAudioPath": "info_access/q2.mp3",
+                                                             "questionAudioRepeatTimes": 2,
+                                                             "audioPath": null,
+                                                             "waitTimeMillseconds": 0,
+                                                             "timeoutMillseconds": 8000,
+                                                             "audioRepeatTimes": 0,
+                                                             "hasOption": true,
+                                                             "answer": "It's hot and rainy on Sunday.",
+                                                             "jsgf": "{\"Grammar\": \"#enumerate\\nIt's hot and rainy on Sunday.\\nIt is hot and rainy on Sunday.\\nIt's rainy and hot on Sunday.\\nIt is rainy and hot on Sunday.\\nIt's rainy and hot.\\nIt's hot and rainy.\\nIt is rainy and hot.\\nIt is hot and rainy.\\nRainy and hot.\\nHot and rainy.\\nRainy and hot on Sunday.\\nHot and Rainy on Sunday.\\n\",\"GrammarWeight\": \"\",\"DisplayText\": \"\",\"Versions\": 1}",
+                                                             "option": {
+                                                             "optionId": 2,
+                                                             "infoAccessDetailId": 2,
+                                                             "optionContent": "(It's cool and rainy on Sunday / It's cold and windy on Sunday / It's hot and rainy on Sunday)",
+                                                             "correct": null
+                                                             }
+                                                             }
+                                                             ],
+                                                            [
+                                                             {
+                                                             "infoAccessDetailId": 3,
+                                                             "partId": 1,
+                                                             "descContent": "听第二段对话，回答第3-4两个问题。现在你有10秒钟的阅题时间。",
+                                                             "descAudioPath": "info_access/p1_desc2.mp3",
+                                                             "group": 2,
+                                                             "question": "3. What are the speakers talking about?",
+                                                             "questionAudioPath": "info_access/q3.mp3",
+                                                             "questionAudioRepeatTimes": 2,
+                                                             "audioPath": "info_access/content2.mp3",
+                                                             "waitTimeMillseconds": 10000,
+                                                             "timeoutMillseconds": 8000,
+                                                             "audioRepeatTimes": 2,
+                                                             "hasOption": true,
+                                                             "answer": "They are talking about an encyclopaedia about wise men.",
+                                                             "jsgf": "{\"Grammar\": \"#enumerate\\nThey are talking about an encyclopedia about wise men.\\nAn encyclopaedia about wise men.\\n\",\"GrammarWeight\": \"\",\"DisplayText\": \"\",\"Versions\": 1}",
+                                                             "option": {
+                                                             "optionId": 3,
+                                                             "infoAccessDetailId": 3,
+                                                             "optionContent": "(They are talking about a book about history / an encyclopaedia about wise men / a story about Archimedes)",
+                                                             "correct": null
+                                                             }
+                                                             },
+                                                             {
+                                                             "infoAccessDetailId": 4,
+                                                             "partId": 1,
+                                                             "descContent": null,
+                                                             "descAudioPath": null,
+                                                             "group": 2,
+                                                             "question": "4. How did Mike get the book?",
+                                                             "questionAudioPath": "info_access/q4.mp3",
+                                                             "questionAudioRepeatTimes": 2,
+                                                             "audioPath": null,
+                                                             "waitTimeMillseconds": 0,
+                                                             "timeoutMillseconds": 8000,
+                                                             "audioRepeatTimes": 0,
+                                                             "hasOption": true,
+                                                             "answer": "Mike got it by borrowing from the library.",
+                                                             "jsgf": "{\"Grammar\": \"#enumerate\\nMike got it by borrowing from the library.\\nMike got the book by borrowing from the library.\\nHe got the book by borrowing from the library.\\nHe got it by borrowing from the library.\\nBy borrowing from the library.\\n\",\"GrammarWeight\": \"\",\"DisplayText\": \"\",\"Versions\": 1}",
+                                                             "option": {
+                                                             "optionId": 4,
+                                                             "infoAccessDetailId": 4,
+                                                             "optionContent": "(Mike got it by buying from the bookshop / by borrowing from his friends / by borrowing from the library)",
+                                                             "correct": null
+                                                             }
+                                                             }
+                                                             ],
+                                                            [
+                                                             {
+                                                             "infoAccessDetailId": 5,
+                                                             "partId": 1,
+                                                             "descContent": "听第三段独白，回答第5-6两个问题。现在你有10秒钟的阅题时间。",
+                                                             "descAudioPath": "info_access/p1_desc3.mp3",
+                                                             "group": 3,
+                                                             "question": "5. When did the modern Olympic Games start?",
+                                                             "questionAudioPath": "info_access/q5.mp3",
+                                                             "questionAudioRepeatTimes": 2,
+                                                             "audioPath": "info_access/content3.mp3",
+                                                             "waitTimeMillseconds": 10000,
+                                                             "timeoutMillseconds": 8000,
+                                                             "audioRepeatTimes": 2,
+                                                             "hasOption": true,
+                                                             "answer": "It started in 1896.",
+                                                             "jsgf": "{\"Grammar\": \"#enumerate\\nIt started in 1896.\\nThe modern Olympic Games started in 1896.\\nIn 1896.\\n\",\"GrammarWeight\": \"\",\"DisplayText\": \"\",\"Versions\": 1}",
+                                                             "option": {
+                                                             "optionId": 5,
+                                                             "infoAccessDetailId": 5,
+                                                             "optionContent": "(It started in 776 BC / It started in 776 / It started in 1896)",
+                                                             "correct": null
+                                                             }
+                                                             },
+                                                             {
+                                                             "infoAccessDetailId": 6,
+                                                             "partId": 1,
+                                                             "descContent": null,
+                                                             "descAudioPath": null,
+                                                             "group": 3,
+                                                             "question": "6. How long did the first ancient Olympic Games last?",
+                                                             "questionAudioPath": "info_access/q6.mp3",
+                                                             "questionAudioRepeatTimes": 2,
+                                                             "audioPath": null,
+                                                             "waitTimeMillseconds": 0,
+                                                             "timeoutMillseconds": 8000,
+                                                             "audioRepeatTimes": 0,
+                                                             "hasOption": true,
+                                                             "answer": "It lasted for a day.",
+                                                             "jsgf": "{\"Grammar\": \"#enumerate\\nIt lasted for a day.\\nFor a day.\\n\",\"GrammarWeight\": \"\",\"DisplayText\": \"\",\"Versions\": 1}",
+                                                             "option": {
+                                                             "optionId": 6,
+                                                             "infoAccessDetailId": 6,
+                                                             "optionContent": "(It lasted for a day / It lasted for a week / It lasted for two weeks)",
+                                                             "correct": null
+                                                             }
+                                                             }
+                                                             ]
+                                                            ]
+                                        },
+                                        {
+                                        "partId": 2,
+                                        "infoAccessId": 1,
+                                        "title": "第二节　回答问题(共4小题;每小题2分,满分8分)",
+                                        "titleAudioPath": "info_access/p1_title.mp3",
+                                        "descContent": "听下面一段对话或独白,录音播放两遍。请根据所听内容回答第7-10四个问题。当听到“开始录音”的信号后,请在8秒钟内口头回答。",
+                                        "descAudioPath": "info_access/p2_desc.mp3",
+                                        "audioPath": null,
+                                        "audioRepeatTimes": 1,
+                                        "questionCount": 4,
+                                        "totalScore": 8,
+                                        "scorePerQuestion": 2,
+                                        "questionDetails": [
+                                                            [
+                                                             {
+                                                             "infoAccessDetailId": 7,
+                                                             "partId": 2,
+                                                             "descContent": "现在你有15 秒钟的时间阅读这四个问题。",
+                                                             "descAudioPath": "info_access/p2_desc1.mp3",
+                                                             "group": 4,
+                                                             "question": "7. Where did Steve Jobs work as a video designer?",
+                                                             "questionAudioPath": "info_access/q7.mp3",
+                                                             "questionAudioRepeatTimes": 2,
+                                                             "audioPath": "info_access/content4.mp3",
+                                                             "waitTimeMillseconds": 15000,
+                                                             "timeoutMillseconds": 8000,
+                                                             "audioRepeatTimes": 2,
+                                                             "hasOption": false,
+                                                             "answer": "He worked as a video designer in a company.",
+                                                             "jsgf": "{\"Grammar\": \"#enumerate\\nHe worked as a video designer in a company.\\nHe worked in a company.\\nSteve Jobs worked as a video designer in a company.\\nSteve Jobs worked in a company.\\nIn a company.\\n\",\"GrammarWeight\": \"\",\"DisplayText\": \"\",\"Versions\": 1}",
+                                                             "option": null
+                                                             },
+                                                             {
+                                                             "infoAccessDetailId": 8,
+                                                             "partId": 2,
+                                                             "descContent": null,
+                                                             "descAudioPath": null,
+                                                             "group": 4,
+                                                             "question": "8. How long had Steve Jobs worked there before he went to India?",
+                                                             "questionAudioPath": "info_access/q8.mp3",
+                                                             "questionAudioRepeatTimes": 2,
+                                                             "audioPath": null,
+                                                             "waitTimeMillseconds": 0,
+                                                             "timeoutMillseconds": 8000,
+                                                             "audioRepeatTimes": 0,
+                                                             "hasOption": false,
+                                                             "answer": "He had worked there for a few months before he went to India.",
+                                                             "jsgf": "{\"Grammar\": \"#enumerate\\nHe had worked there for a few months before he went to India.\\nHe had worked there for a few months.\\nFor a few months.\\nSteve Jobs had worked there for a few months before he went to India.\\nSteve Jobs had worked there for a few months.\\n\",\"GrammarWeight\": \"\",\"DisplayText\": \"\",\"Versions\": 1}",
+                                                             "option": null
+                                                             },
+                                                             {
+                                                             "infoAccessDetailId": 9,
+                                                             "partId": 2,
+                                                             "descContent": null,
+                                                             "descAudioPath": null,
+                                                             "group": 4,
+                                                             "question": "9. When did Steve Jobs begin to make a new type of computer?",
+                                                             "questionAudioPath": "info_access/q9.mp3",
+                                                             "questionAudioRepeatTimes": 2,
+                                                             "audioPath": null,
+                                                             "waitTimeMillseconds": 0,
+                                                             "timeoutMillseconds": 8000,
+                                                             "audioRepeatTimes": 0,
+                                                             "hasOption": false,
+                                                             "answer": "He began to make a new type of computer in 1975. / In 1975.",
+                                                             "jsgf": "{\"Grammar\": \"#enumerate\\nHe began to make a new type of computer in 1975.\\nHe began to make it in 1975\\nSteve Jobs began to make a new type of computer in 1975.\\nSteve Jobs began to make it in 1975.\\nIn 1975.\\n\",\"GrammarWeight\": \"\",\"DisplayText\": \"\",\"Versions\": 1}",
+                                                             "option": null
+                                                             },
+                                                             {
+                                                             "infoAccessDetailId": 10,
+                                                             "partId": 2,
+                                                             "descContent": null,
+                                                             "descAudioPath": null,
+                                                             "group": 4,
+                                                             "question": "10. What did Steve Jobs design in his garage?",
+                                                             "questionAudioPath": "info_access/q10.mp3",
+                                                             "questionAudioRepeatTimes": 2,
+                                                             "audioPath": null,
+                                                             "waitTimeMillseconds": 0,
+                                                             "timeoutMillseconds": 8000,
+                                                             "audioRepeatTimes": null,
+                                                             "hasOption": false,
+                                                             "answer": "He designed the first Apple computer in his garage.",
+                                                             "jsgf": "{\"Grammar\": \"#enumerate\\nHe designed the first Apple computer in his garage.\\nHe designed the first Apple computer.\\nDesigning the first Apple computer.\\nSteve Jobs designed the first Apple computer in his garage.\\nSteve Jobs designed the first Apple computer.\\nThe first Apple computer. \\nThe first Apple computer was designed by Steve Jobs in his garage.\\nThe first Apple computer was designed in his garage.\\nThe first Apple computer was designed by Steve Jobs.\\n\",\"GrammarWeight\": \"\",\"DisplayText\": \"\",\"Versions\": 1}",
+                                                             "option": null
+                                                             }
+                                                             ]
+                                                            ]
+                                        }
+                                        ]
+        },
+        "infoDescQuestion":{
+            "infoDescId":1,
+            "title":"三、信息转述及询问",
+            "titleAudioPath":"/aa/bb/cc.mp3",
+            "totalScore":12,
+            "infoDescQuestionParts":[
+                                     {
+                                     "partId":1,
+                                     "title":"第一节 信息转述",
+                                     "titleAudioPath":"/aa/bb/cc.mp3",
+                                     "descContent":"你将听到你将听到你将听到你将听到你将听到你将听到你将听到你将听到",
+                                     "descAudioPath":"/aa/bb/cc.mp3",
+                                     "audioPath":"/aa/bb/cc.mp3",
+                                     "audioRepeatTimes":1,
+                                     "questionCount":1,
+                                     "totalScore":8,
+                                     "scorePerQuestion":8,
+                                     "details":[
+                                                {
+                                                "detailId":1,
+                                                "descContent":"现在，你有15秒钟现在，你有15秒钟现在，你有15秒钟现在，你有15秒钟",
+                                                "descAudioPath":"/aa/bb/cc.mp3",
+                                                "subDescContent":"下面你将有50秒钟下面你将有50秒钟下面你将有50秒钟",
+                                                "subDescAudioPath":"/aa/bb/cc.mp3",
+                                                "question":"",
+                                                "questionPicPath":"/aa/bb/cc.webp",
+                                                "jsgf":"{aaa,bbb,ccc}",
+                                                "waitTimeMillseconds":10000,
+                                                "subWaitTimeMillseconds":10000,
+                                                "timoutMillseconds":10000,
+                                                "audioRepeatTimes":2
+                                                }
+                                                ]
+                                     },
+                                     {
+                                     "partId":1,
+                                     "title":"第二节 询问信息",
+                                     "titleAudioPath":"/aa/bb/cc.mp3",
+                                     "descContent":"你将听到你将听到你将听到你将听到你将听到你将听到你将听到你将听到",
+                                     "descAudioPath":"/aa/bb/cc.mp3",
+                                     "questionCount":1,
+                                     "totalScore":8,
+                                     "scorePerQuestion":8,
+                                     "details":[
+                                                {
+                                                "detailId":1,
+                                                "descContent":"",
+                                                "descAudioPath":"",
+                                                "subDescContent":"",
+                                                "subDescAudioPath":"",
+                                                "question":"11.除了游泳你还喜欢什么运动？",
+                                                "questionPicPath":"",
+                                                "jsgf":"{aaa,bbb,ccc}",
+                                                "waitTimeMillseconds":10000,
+                                                "timoutMillseconds":10000,
+                                                "audioRepeatTimes":2
+                                                },
+                                                {
+                                                "detailId":1,
+                                                "descContent":"",
+                                                "descAudioPath":"",
+                                                "subDescContent":"",
+                                                "subDescAudioPath":"",
+                                                "question":"11.除了游泳你还喜欢什么运动？",
+                                                "questionPicPath":"",
+                                                "jsgf":"{aaa,bbb,ccc}",
+                                                "waitTimeMillseconds":10000,
+                                                "timoutMillseconds":10000,
+                                                "audioRepeatTimes":2
+                                                }
+                                                ]
+                                     }
+                                     ]
         }
-      ]
-    },
-   "infoDescQuestion":{
-     "infoDescId":1,
-     "title":"三、信息转述及询问",
-     "titleAudioPath":"/aa/bb/cc.mp3",
-     "totalScore":12,
-     "infoDescQuestionParts":[
-       {
-         "partId":1,
-         "title":"第一节 信息转述",
-         "titleAudioPath":"/aa/bb/cc.mp3",
-         "descContent":"你将听到你将听到你将听到你将听到你将听到你将听到你将听到你将听到",
-         "descAudioPath":"/aa/bb/cc.mp3",
-         "audioPath":"/aa/bb/cc.mp3",
-         "audioRepeatTimes":1,
-         "questionCount":1,
-         "totalScore":8,
-         "scorePerQuestion":8,
-         "details":[
-           {
-             "detailId":1,
-             "descContent":"现在，你有15秒钟现在，你有15秒钟现在，你有15秒钟现在，你有15秒钟",
-             "descAudioPath":"/aa/bb/cc.mp3",
-             "subDescContent":"下面你将有50秒钟下面你将有50秒钟下面你将有50秒钟",
-             "subDescAudioPath":"/aa/bb/cc.mp3",
-             "question":"",
-             "questionPicPath":"/aa/bb/cc.webp",
-             "jsgf":"{aaa,bbb,ccc}",
-             "waitTimeMillseconds":10000,
-             "subWaitTimeMillseconds":10000,
-             "timoutMillseconds":10000,
-             "audioRepeatTimes":2
-           }
-         ]
-       },
-       {
-         "partId":1,
-         "title":"第二节 询问信息",
-         "titleAudioPath":"/aa/bb/cc.mp3",
-         "descContent":"你将听到你将听到你将听到你将听到你将听到你将听到你将听到你将听到",
-         "descAudioPath":"/aa/bb/cc.mp3",
-         "questionCount":1,
-         "totalScore":8,
-         "scorePerQuestion":8,
-         "details":[
-           {
-             "detailId":1,
-             "descContent":"",
-             "descAudioPath":"",
-             "subDescContent":"",
-             "subDescAudioPath":"",
-             "question":"11.除了游泳你还喜欢什么运动？",
-             "questionPicPath":"",
-             "jsgf":"{aaa,bbb,ccc}",
-             "waitTimeMillseconds":10000,
-             "timoutMillseconds":10000,
-             "audioRepeatTimes":2
-           },
-           {
-             "detailId":1,
-             "descContent":"",
-             "descAudioPath":"",
-             "subDescContent":"",
-             "subDescAudioPath":"",
-             "question":"11.除了游泳你还喜欢什么运动？",
-             "questionPicPath":"",
-             "jsgf":"{aaa,bbb,ccc}",
-             "waitTimeMillseconds":10000,
-             "timoutMillseconds":10000,
-             "audioRepeatTimes":2
-           }
-         ]
-       }
-     ]
-   }
- }
+    }
 }
