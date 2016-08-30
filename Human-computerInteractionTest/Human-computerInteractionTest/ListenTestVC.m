@@ -7,7 +7,6 @@
 //
 
 #import "ListenTestVC.h"
-#import "ReadingAloudVC.h"
 #import "ListenTestCollectionCell.h"
 #import "UIViewController+BackButtonHandler.h"
 #import "MJExtension.h"

@@ -10,12 +10,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Human-computerInteractionTest/ListenTestCollectionCell.m"
-            timestampString = "494178830.600603"
+            timestampString = "494236276.370567"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
-            landmarkName = "-setInfoAccessQuestionInfomation:Index:"
+            startingLineNumber = "580"
+            endingLineNumber = "580"
+            landmarkName = "-onEndOral:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Human-computerInteractionTest/ListenTestCollectionCell.m"
+            timestampString = "494236611.019569"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "442"
+            endingLineNumber = "442"
+            landmarkName = "-questionTwo"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

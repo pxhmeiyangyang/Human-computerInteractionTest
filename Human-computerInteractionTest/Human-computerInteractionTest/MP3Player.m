@@ -47,11 +47,11 @@ static MP3Player* _instancePlayer = nil;
 - (BOOL)play{
     NSLog(@"play");
     _sliderTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(progress:) userInfo:nil repeats:YES];
-    return [audioPlayer play];
+    return [_audioPlayer play];
 }
 
 -(void)progress:(NSTimer* )timer{
-    CGFloat progressValue = audioPlayer.currentTime / audioPlayer.duration;
+    CGFloat progressValue = _audioPlayer.currentTime / _audioPlayer.duration;
     if (_playPorgressBlock) {
         _playPorgressBlock(progressValue);
     }
@@ -59,21 +59,21 @@ static MP3Player* _instancePlayer = nil;
 
 - (void)stop{
     [_sliderTimer invalidate];
-    [audioPlayer stop];
+    [_audioPlayer stop];
 }
 
 -(void)playWithFile:(NSString *)path{
     NSData* data = [[NSData alloc]initWithContentsOfFile:path];
-    audioPlayer = [[AVAudioPlayer alloc]initWithData:data error:nil];
-    audioPlayer.delegate = self;
-    [audioPlayer prepareToPlay];
+    _audioPlayer = [[AVAudioPlayer alloc]initWithData:data error:nil];
+    _audioPlayer.delegate = self;
+    [_audioPlayer prepareToPlay];
 }
 
 -(void)playWithUrl:(NSString* )url{
     NSData* data = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:url]];
-    audioPlayer = [[AVAudioPlayer alloc]initWithData:data error:nil];
-    audioPlayer.delegate = self;
-    [audioPlayer prepareToPlay];
+    _audioPlayer = [[AVAudioPlayer alloc]initWithData:data error:nil];
+    _audioPlayer.delegate = self;
+    [_audioPlayer prepareToPlay];
 }
 
 #pragma mark - AVAudioPlayerDelegate

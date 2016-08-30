@@ -18,16 +18,12 @@ typedef void(^PlayPorgressBlock)(CGFloat progress);
 @end
 
 @interface MP3Player : NSObject<AVAudioPlayerDelegate>
-{
-    NSString *filePath;
-    AVAudioPlayer *audioPlayer;
-}
 
 @property (nonatomic, assign) id<MP3PlayerDelegate> delegate;
 
 @property(nonatomic,copy)PlayPorgressBlock playPorgressBlock;
 
-//- (id)initWithPath:(NSString *)path;
+@property(nonatomic,strong)AVAudioPlayer *audioPlayer;
 
 +(instancetype)sharedInstancePlayer;
 
