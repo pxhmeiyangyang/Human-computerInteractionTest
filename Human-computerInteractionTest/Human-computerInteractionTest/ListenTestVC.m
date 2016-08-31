@@ -10,9 +10,11 @@
 #import "ListenTestCollectionCell.h"
 #import "UIViewController+BackButtonHandler.h"
 #import "MJExtension.h"
-#define cellCount 4
 
 @interface ListenTestVC ()<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UIAlertViewDelegate>
+{
+    NSInteger _cellCount;
+}
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *collectionLayout;
 @property (nonatomic,strong) NSMutableDictionary* cellDic;
@@ -81,7 +83,12 @@
 #pragma mark - UICollectionViewDelegate
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return cellCount;
+    NSInteger count = 0;
+    for (Infoaccessquestionparts* part in _paperModel.paper.infoAccessQuestion.infoAccessQuestionParts) {
+        count += part.questionDetails.count;
+    }
+    _cellCount = 1 + count;
+    return _cellCount;
 }
 -(UICollectionViewCell* )collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     NSString* identifier = [_cellDic objectForKey:[NSString stringWithFormat:@"%@",indexPath]];
@@ -91,12 +98,12 @@
         [self.collectionView registerNib:[UINib nibWithNibName:@"ListenTestCollectionCell" bundle:nil] forCellWithReuseIdentifier:identifier];
     }
     ListenTestCollectionCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
-    cell.tag = 1;
+    cell.tag = indexPath.row;
     cell.paperModel = self.paperModel;
     cell.nextItemBlock = ^(){
         NSIndexPath* currentIndexPath = [[self.collectionView indexPathsForVisibleItems] lastObject];
         NSInteger nextItem = currentIndexPath.item + 1;
-        if (nextItem > cellCount) {
+        if (nextItem > _cellCount - 1) {
          //跳转到下一个页面
             NSLog(@"跳转到下一个页面");
         }else{

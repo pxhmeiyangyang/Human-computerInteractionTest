@@ -126,15 +126,12 @@ typedef NS_ENUM(NSInteger,controlShowType) {
 
 -(void)setPaperModel:(PaperModel *)paperModel{
     _paperModel = paperModel;
-    switch (self.tag) {
-        case 0:
-            [self setReadQuestionInfomation:paperModel];
-            break;
-        case 1:
-            [self setInfoAccessQuestionInfomation:paperModel Index:self.tag];
-            break;
-        default:
-            break;
+    if (self.tag == 0) {
+        [self setReadQuestionInfomation:paperModel];
+    }else if (self.tag > 0 && self.tag < 5){
+        [self setInfoAccessQuestionInfomation:paperModel Index:self.tag];
+    }else{
+    
     }
 }
 
@@ -164,19 +161,43 @@ typedef NS_ENUM(NSInteger,controlShowType) {
 
 }
 -(void)setInfoAccessQuestionInfomation:(PaperModel *)paperModel Index:(NSInteger)index{
-    if (_paperModel.paper.infoAccessQuestion.titleAudioPath.length > 0) {
-        //音频地址
-        NSString* path = [NSString stringWithFormat:@"%@/%@",FolderPath,_paperModel.paper.infoAccessQuestion.titleAudioPath];
-        [_mp3Player playWithFile:path];
-        [_mp3Player play];
-    }
     if (paperModel.paper.infoAccessQuestion.title.length > 0) {
         _titleLabel.text = paperModel.paper.infoAccessQuestion.title;
     }
     NSString* content = @"";
-    Infoaccessquestionparts* part = paperModel.paper.infoAccessQuestion.infoAccessQuestionParts[0];
-    NSArray* questionDetail = part.questionDetails[0];
-    for (id question in questionDetail) {
+    Infoaccessquestionparts* part;
+    NSArray* questionDetails;
+    switch (index) {
+        case 1:
+            if (_paperModel.paper.infoAccessQuestion.titleAudioPath.length > 0) {
+                //音频地址
+                NSString* path = [NSString stringWithFormat:@"%@/%@",FolderPath,_paperModel.paper.infoAccessQuestion.titleAudioPath];
+                [_mp3Player playWithFile:path];
+                [_mp3Player play];
+            }
+            part = paperModel.paper.infoAccessQuestion.infoAccessQuestionParts[0];
+            questionDetails = part.questionDetails[0];
+            break;
+        case 2:
+            part = paperModel.paper.infoAccessQuestion.infoAccessQuestionParts[0];
+            questionDetails = part.questionDetails[1];
+            _soundCount = 3;
+            break;
+        case 3:
+            part = paperModel.paper.infoAccessQuestion.infoAccessQuestionParts[0];
+            questionDetails = part.questionDetails[2];
+            _soundCount = 3;
+            break;
+        case 4:
+            part = paperModel.paper.infoAccessQuestion.infoAccessQuestionParts[1];
+            questionDetails = part.questionDetails[0];
+            _soundCount = 3;
+            break;
+        default:
+            break;
+    }
+
+    for (id question in questionDetails) {
         QuestionDetail* detail = [QuestionDetail mj_objectWithKeyValues:question];
         NSString* string = [NSString stringWithFormat:@"%@\n%@",detail.question,detail.option.optionContent];
         content = [content stringByAppendingFormat:@"%@\n",string];
@@ -191,6 +212,9 @@ typedef NS_ENUM(NSInteger,controlShowType) {
         if (detail.descContent.length > 0) {
             _tipLabel.text = [NSString stringWithFormat:@"%@\n%@\n%@",part.title,part.descContent,detail.descContent];
         }
+    }
+    if (index > 1 && index < 5) {
+        [self questionTwo];
     }
 }
 #pragma mark - MP3PlayerDelegate
@@ -406,8 +430,9 @@ typedef NS_ENUM(NSInteger,controlShowType) {
             break;
         case 7:{
             //开始录音
+            [_soundImage stopAnimating];
             [self starRecording];
-            _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(questionTwoStartRecorder:) userInfo:nil repeats:YES];
+            _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(questionTwosoundWait:) userInfo:nil repeats:YES];
             _soundProgress.progress = 1.0;
         }
             break;
@@ -430,14 +455,26 @@ typedef NS_ENUM(NSInteger,controlShowType) {
             break;
         case 9:
         {
+            [self controlViewShow:ControlshowAll];
+            [_timer invalidate];
+            _frontCountDownTime = 0.0;
+            //提示开始录音
+            NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"start_audio" ofType:@"mp3"];
+            [_mp3Player playWithFile:mp3Path];
+            [_mp3Player play];
+        }
+            break;
+        case 10:
+        {
             //开始录音
+            [_soundImage stopAnimating];
             [self starRecording];
-            _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(questionTwoStartRecorder:) userInfo:nil repeats:YES];
+            _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(questionTwosoundWait:) userInfo:nil repeats:YES];
             _soundProgress.progress = 1.0;
             _questionTwoRecorder ++;
         }
             break;
-        case 10:
+        case 11:
         {
             [self gotoNextSubject];
         }
@@ -485,15 +522,12 @@ typedef NS_ENUM(NSInteger,controlShowType) {
         [_soundImage startAnimating];
     }
 }
--(void)questionTwoStartRecorder:(NSTimer* )timer{
+-(void)questionTwosoundWait:(NSTimer* )timer{
     QuestionDetail* detail = _questionTwoArray[_questionTwoRecorder];
     CGFloat timeOut = detail.timeoutMillseconds / 1000;
-    if (_frontCountDownTime < timeOut ) {
-        if (_frontCountDownTime == 0) {
-            [self controlViewShow:ControlShowImage];
-        }
+    if (_frontCountDownTime < timeOut) {
         _frontCountDownTime ++;
-        int ratio = (int)(_timeOut - _frontCountDownTime);
+        int ratio = (int)(timeOut - _frontCountDownTime);
         NSString* str = [NSString stringWithFormat:@"请开始录音（倒计时%d秒）",ratio];
         NSMutableAttributedString* attriStr = [[NSMutableAttributedString alloc]initWithString:str];
         NSRange range;
@@ -504,32 +538,7 @@ typedef NS_ENUM(NSInteger,controlShowType) {
         }
         [attriStr addAttribute:NSForegroundColorAttributeName value:[UIColor orangeColor] range:range];
         [_soundTitle setAttributedText:attriStr];
-        _soundProgress.progress = _frontCountDownTime / _timeOut;
-    }else{
-        [_timer invalidate];
-        [self controlViewShow:ControlHiddenAll];
-        //提示停止录音
-        [self stopRecording];//停止录音函数
-        NSString* mp3Path = [[NSBundle mainBundle]pathForResource:@"end_audio" ofType:@"mp3"];
-        [_mp3Player playWithFile:mp3Path];
-        [_mp3Player play];
-    }
-}
--(void)questionTwosoundWait:(NSTimer* )timer{
-    if (_frontCountDownTime < _timeOut) {
-        _frontCountDownTime ++;
-        int ratio = (int)(_timeOut - _frontCountDownTime);
-        NSString* str = [NSString stringWithFormat:@"请开始录音（倒计时%d秒）",ratio];
-        NSMutableAttributedString* attriStr = [[NSMutableAttributedString alloc]initWithString:str];
-        NSRange range;
-        if (ratio > 9) {
-            range = NSMakeRange(9, 2);
-        }else{
-            range = NSMakeRange(9, 1);
-        }
-        [attriStr addAttribute:NSForegroundColorAttributeName value:[UIColor orangeColor] range:range];
-        [_soundTitle setAttributedText:attriStr];
-        _soundProgress.progress = _frontCountDownTime / _timeOut;
+        _soundProgress.progress = _frontCountDownTime / timeOut;
     }else{
         [_timer invalidate];
         [self controlViewShow:ControlHiddenAll];
@@ -574,7 +583,7 @@ typedef NS_ENUM(NSInteger,controlShowType) {
 }
 
 - (void)onEndOral:(NSError *)error{
-    if (self.tag > 1) {
+    if (self.tag > 0) {
         if (_questionTwoRecorder == 1) {
             [self gotoNextSubject];
         }

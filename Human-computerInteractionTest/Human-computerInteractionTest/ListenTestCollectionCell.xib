@@ -86,7 +86,7 @@
                         <rect key="frame" x="0.0" y="498" width="600" height="38"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正在播放原音" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4iW-uy-sze">
-                                <rect key="frame" x="0.0" y="7" width="600" height="18"/>
+                                <rect key="frame" x="0.0" y="8" width="600" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -108,7 +108,7 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="oYN-26-iTb" secondAttribute="bottom" id="DAG-Oh-uPR"/>
                             <constraint firstItem="oYN-26-iTb" firstAttribute="leading" secondItem="fyw-1B-uKK" secondAttribute="leading" id="HCv-y4-Hxd"/>
-                            <constraint firstItem="oYN-26-iTb" firstAttribute="top" secondItem="4iW-uy-sze" secondAttribute="bottom" constant="11" id="UJm-09-Zp4"/>
+                            <constraint firstItem="oYN-26-iTb" firstAttribute="top" secondItem="4iW-uy-sze" secondAttribute="bottom" constant="10" id="UJm-09-Zp4"/>
                             <constraint firstAttribute="height" constant="38" id="evK-Ka-3tB"/>
                             <constraint firstAttribute="trailing" secondItem="oYN-26-iTb" secondAttribute="trailing" id="fYr-QS-MZ2"/>
                             <constraint firstItem="4iW-uy-sze" firstAttribute="leading" secondItem="fyw-1B-uKK" secondAttribute="leading" id="nZ8-xN-TZR"/>
