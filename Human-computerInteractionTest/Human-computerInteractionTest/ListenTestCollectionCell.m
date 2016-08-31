@@ -69,7 +69,6 @@ typedef NS_ENUM(NSInteger,controlShowType) {
 -(void)resetData{
     _engine = [EngineManager sharedManager];
     _engine.delegate = self;
-    [_engine setOralText:@"good moring"];
     _soundCount = 0;
     _frontCountDownTime = 0.0;
     _isNext = NO;
@@ -311,7 +310,7 @@ typedef NS_ENUM(NSInteger,controlShowType) {
         [_mp3Player playWithFile:mp3Path];
         [_mp3Player play];
         //开始录音
-        [self starRecording];
+        [self starRecordingWithOralText:_paperModel.paper.readQuestion.content];
     }
 }
 -(void)soundWait:(NSTimer* )timer{
@@ -431,7 +430,7 @@ typedef NS_ENUM(NSInteger,controlShowType) {
         case 7:{
             //开始录音
             [_soundImage stopAnimating];
-            [self starRecording];
+            [self starRecordingWithOralText:detail1.jsgf];
             _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(questionTwosoundWait:) userInfo:nil repeats:YES];
             _soundProgress.progress = 1.0;
         }
@@ -468,7 +467,7 @@ typedef NS_ENUM(NSInteger,controlShowType) {
         {
             //开始录音
             [_soundImage stopAnimating];
-            [self starRecording];
+            [self starRecordingWithOralText:detail2.jsgf];
             _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(questionTwosoundWait:) userInfo:nil repeats:YES];
             _soundProgress.progress = 1.0;
             _questionTwoRecorder ++;
@@ -550,7 +549,8 @@ typedef NS_ENUM(NSInteger,controlShowType) {
     }
 }
 
--(void)starRecording{
+-(void)starRecordingWithOralText:(NSString* )text{
+    [_engine setOralText:text];
     [_engine startRecognize];
     [self.wave setHidden:NO];
     [_soundImage setImage:[UIImage imageNamed:@"05_mic"]];
