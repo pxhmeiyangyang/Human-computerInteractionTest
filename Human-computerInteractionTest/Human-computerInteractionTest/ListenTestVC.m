@@ -100,7 +100,7 @@
         [self.collectionView registerNib:[UINib nibWithNibName:@"ListenTestCollectionCell" bundle:nil] forCellWithReuseIdentifier:identifier];
     }
     ListenTestCollectionCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
-    cell.tag = indexPath.row;
+    cell.tag = 6;
     cell.paperModel = self.paperModel;
     cell.nextItemBlock = ^(){
         NSIndexPath* currentIndexPath = [[self.collectionView indexPathsForVisibleItems] lastObject];
