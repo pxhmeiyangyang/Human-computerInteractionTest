@@ -274,79 +274,92 @@
                                         }
                                         ]
         },
-        "infoDescQuestion":{
-            "infoDescId":1,
-            "title":"三、信息转述及询问",
-            "titleAudioPath":"/aa/bb/cc.mp3",
-            "totalScore":12,
-            "infoDescQuestionParts":[
-                                     {
-                                     "partId":1,
-                                     "title":"第一节 信息转述",
-                                     "titleAudioPath":"/aa/bb/cc.mp3",
-                                     "descContent":"你将听到你将听到你将听到你将听到你将听到你将听到你将听到你将听到",
-                                     "descAudioPath":"/aa/bb/cc.mp3",
-                                     "audioPath":"/aa/bb/cc.mp3",
-                                     "audioRepeatTimes":1,
-                                     "questionCount":1,
-                                     "totalScore":8,
-                                     "scorePerQuestion":8,
-                                     "details":[
-                                                {
-                                                "detailId":1,
-                                                "descContent":"现在，你有15秒钟现在，你有15秒钟现在，你有15秒钟现在，你有15秒钟",
-                                                "descAudioPath":"/aa/bb/cc.mp3",
-                                                "subDescContent":"下面你将有50秒钟下面你将有50秒钟下面你将有50秒钟",
-                                                "subDescAudioPath":"/aa/bb/cc.mp3",
-                                                "question":"",
-                                                "questionPicPath":"/aa/bb/cc.webp",
-                                                "jsgf":"{aaa,bbb,ccc}",
-                                                "waitTimeMillseconds":10000,
-                                                "subWaitTimeMillseconds":10000,
-                                                "timoutMillseconds":10000,
-                                                "audioRepeatTimes":2
-                                                }
-                                                ]
-                                     },
-                                     {
-                                     "partId":1,
-                                     "title":"第二节 询问信息",
-                                     "titleAudioPath":"/aa/bb/cc.mp3",
-                                     "descContent":"你将听到你将听到你将听到你将听到你将听到你将听到你将听到你将听到",
-                                     "descAudioPath":"/aa/bb/cc.mp3",
-                                     "questionCount":1,
-                                     "totalScore":8,
-                                     "scorePerQuestion":8,
-                                     "details":[
-                                                {
-                                                "detailId":1,
-                                                "descContent":"",
-                                                "descAudioPath":"",
-                                                "subDescContent":"",
-                                                "subDescAudioPath":"",
-                                                "question":"11.除了游泳你还喜欢什么运动？",
-                                                "questionPicPath":"",
-                                                "jsgf":"{aaa,bbb,ccc}",
-                                                "waitTimeMillseconds":10000,
-                                                "timoutMillseconds":10000,
-                                                "audioRepeatTimes":2
-                                                },
-                                                {
-                                                "detailId":1,
-                                                "descContent":"",
-                                                "descAudioPath":"",
-                                                "subDescContent":"",
-                                                "subDescAudioPath":"",
-                                                "question":"11.除了游泳你还喜欢什么运动？",
-                                                "questionPicPath":"",
-                                                "jsgf":"{aaa,bbb,ccc}",
-                                                "waitTimeMillseconds":10000,
-                                                "timoutMillseconds":10000,
-                                                "audioRepeatTimes":2
-                                                }
-                                                ]
-                                     }
-                                     ]
+        "infoDescQuestion": {
+            "infoDescId": 1,
+            "title": "三、信息转述及询问(共12分)",
+            "titleAudioPath": "info_desc/title.mp3",
+            "totalScore": 12,
+            "infoDescQuestionParts": [
+                                      {
+                                      "partId": 1,
+                                      "infoDescId": 1,
+                                      "title": "第一节　信息转述(8分)",
+                                      "titleAudioPath": "info_desc/p1_title.mp3",
+                                      "audioPath": null,
+                                      "audioRepeatTimes": 0,
+                                      "descContent": null,
+                                      "descAudioPath": null,
+                                      "questionCount": 1,
+                                      "totalScore": 8,
+                                      "scorePerQuestion": 8,
+                                      "details": [
+                                                  [
+                                                   {
+                                                   "infoDescDetailId": 1,
+                                                   "partId": 1,
+                                                   "descContent": "\"你将听到一段David的My favourite teacher的介绍,录音播放两遍。请根据所听到的内容,选择下列表格中的正确信息,在50秒钟内说一段话转述,包含五个要点的内容。\n现在,你有15秒钟的时间阅读表格内容。\"",
+                                                   "descAudioPath": "info_desc/p1_desc.mp3",
+                                                   "subDescContent": "\"下面你有50秒钟的时间准备。你的介绍可以这样开始：\nThere is a foreign teacher in David's school. His name is …\"",
+                                                   "subDescAudioPath": "info_desc/p1_sub_desc.mp3",
+                                                   "question": null,
+                                                   "questionPicPath": "info_desc/1.jpg",
+                                                   "waitTimeMillseconds": 15000,
+                                                   "subWaitTimeMillseconds": 50000,
+                                                   "timeoutMillseconds": 50000,
+                                                   "audioRepeatTimes": 2,
+                                                   "jsgf": "{\"Grammar\": \"#JSGF V1.0 utf-8 cn;\\ngrammar main;\\npublic <sample> = \"<s>\" (There is a foreign teacher in David's school. <t1> Johnny Brown. He <t2> in David's school. He <t3> Three years ago, he <t4> to China. He works very hard. <t5> very lively and interesting. <t6> sports and travelling. He is one of the most <t7> teachers in David's school.) \"</s>\";\\n<t1> = (His name is | He is called);\\n<t2> = (teaches English | is an English teacher);\\n<t3> = (is 35 years old. He comes from Canada. | is a 35-year-old Canadian. | is 35 years old. His nationality is Canada.);\\n<t4> = (came | went);\\n<t5> = (He can make his classes | His classes are);\\n<t6> = (When he is free, he likes having | In his free time, his hobbies are doing | He spends his free time in doing);\\n<t7> = (popular | welcomed);\\n\",\"GrammarWeight\": \"{\"weight_struct\":[[{\"weight\":0.2,\"key\":\"near\"},{\"weight\":0.2,\"key\":\"close to\"},{\"weight\":0.2,\"key\":\"beside\"},{\"weight\":0.2,\"key\":\"not far from\"},{\"weight\":0.2,\"key\":\"not far away from\"}],[{\"weight\":1,\"key\":\"my school\"}]]}\",\"DisplayText\": \"\",\"Versions\": 1}"
+                                                   }
+                                                   ]
+                                                  ]
+                                      },
+                                      {
+                                      "partId": 2,
+                                      "infoDescId": 1,
+                                      "title": "第二节　询问信息(共2小题;每小题2分,满分4分)",
+                                      "titleAudioPath": "info_desc/p2_title.mp3",
+                                      "audioPath": null,
+                                      "audioRepeatTimes": 0,
+                                      "descContent": "你希望了解更多关于David的My favourite teacher的情况，请根据以下提示向他提两个问题。每个问题有15秒钟的准备时间和8秒钟的提问时间。",
+                                      "descAudioPath": "info_desc/p2_desc.mp3",
+                                      "questionCount": 2,
+                                      "totalScore": 4,
+                                      "scorePerQuestion": 2,
+                                      "details": [
+                                                  [
+                                                   {
+                                                   "infoDescDetailId": 2,
+                                                   "partId": 2,
+                                                   "descContent": null,
+                                                   "descAudioPath": "info_desc/p2_desc1.mp3",
+                                                   "subDescContent": null,
+                                                   "subDescAudioPath": null,
+                                                   "question": "11. 你的妈妈认识你的外教吗?",
+                                                   "questionPicPath": null,
+                                                   "waitTimeMillseconds": 15000,
+                                                   "subWaitTimeMillseconds": 0,
+                                                   "timeoutMillseconds": 8000,
+                                                   "audioRepeatTimes": 0,
+                                                   "jsgf": "Does your mother know your foreign teacher?"
+                                                   },
+                                                   {
+                                                   "infoDescDetailId": 3,
+                                                   "partId": 2,
+                                                   "descContent": null,
+                                                   "descAudioPath": "info_desc/p2_desc2.mp3",
+                                                   "subDescContent": null,
+                                                   "subDescAudioPath": null,
+                                                   "question": "12. 你们学校有多少个外教?",
+                                                   "questionPicPath": null,
+                                                   "waitTimeMillseconds": 15000,
+                                                   "subWaitTimeMillseconds": 0,
+                                                   "timeoutMillseconds": 8000,
+                                                   "audioRepeatTimes": 0,
+                                                   "jsgf": "How many foreign teachers are there in your school?"
+                                                   }
+                                                   ]
+                                                  ]
+                                      }
+                                      ]
         }
     }
 }

@@ -84,10 +84,12 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     NSInteger count = 0;
+    count += 1;//题型一
     for (Infoaccessquestionparts* part in _paperModel.paper.infoAccessQuestion.infoAccessQuestionParts) {
         count += part.questionDetails.count;
     }
-    _cellCount = 1 + count;
+    count += _paperModel.paper.infoDescQuestion.infoDescQuestionParts.count;
+    _cellCount = count;
     return _cellCount;
 }
 -(UICollectionViewCell* )collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
